@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TechNation</title>
+  <script src="https://kit.fontawesome.com/your-kit-id.js" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="flex flex-col min-h-screen">
+
+  <!-- Navbar -->
+  <header class="bg-gray-900 text-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center h-16">
+      <h1 class="text-xl font-bold">TechNation</h1>
+      <nav class="space-x-4">
+        <a href="#" class="hover:text-gray-300">Home</a>
+        <a href="#" class="hover:text-gray-300">Products</a>
+        <a href="#" class="hover:text-gray-300">About</a>
+        <a href="#" class="hover:text-gray-300">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="flex-grow">
+  <!-- Main content -->
+  <div class="max-w-screen-2xl mx-auto px-4 py-6">
+  
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+    <!-- Left: Cart Items Container -->
+    <div class="lg:col-span-9 min-w-0">
+      <div class="bg-white p-4 shadow-md rounded" id="cart-items-container">
+          <h1 class="text-2xl font-semibold border-b pb-4 mb-6">Shopping Cart</h1>
+        <!-- Cart Item -->
+        <div class="flex flex-col md:flex-row gap-4 border-b pb-4 cart-item" data-price="34.99">
+          <img src="https://m.media-amazon.com/images/I/71UnL+fUeWL._AC_AA180_.jpg" class="w-44 h-44 object-contain" />
+          <div class="flex-grow">
+            <h2 style="font-size: 22px; font-weight: lighter; font-family: 'Lato', sans-serif;">SteelSeries Apex 3 TKL RGB Gaming Keyboard – Tenkeyless...</h2>
+            <p class="text-green-600 text-sm mt-1">In Stock</p>
+            <label class="flex items-center text-sm mt-1">
+              <input type="checkbox" class="accent-yellow-500 mr-2" /> This is a gift
+            </label>
+            <p class="text-sm mt-1">Size: Apex 3 TKL</p>
+            <p class="text-sm">Style: Whisper Quiet</p>
+            <div class="flex items-center gap-4 mt-2 text-sm text-blue-600">
+              <div class="flex items-center border rounded px-2 py-1">
+                <button class="decrease-qty">-</button>
+                <span class="px-2 quantity">1</span> <!-- Dynamic quantity -->
+                <button class="increase-qty">+</button>
+              </div>
+              <button class="hover:underline delete-item">Delete</button>
+              <button class="hover:underline">Save for later</button>
+              <button class="hover:underline">Compare</button>
+            </div>
+          </div>
+          <div class="text-right text-lg font-semibold item-price">$34.99</div>
+        </div>
+
+        <!-- Another Cart Item -->
+        <div class="flex flex-col md:flex-row gap-4 border-b pb-4 pt-4 cart-item" data-price="177.99">
+          <img src="https://m.media-amazon.com/images/I/71VV0kyOKCL._AC_AA180_.jpg" class="w-44 h-44 object-contain" />
+          <div class="flex-grow">
+              <h2 style="font-size: 22px; font-weight: lighter; font-family: 'Lato', sans-serif;">Samsung Galaxy A16 5G Smartphone, 128GB, Light Gray</h2>
+            <p class="text-green-600 text-sm mt-1">In Stock</p>
+            <label class="flex items-center text-sm mt-1">
+              <input type="checkbox" class="accent-yellow-500 mr-2" /> This is a gift
+            </label>
+            <p class="text-sm mt-1">Color: Light Gray</p>
+            <p class="text-sm">Style: A16 Only</p>
+            <div class="flex items-center gap-4 mt-2 text-sm text-blue-600">
+              <div class="flex items-center border rounded px-2 py-1">
+                <button class="decrease-qty">-</button>
+                <span class="px-2 quantity">1</span> <!-- Dynamic quantity -->
+                <button class="increase-qty">+</button>
+              </div>
+              <button class="hover:underline delete-item">Delete</button>
+              <button class="hover:underline">Save for later</button>
+              <button class="hover:underline">Compare</button>
+            </div>
+          </div>
+          <div class="text-right text-lg font-semibold item-price">$177.99</div>
+        </div>
+
+        <!-- Cart Item -->
+        <div class="flex flex-col md:flex-row gap-4 border-b pb-4 pt-4 cart-item" data-price="34.99">
+          <img src="https://m.media-amazon.com/images/I/71UnL+fUeWL._AC_AA180_.jpg" class="w-44 h-44 object-contain" />
+          <div class="flex-grow">
+              <h2 style="font-size: 22px; font-weight: lighter; font-family: 'Lato', sans-serif;">SteelSeries Apex 3 TKL RGB Gaming Keyboard – Tenkeyless...</h2>
+            <p class="text-green-600 text-sm mt-1">In Stock</p>
+            <label class="flex items-center text-sm mt-1">
+              <input type="checkbox" class="accent-yellow-500 mr-2" /> This is a gift
+            </label>
+            <p class="text-sm mt-1">Size: Apex 3 TKL</p>
+            <p class="text-sm">Style: Whisper Quiet</p>
+            <div class="flex items-center gap-4 mt-2 text-sm text-blue-600">
+              <div class="flex items-center border rounded px-2 py-1">
+                <button class="decrease-qty">-</button>
+                <span class="px-2 quantity">1</span> <!-- Dynamic quantity -->
+                <button class="increase-qty">+</button>
+              </div>
+              <button class="hover:underline delete-item">Delete</button>
+              <button class="hover:underline">Save for later</button>
+              <button class="hover:underline">Compare</button>
+            </div>
+          </div>
+          <div class="text-right text-lg font-semibold item-price">$34.99</div>
+        </div>
+
+        <!-- Another Cart Item -->
+        <div class="flex flex-col md:flex-row gap-4 border-b pb-4 pt-4 cart-item" data-price="177.99">
+          <img src="https://m.media-amazon.com/images/I/71VV0kyOKCL._AC_AA180_.jpg" class="w-44 h-44 object-contain" />
+          <div class="flex-grow">
+              <h2 style="font-size: 22px; font-weight: lighter; font-family: 'Lato', sans-serif;">Samsung Galaxy A16 5G Smartphone, 128GB, Light Gray</h2>
+            <p class="text-green-600 text-sm mt-1">In Stock</p>
+            <label class="flex items-center text-sm mt-1">
+              <input type="checkbox" class="accent-yellow-500 mr-2" /> This is a gift
+            </label>
+            <p class="text-sm mt-1">Color: Light Gray</p>
+            <p class="text-sm">Style: A16 Only</p>
+            <div class="flex items-center gap-4 mt-2 text-sm text-blue-600">
+              <div class="flex items-center border rounded px-2 py-1">
+                <button class="decrease-qty">-</button>
+                <span class="px-2 quantity">1</span> <!-- Dynamic quantity -->
+                <button class="increase-qty">+</button>
+              </div>
+              <button class="hover:underline delete-item">Delete</button>
+              <button class="hover:underline">Save for later</button>
+              <button class="hover:underline">Compare</button>
+            </div>
+          </div>
+          <div class="text-right text-lg font-semibold item-price">$177.99</div>
+        </div>
+
+      </div>
+    </div>
+
+    
+
+    <!-- Right: Summary -->
+  <div class="lg:col-span-3 w-full lg:w-72">
+      <div class="sticky top-6 border rounded p-4 shadow-md">
+        <p class="text-lg font-semibold mb-2">
+          Subtotal (<span id="item-count">0</span> items): <span id="subtotal">$0.00</span>
+        </p>
+        <label class="flex items-center text-sm mb-4">
+          <input type="checkbox" class="accent-yellow-500 mr-2" /> This order contains a gift
+        </label>
+        <button class="w-full bg-yellow-400 hover:bg-yellow-500 text-black font-semibold py-2 rounded-full mb-2">
+          Proceed to checkout
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</main>
+
+  <!-- Footer -->
+  <footer class="mt-auto text-gray-400 py-12" style="background-color: #152e3b;">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-5 gap-10">
+
+        <!-- Brand -->
+        <div class="md:col-span-2">
+          <h3 class="text-white text-2xl font-bold mb-4">TechNation</h3>
+          <p class="text-sm leading-relaxed">
+            Precision hardware meets smart software. Explore gear crafted for creators, gamers, and professionals alike.
+          </p>
+          <div class="flex space-x-4 mt-6">
+            <a href="#" class="text-gray-500 hover:text-white" aria-label="Facebook">
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+            <a href="#" class="text-gray-500 hover:text-white" aria-label="X">
+              <i class="fa-brands fa-x-twitter"></i>
+            </a>
+            <a href="#" class="text-gray-500 hover:text-white" aria-label="Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="#" class="text-gray-500 hover:text-white" aria-label="LinkedIn">
+              <i class="fa-brands fa-linkedin"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Products -->
+        <div>
+          <h4 class="text-white text-sm font-semibold mb-4 uppercase tracking-wider">Products</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#" class="hover:text-white">Keyboards</a></li>
+            <li><a href="#" class="hover:text-white">Mice</a></li>
+            <li><a href="#" class="hover:text-white">Headsets</a></li>
+            <li><a href="#" class="hover:text-white">Streaming Gear</a></li>
+          </ul>
+        </div>
+
+        <!-- Support -->
+        <div>
+          <h4 class="text-white text-sm font-semibold mb-4 uppercase tracking-wider">Support</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#" class="hover:text-white">Downloads</a></li>
+            <li><a href="#" class="hover:text-white">FAQs</a></li>
+            <li><a href="#" class="hover:text-white">Warranty</a></li>
+            <li><a href="#" class="hover:text-white">Contact</a></li>
+          </ul>
+        </div>
+
+        <!-- Company -->
+        <div>
+          <h4 class="text-white text-sm font-semibold mb-4 uppercase tracking-wider">Company</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#" class="hover:text-white">About</a></li>
+            <li><a href="#" class="hover:text-white">Careers</a></li>
+            <li><a href="#" class="hover:text-white">Newsroom</a></li>
+            <li><a href="#" class="hover:text-white">Investors</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="mt-12 border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+        <p>&copy; 2025 TechNation. All rights reserved.</p>
+        <div class="flex space-x-6 mt-4 md:mt-0">
+          <a href="#" class="hover:text-white">Privacy</a>
+          <a href="#" class="hover:text-white">Terms</a>
+          <a href="#" class="hover:text-white">Accessibility</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    const subtotalElement = document.getElementById('subtotal');
+    const itemCountElement = document.getElementById('item-count');
+  
+    // Unified update function
+    function updateCartSummary() {
+      const cartItems = document.querySelectorAll('.cart-item');
+      let subtotal = 0;
+      let totalCount = 0;
+  
+      cartItems.forEach(item => {
+        const price = parseFloat(item.getAttribute('data-price'));
+        const quantity = parseInt(item.querySelector('.quantity').textContent);
+        subtotal += price * quantity;
+        totalCount += quantity;
+      });
+  
+      subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
+      itemCountElement.textContent = totalCount;
+    }
+  
+    // Increase quantity
+    document.querySelectorAll('.increase-qty').forEach(button => {
+      button.addEventListener('click', function () {
+        const container = button.parentElement;
+        const quantityElement = container.querySelector('.quantity');
+        let quantity = parseInt(quantityElement.textContent);
+        quantityElement.textContent = ++quantity;
+        updateCartSummary();
+      });
+    });
+  
+    // Decrease quantity
+    document.querySelectorAll('.decrease-qty').forEach(button => {
+      button.addEventListener('click', function () {
+        const container = button.parentElement;
+        const quantityElement = container.querySelector('.quantity');
+        let quantity = parseInt(quantityElement.textContent);
+        if (quantity > 1) { // prevent going below 1
+          quantityElement.textContent = --quantity;
+          updateCartSummary();
+        }
+      });
+    });
+  
+    // Delete item
+    document.querySelectorAll('.delete-item').forEach(button => {
+      button.addEventListener('click', function () {
+        const cartItem = button.closest('.cart-item');
+        cartItem.remove();
+        updateCartSummary();
+      });
+    });
+  
+    // Initial calculation
+    updateCartSummary();
+  });
+  </script>
+
+  
+</html>

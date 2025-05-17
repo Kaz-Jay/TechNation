@@ -1,0 +1,111 @@
+html {
+  scroll-behavior: smooth;
+}
+
+
+  .no-border {
+    border: none;
+    box-shadow: none;
+  }
+
+  .footer {
+    position: relative;
+    width: 100%;
+    bottom: 0;
+  }
+
+  .offcanvas .dropdown-menu {
+    position: static;
+    float: none;
+  }
+
+  .card:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s ease;
+  }
+
+  .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
+  }
+
+  footer ul {
+    padding-left: 0;
+    list-style-type: none;
+  }
+
+
+  @media (max-width: 1024px) {
+    .carousel-item img {
+      max-height: 500px;
+    }
+  }
+
+  .carousel-item img {
+    width: 100%; /* Set the width of the image */
+    height: 700px; /* Set the height of the image */
+    /* object-fit: cover; /* This ensures the image covers the entire area without distorting */
+} 
+
+/* Hide horizontal scrollbar */
+.hide-scrollbar {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+  .cart_button:hover{
+    background-color: #346f8f
+  }
+
+  .shadow-bottom-left {
+    box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.4); /* Left + bottom shadow */
+  }
+
+  #mainNavbar {
+    transition: transform 0.3s ease-in-out;
+  }
+  .navbar-hidden {
+    transform: translateY(-100%);
+  }
+
+  /* .product-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    padding: 1rem;
+  }
+  
+  .product-gallery img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .product-gallery img:hover {
+    transform: scale(1.03);
+  } */
+
+  /* #mainImage {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  } */
+
+  /* .image-container {
+    max-height: 80vh;
+  } */
+
+
+  .navbar-hidden {
+    transform: translateY(-100%);
+    transition: transform 0.3s ease;
+  }
+

@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+    <title>Document</title>
+</head>
+<body class="d-flex flex-column min-vh-100">
+<div id="root">
+    <nav class="navbar navbar-dark bg-dark fixed-top">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+      
+          <!-- Left Side: Menu Button -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+      
+          <!-- Center: Brand -->
+          <a href="index.html" class="navbar-brand mx-auto" href="#">TechNation</a>
+          <!-- Hidden Search Icon (appears on scroll) -->
+  <div id="searchIcon" class="navbar-brand mx-right" class="fixed z-50 hidden">
+    <a href="#searchBar"><button class="p-2 rounded-full bg-white shadow">
+      <svg class="w-3 h-3 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M21 21l-4.35-4.35M10 18a8 8 0 100-16 8 8 0 000 16z" />
+      </svg>
+    </button></a>
+  </div>
+          <a class="navbar-brand mx-right" href=""><i class="fa-solid fa-bolt"></i></a>
+          <!-- Profile Dropdown -->
+<div x-data="{ open: false }" class="relative">
+  <!-- Trigger Icon -->
+  <a href="#" @click.prevent="open = !open" class="navbar-brand mx-right flex items-center space-x-2 text-white hover:text-gray-300">
+    <i class="fa-solid fa-user text-xl"></i>
+  </a>
+
+  <!-- Dropdown Menu -->
+  <div x-show="open" @click.away="open = false" x-transition
+       class="absolute right-0 mt-2 w-64 bg-white text-black rounded-lg shadow-lg border border-neutral-700 z-50 overflow-hidden">
+
+    <!-- Profile Section -->
+    <div class="p-4 border-b border-neutral-700 flex items-center space-x-4">
+      <img src="https://i.pinimg.com/736x/ea/88/46/ea8846b8f042b24b0619f8cf88520430.jpg"
+           alt="Profile" class="w-12 h-12 rounded-full object-cover">
+      <div>
+        <div class="text-lg font-semibold">ammar</div>
+        <div class="text-yellow-400 text-sm">👑 Admin</div>
+      </div>
+    </div>
+
+    <!-- Menu Items -->
+    <ul class="text-sm divide-y divide-neutral-700">
+      <!-- <li><a href="#" class="flex items-center px-4 py-3 hover:bg-neutral-800"><i class="fa-solid fa-right-left mr-3 w-5"></i> Switch Profile</a></li> -->
+      <li><a href="#" class="flex items-center px-4 py-3 hover:bg-neutral-800"><i class="fa-solid fa-gear mr-3 w-5"></i> Settings</a></li>
+      <li><a href="#" class="flex items-center px-4 py-3 hover:bg-neutral-800"><i class="fa-solid fa-bookmark mr-3 w-5"></i> Bookmarks</a></li>
+      <li><a href="#" class="flex items-center px-4 py-3 hover:bg-neutral-800"><i class="fa-solid fa-clock-rotate-left mr-3 w-5"></i> History</a></li>
+      <li><a href="#" class="flex items-center px-4 py-3 hover:bg-neutral-800"><i class="fa-solid fa-bell mr-3 w-5"></i> Notifications</a></li>
+      <li>
+        <a href="#" class="flex flex-col px-4 py-3 hover:bg-neutral-800">
+          <div class="flex items-center"><i class="fa-solid fa-gift mr-3 w-5"></i> Gift Card</div>
+          <span class="text-xs text-gray-400 ml-8">Have a gift card? Redeem it here.</span>
+        </a>
+      </li>
+    </ul>
+
+    <!-- Logout -->
+    <div class="border-t border-neutral-700">
+      <a href="#" class="flex items-center px-4 py-3 text-red-400 hover:bg-neutral-800"><i class="fa-solid fa-right-from-bracket mr-3 w-5"></i> Log Out</a>
+    </div>
+  </div>
+</div>
+
+          
+          
+          <!-- Right Side: Cart Toggle -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCartRight" aria-controls="offcanvasCartRight">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+              <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Offcanvas Cart Section -->
+<div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasCartRight" aria-labelledby="offcanvasCartRightLabel">
+  <div class="offcanvas-header">
+      <h5 class="offcanvas-title" id="offcanvasCartRightLabel">Cart</h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+      <p id="empty-cart-message" class="text-muted">Your cart is currently empty.</p>
+      <div id="offcanvas-cart-items"></div>
+      <hr>
+      <div id="offcanvas-cart-total" class="fw-bold">Total: $0.00</div>
+      <button class="btn btn-success mt-3" id="checkout-btn">Proceed to Checkout</button>
+  </div>
+</div>
+
+
+      
+        <!-- Offcanvas Menu (Left Side) -->
+        <div class="offcanvas offcanvas-start text-bg-dark" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
+          <div class="offcanvas-header">
+            <h5 style="margin-left: 6px; font-size: larger;" class="offcanvas-title" id="offcanvasMenuLabel">Menu</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body hide-scrollbar overflow-y-auto">
+            <ul class="list-unstyled">
+              <div class="flex min-h-screen bg-neutral-950 text-gray-200" >
+                <!-- Sidebar -->
+                <aside class="w-100 bg-neutral-900 md:block" style="font-size: 20px;">
+                  <div class="h-full px-0 py-2 flex flex-col justify-between">
+                    <div>
+              
+                      <!-- Navigation -->
+                      <nav class="space-y-1">
+                        <a href="#" class="flex items-center p-2 rounded hover:bg-neutral-800">
+                          <!-- Home icon -->
+                          <svg class="w-5 h-5 mr-3 text-gray-400" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24"><path d="M3 12l9-9 9 9v8a2 2 0 01-2 2h-4a2 2 0 01-2-2v-4H9v4a2 2 0 01-2 2H5a2 2 0 01-2-2z" /></svg>
+                          <span>Dashboard</span>
+                        </a>
+                        <div>
+                            <!-- Products Dropdown Section (Only Images) -->
+<div x-data="{ open: false }" class="text-sm">
+    <!-- Trigger Button -->
+    <button @click="open = !open" class="w-full flex items-center justify-between p-2 rounded hover:bg-neutral-800 transition focus:outline-none">
+      <div class="flex items-center">
+        <svg class="w-5 h-5 mr-3 text-gray-400" fill="none" stroke="currentColor" stroke-width="2"
+          viewBox="0 0 24 24">
+          <path d="M20 13V6a2 2 0 00-2-2h-3V2h-6v2H6a2 2 0 00-2 2v7M5 20h14a1 1 0 001-1v-5H4v5a1 1 0 001 1z" />
+        </svg>
+        <span style="font-size: 20px;">Products</span>
+      </div>
+      <!-- Arrow Icon -->
+      <svg :class="{ 'rotate-180': open }" class="w-4 h-4 text-gray-500 transition-transform duration-300"
+        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path d="M19 9l-7 7-7-7" />
+      </svg>
+    </button>
+  
+    <!-- Dropdown with only product images -->
+    <!-- <div x-show="open" x-transition class="grid grid-cols-2 gap-4 mt-3 ml-4 pr-4">
+      <a href="#">
+        <img src="https://resource.logitech.com/w_180,h_180,ar_1,c_fill,q_auto,f_auto,dpr_2.0/d_transparent.gif/content/dam/logitech/en/shop-lp/lp-images/quick-link-keyboards-new.png" alt="Keyboards" class="w-full h-24 object-cover rounded-lg hover:scale-105 transition">
+      </a>
+      <a href="#">
+        <img src="https://resource.logitech.com/w_180,h_180,ar_1,c_fill,q_auto,f_auto,dpr_2.0/d_transparent.gif/content/dam/logitech/en/shop-lp/lp-images/quick-link-mice-new.png" alt="Mice" class="w-full h-24 object-cover rounded-lg hover:scale-105 transition">
+      </a>
+      <a href="#">
+        <img src="https://resource.logitech.com/w_180,h_180,ar_1,c_fill,q_auto,f_auto,dpr_2.0/d_transparent.gif/content/dam/logitech/en/shop-lp/lp-images/quick-link-headsets-earbuds-new.png" alt="Headsets" class="w-full h-24 object-cover rounded-lg hover:scale-105 transition">
+      </a>
+      <a href="#">
+        <img src="https://resource.logitech.com/w_180,h_180,ar_1,c_fill,q_auto,f_auto,dpr_2.0/d_transparent.gif/content/dam/logitech/en/shop-lp/lp-images/quick-link-webcams-new.png" alt="WebCams" class="w-full h-24 object-cover rounded-lg hover:scale-105 transition">
+      </a>
+    </div> -->
+    <div x-show="open" x-transition class="flex flex-col mt-2 ml-10 space-y-2" style="font-size: larger;">
+        <a href="#" class="hover:text-blue-400 transition">Keyboards</a>
+        <a href="#" class="hover:text-blue-400 transition">Mice</a>
+        <a href="#" class="hover:text-blue-400 transition">Headsets</a>
+        <a href="#" class="hover:text-blue-400 transition">WebCams</a>
+        <a href="#" class="hover:text-blue-400 transition">Keyboards</a>
+        <a href="#" class="hover:text-blue-400 transition">Mice</a>
+        <a href="#" class="hover:text-blue-400 transition">Headsets</a>
+        <a href="#" class="hover:text-blue-400 transition">WebCams</a>
+    </div>
+  </div>
+  
+  
+                        <a href="#" class="flex items-center p-2 rounded hover:bg-neutral-800">
+                          <!-- Orders icon -->
+                          <svg class="w-5 h-5 mr-3 text-gray-400" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24"><path d="M3 7h18M3 12h18M3 17h18" /></svg>
+                          <span>Orders</span>
+                        </a>
+                        <a href="#" class="flex items-center p-2 rounded hover:bg-neutral-800">
+                          <!-- Support icon -->
+                          <svg class="w-5 h-5 mr-3 text-gray-400" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24"><path d="M18.364 5.636a9 9 0 11-12.728 0M9 9h.01M15 15h.01M9 15h.01M15 9h.01" /></svg>
+                          <span>Support</span>
+                        </a>
+                        <a href="#" class="flex items-center p-2 rounded hover:bg-neutral-800">
+                          <!-- Settings icon -->
+                          <svg class="w-5 h-5 mr-3 text-gray-400" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24"><path d="M12 4v2m6.364 1.636l-1.414 1.414M20 12h-2m-1.636 6.364l-1.414-1.414M12 20v-2m-6.364-1.636l1.414-1.414M4 12h2m1.636-6.364l1.414 1.414" /></svg>
+                          <span>Settings</span>
+                        </a>
+                        </div>
+                      </nav>
+                    </div>
+              
+                    <!-- Profile / Logout -->
+                    <div style="margin-bottom: 20%;" class="border-t border-neutral-800 pt-2">
+                        <a href="#" class="flex items-center p-2 rounded hover:bg-neutral-800">
+                          <svg class="w-5 h-5 mr-3 text-gray-400" fill="none" stroke="currentColor" stroke-width="2"
+                            viewBox="0 0 24 24"><path d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a2 2 0 11-4 0v-1m4 0a2 2 0 01-4 0v-1" /></svg>
+                          <span>Logout</span>
+                        </a>
+                      </div>
+                </aside>
+  </div>
+
+                  
+</nav>
+    
+
+<!-- Body with Search and Filter -->
+<div class="container py-5">
+<div class="max-w-4xl mx-auto p-6">
+    <div class="bg-white p-6 rounded-lg shadow-md flex flex-col md:flex-row items-center gap-4">
+      
+      <!-- Search Bar -->
+      <input 
+        type="text" 
+        id="searchInput" 
+        placeholder="Search..." 
+        class="w-full md:flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+      >
+
+      <!-- Dropdown Filter -->
+      <div class="relative w-full md:w-48">
+        <select 
+          id="filterSelect"
+          class="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-400 px-4 py-2 pr-8 rounded-lg shadow leading-tight focus:outline-none focus:ring-2 focus:ring-blue-400"
+        >
+          <option value="alphabetical">Alphabetical</option>
+          <option value="low-high">Lowest to Highest</option>
+          <option value="high-low">Highest to Lowest</option>
+        </select>
+      </div>
+
+    </div>
+
+    <!-- Example Results -->
+    <div id="results" class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+      <!-- Results will be shown here -->
+    </div>
+
+    </div>
+    </div> 
+
+    <div class="container py-4">
+      <div class="row justify-content-center g-4">
+    
+        <!-- Card 1 -->
+        <div class="col-12 col-md-6 d-flex justify-content-center">
+          <div class="card mb-3 w-100" style="max-width: 540px;">
+            <div class="row g-0 align-items-center">
+              <div class="col-4 text-center">
+                <img src="keyboard.jpeg" class="img-fluid p-2" alt="Wired Keyboard">
+              </div>
+              <div class="col-8">
+                <div class="card-body">
+                  <h5 class="card-title">Wired Keyboard</h5>
+                  <p class="card-text">Recommend-d-atertaudlo-nead onl mo-prelca-eleform luni-numic pureada, apollate.</p>
+                  <a href="#" class="btn btn-dark">View Details</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Repeat for Card 2 -->
+        <div class="col-12 col-md-6 d-flex justify-content-center">
+          <div class="card mb-3 w-100" style="max-width: 540px;">
+            <div class="row g-0 align-items-center">
+              <div class="col-4 text-center">
+                <img src="keyboard.jpeg" class="img-fluid p-2" alt="Wired Keyboard">
+              </div>
+              <div class="col-8">
+                <div class="card-body">
+                  <h5 class="card-title">Wired Keyboard</h5>
+                  <p class="card-text">Recommend-d-atertaudlo-nead onl mo-prelca-eleform luni-numic pureada, apollate.</p>
+                  <a href="#" class="btn btn-dark">View Details</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+    
+        <!-- Repeat for Card 3 (if needed) -->
+        <div class="col-12 col-md-6 d-flex justify-content-center">
+          <div class="card mb-3 w-100" style="max-width: 540px;">
+            <div class="row g-0 align-items-center">
+              <div class="col-4 text-center">
+                <img src="keyboard.jpeg" class="img-fluid p-2" alt="Wired Keyboard">
+              </div>
+              <div class="col-8">
+                <div class="card-body">
+                  <h5 class="card-title">Wired Keyboard</h5>
+                  <p class="card-text">Recommend-d-atertaudlo-nead onl mo-prelca-eleform luni-numic pureada, apollate.</p>
+                  <a href="#" class="btn btn-dark">View Details</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 d-flex justify-content-center">
+          <div class="card mb-3 w-100" style="max-width: 540px;">
+            <div class="row g-0 align-items-center">
+              <div class="col-4 text-center">
+                <img src="keyboard.jpeg" class="img-fluid p-2" alt="Wired Keyboard">
+              </div>
+              <div class="col-8">
+                <div class="card-body">
+                  <h5 class="card-title">Wired Keyboard</h5>
+                  <p class="card-text">Recommend-d-atertaudlo-nead onl mo-prelca-eleform luni-numic pureada, apollate.</p>
+                  <a href="#" class="btn btn-dark">View Details</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-6 d-flex justify-content-center">
+            <div class="card mb-3 w-100" style="max-width: 540px;">
+              <div class="row g-0 align-items-center">
+                <div class="col-4 text-center">
+                  <img src="keyboard.jpeg" class="img-fluid p-2" alt="Wired Keyboard">
+                </div>
+                <div class="col-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Wired Keyboard</h5>
+                    <p class="card-text">Recommend-d-atertaudlo-nead onl mo-prelca-eleform luni-numic pureada, apollate.</p>
+                    <a href="#" class="btn btn-dark">View Details</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-12 col-md-6 d-flex justify-content-center">
+            <div class="card mb-3 w-100" style="max-width: 540px;">
+              <div class="row g-0 align-items-center">
+                <div class="col-4 text-center">
+                  <img src="keyboard.jpeg" class="img-fluid p-2" alt="Wired Keyboard">
+                </div>
+                <div class="col-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Wired Keyboard</h5>
+                    <p class="card-text">Recommend-d-atertaudlo-nead onl mo-prelca-eleform luni-numic pureada, apollate.</p>
+                    <a href="#" class="btn btn-dark">View Details</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 d-flex justify-content-center">
+            <div class="card mb-3 w-100" style="max-width: 540px;">
+              <div class="row g-0 align-items-center">
+                <div class="col-4 text-center">
+                  <img src="keyboard.jpeg" class="img-fluid p-2" alt="Wired Keyboard">
+                </div>
+                <div class="col-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Wired Keyboard</h5>
+                    <p class="card-text">Recommend-d-atertaudlo-nead onl mo-prelca-eleform luni-numic pureada, apollate.</p>
+                    <a href="#" class="btn btn-dark">View Details</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-12 col-md-6 d-flex justify-content-center">
+            <div class="card mb-3 w-100" style="max-width: 540px;">
+              <div class="row g-0 align-items-center">
+                <div class="col-4 text-center">
+                  <img src="keyboard.jpeg" class="img-fluid p-2" alt="Wired Keyboard">
+                </div>
+                <div class="col-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Wired Keyboard</h5>
+                    <p class="card-text">Recommend-d-atertaudlo-nead onl mo-prelca-eleform luni-numic pureada, apollate.</p>
+                    <a href="#" class="btn btn-dark">View Details</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 d-flex justify-content-center">
+            <div class="card mb-3 w-100" style="max-width: 540px;">
+              <div class="row g-0 align-items-center">
+                <div class="col-4 text-center">
+                  <img src="keyboard.jpeg" class="img-fluid p-2" alt="Wired Keyboard">
+                </div>
+                <div class="col-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Wired Keyboard</h5>
+                    <p class="card-text">Recommend-d-atertaudlo-nead onl mo-prelca-eleform luni-numic pureada, apollate.</p>
+                    <a href="#" class="btn btn-dark">View Details</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-12 col-md-6 d-flex justify-content-center">
+            <div class="card mb-3 w-100" style="max-width: 540px;">
+              <div class="row g-0 align-items-center">
+                <div class="col-4 text-center">
+                  <img src="keyboard.jpeg" class="img-fluid p-2" alt="Wired Keyboard">
+                </div>
+                <div class="col-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Wired Keyboard</h5>
+                    <p class="card-text">Recommend-d-atertaudlo-nead onl mo-prelca-eleform luni-numic pureada, apollate.</p>
+                    <a href="#" class="btn btn-dark">View Details</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+    
+      </div>
+    </div>
+    
+    
+
+      <footer class="bg-black text-gray-400 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 md:grid-cols-5 gap-10">
+            
+            <!-- Brand -->
+            <div class="md:col-span-2">
+              <h3 class="text-white text-2xl font-bold mb-4">TechNation</h3>
+              <p class="text-sm leading-relaxed">Precision hardware meets smart software. Explore gear crafted for creators, gamers, and professionals alike.</p>
+              <!-- Social icons -->
+              <div class="flex space-x-4 mt-6">
+                <a href="#" class="text-gray-500 hover:text-white" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook"></i>
+                      </svg>
+                </a>
+                <a href="#" class="text-gray-500 hover:text-white" aria-label="X">
+                    <i class="fa-brands fa-x-twitter"></i>
+                      </svg>
+                </a>
+                <a href="#" class="text-gray-500 hover:text-white" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="#" class="text-gray-500 hover:text-white" aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+              </div>
+            </div>
+      
+            <!-- Products -->
+            <div>
+              <h4 class="text-white text-sm font-semibold mb-4 uppercase tracking-wider">Products</h4>
+              <ul class="space-y-2 text-sm">
+                <li><a href="#" class="hover:text-white">Keyboards</a></li>
+                <li><a href="#" class="hover:text-white">Mice</a></li>
+                <li><a href="#" class="hover:text-white">Headsets</a></li>
+                <li><a href="#" class="hover:text-white">Streaming Gear</a></li>
+              </ul>
+            </div>
+      
+            <!-- Support -->
+            <div>
+              <h4 class="text-white text-sm font-semibold mb-4 uppercase tracking-wider">Support</h4>
+              <ul class="space-y-2 text-sm">
+                <li><a href="#" class="hover:text-white">Downloads</a></li>
+                <li><a href="#" class="hover:text-white">FAQs</a></li>
+                <li><a href="#" class="hover:text-white">Warranty</a></li>
+                <li><a href="#" class="hover:text-white">Contact</a></li>
+              </ul>
+            </div>
+      
+            <!-- Company -->
+            <div>
+              <h4 class="text-white text-sm font-semibold mb-4 uppercase tracking-wider">Company</h4>
+              <ul class="space-y-2 text-sm">
+                <li><a href="#" class="hover:text-white">About</a></li>
+                <li><a href="#" class="hover:text-white">Careers</a></li>
+                <li><a href="#" class="hover:text-white">Newsroom</a></li>
+                <li><a href="#" class="hover:text-white">Investors</a></li>
+              </ul>
+            </div>
+          </div>
+      
+          <!-- Bottom -->
+          <div class="mt-12 border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+            <p>&copy; 2025 TechNation. All rights reserved.</p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+              <a href="#" class="hover:text-white">Privacy</a>
+              <a href="#" class="hover:text-white">Terms</a>
+              <a href="#" class="hover:text-white">Accessibility</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+
+    function includeHTML(callback) {
+      const elements = document.querySelectorAll('[data-include]');
+      let loadedCount = 0;
+    
+      if (elements.length === 0) {
+        if (callback) callback();
+        return;
+      }
+    
+      elements.forEach(el => {
+        const file = el.getAttribute('data-include');
+        fetch(file)
+          .then(response => {
+            if (!response.ok) throw new Error('File not found');
+            return response.text();
+          })
+          .then(data => {
+            el.innerHTML = data;
+            loadedCount++;
+            if (loadedCount === elements.length && callback) {
+              callback();
+            }
+          })
+          .catch(error => console.error('Error loading component:', error));
+      });
+    }
+    
+    // Attach scroll behavior AFTER includes are done
+    document.addEventListener('DOMContentLoaded', function () {
+      includeHTML(function () {
+        let lastScrollTop = 0;
+        const navbar = document.getElementById("mainNavbar");
+    
+        if (!navbar) {
+          console.warn("Navbar element not found after include.");
+          return;
+        }
+    
+        window.addEventListener("scroll", function () {
+          const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    
+          if (currentScroll > lastScrollTop && currentScroll > 50) {
+            // Scrolling down
+            navbar.classList.add("navbar-hidden");
+          } else {
+            // Scrolling up
+            navbar.classList.remove("navbar-hidden");
+          }
+    
+          lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+        });
+      });
+    });

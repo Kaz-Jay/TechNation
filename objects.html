@@ -1,0 +1,314 @@
+<div class="container py-4">
+    <div class="row justify-content-center g-4">
+  
+      <!-- Card 1 -->
+      <div class="col-12 col-md-6 d-flex justify-content-center">
+        <div class="card mb-3 w-100" style="max-width: 540px;">
+          <div class="row g-0 align-items-center">
+            <div class="col-4 text-center">
+              <img src="your-keyboard-image.jpg" class="img-fluid p-2" alt="Wired Keyboard">
+            </div>
+            <div class="col-8">
+              <div class="card-body">
+                <h5 class="card-title">Wired Keyboard</h5>
+                <p class="card-text">Recommend-d-atertaudlo-nead onl mo-prelca-eleform luni-numic pureada, apollate.</p>
+                <a href="#" class="btn btn-dark">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Repeat for Card 2 -->
+      <div class="col-12 col-md-6 d-flex justify-content-center">
+        <div class="card mb-3 w-100" style="max-width: 540px;">
+          <div class="row g-0 align-items-center">
+            <div class="col-4 text-center">
+              <img src="your-keyboard-image.jpg" class="img-fluid p-2" alt="Wired Keyboard">
+            </div>
+            <div class="col-8">
+              <div class="card-body">
+                <h5 class="card-title">Wired Keyboard</h5>
+                <p class="card-text">Recommend-d-atertaudlo-nead onl mo-prelca-eleform luni-numic pureada, apollate.</p>
+                <a href="#" class="btn btn-dark">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <!-- Repeat for Card 3 (if needed) -->
+      <div class="col-12 col-md-6 d-flex justify-content-center">
+        <div class="card mb-3 w-100" style="max-width: 540px;">
+          <div class="row g-0 align-items-center">
+            <div class="col-4 text-center">
+              <img src="your-keyboard-image.jpg" class="img-fluid p-2" alt="Wired Keyboard">
+            </div>
+            <div class="col-8">
+              <div class="card-body">
+                <h5 class="card-title">Wired Keyboard</h5>
+                <p class="card-text">Recommend-d-atertaudlo-nead onl mo-prelca-eleform luni-numic pureada, apollate.</p>
+                <a href="#" class="btn btn-dark">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 d-flex justify-content-center">
+        <div class="card mb-3 w-100" style="max-width: 540px;">
+          <div class="row g-0 align-items-center">
+            <div class="col-4 text-center">
+              <img src="your-keyboard-image.jpg" class="img-fluid p-2" alt="Wired Keyboard">
+            </div>
+            <div class="col-8">
+              <div class="card-body">
+                <h5 class="card-title">Wired Keyboard</h5>
+                <p class="card-text">Recommend-d-atertaudlo-nead onl mo-prelca-eleform luni-numic pureada, apollate.</p>
+                <a href="#" class="btn btn-dark">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+    </div>
+  </div>
+
+
+
+
+
+  <!-- Desktop Products Dropdown (Only on md and up) -->
+  <div class="d-none d-md-block me-3 position-absolute" style="margin-left: 300px;" x-data="{ open: false }">
+    <div class="text-sm">
+      <!-- Dropdown Button -->
+      <button @click="open = !open" class="btn btn-none d-flex align-items-center">
+        <svg class="w-5 h-5 me-2 text-white" fill="none" stroke="currentColor" stroke-width="2"
+          viewBox="0 0 24 24">
+          <path d="M20 13V6a2 2 0 00-2-2h-3V2h-6v2H6a2 2 0 00-2 2v7M5 20h14a1 1 0 001-1v-5H4v5a1 1 0 001 1z" />
+        </svg>
+        <span style="font-size: 16px; color: white;">Products</span>
+        <svg :class="{ 'rotate-180': open }" class="ms-2 w-4 h-4 text-gray-200 transition-transform duration-300"
+          fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path d="M19 9l-7 7-7-7" />
+        </svg>
+      </button>
+
+      <!-- Dropdown Menu -->
+      <div x-show="open" x-transition class="mt-2 bg-white rounded shadow p-2 position-absolute" style="z-index: 999;">
+        <a href="#" class="d-block text-gray-600 px-2 py-1 hover:text-blue-600">Keyboards</a>
+        <a href="#" class="d-block text-gray-600 px-2 py-1 hover:text-blue-600">Mice</a>
+        <a href="#" class="d-block text-gray-600 px-2 py-1 hover:text-blue-600">Headsets</a>
+        <a href="#" class="d-block text-gray-600 px-2 py-1 hover:text-blue-600">WebCams</a>
+      </div>
+    </div>
+  </div>
+
+
+  <a href="#" class="hidden lg:flex items-center p-2 rounded hover:bg-neutral-800 position-absolute" style="margin-left: 200px;">
+    <!-- Support icon -->
+    <svg class="w-5 h-5 mr-3 text-white" fill="none" stroke="currentColor" stroke-width="2"
+      viewBox="0 0 24 24"><path d="M18.364 5.636a9 9 0 11-12.728 0M9 9h.01M15 15h.01M9 15h.01M15 9h.01" /></svg>
+    <span style="color: white;">Support</span>
+    <div class="d-flex align-items-center ms-2 me-3">
+      <!-- Your vertical line SVG -->
+      <svg class="vertical-line" width="2" height="40" viewBox="0 0 2 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="2" height="40" fill="#ccc"/>
+      </svg>
+    </div>
+  </a>
+
+
+  <div class="max-w-5xl mx-auto bg-white border border-gray-200 rounded-lg shadow-md overflow-hidden flex flex-col md:flex-row p-4 space-y-4 md:space-y-0 md:space-x-6">
+
+    <!-- Product Image -->
+    <div class="flex justify-center md:justify-start">
+      <img src="keyboard.jpeg" alt="Headphones" class="w-60 h-auto object-contain" />
+    </div>
+  
+    <!-- Product Details -->
+    <div class="flex-1 text-left md:text-left space-y-2">
+  
+      <!-- Badge -->
+      <span class="inline-block bg-orange-500 text-white text-xs font-semibold px-2 py-1 rounded-full">Best Seller</span>
+  
+      <!-- Title -->
+      <h2 class="text-lg font-semibold text-gray-900">
+        BENGOO G9000 Stereo Gaming Headset for PS4 PC Xbox One PS5 Controller...
+      </h2>
+  
+      <!-- Rating -->
+      <div class="flex items-center justify-center md:justify-start text-sm text-gray-600 space-x-1">
+        <span class="text-orange-500">★★★★☆</span>
+        <span>(109.3K)</span>
+        <span class="hidden sm:inline">10K+ bought in past month</span>
+      </div>
+  
+      <!-- Price -->
+      <div class="text-gray-900">
+        <span class="text-2xl font-bold">$19<sup class="text-base align-top">99</sup></span>
+        <span class="line-through text-gray-400 ml-2">$35.99</span>
+      </div>
+  
+      <!-- Coupon -->
+      <div class="text-sm">
+        <span class="bg-green-500 text-white px-2 py-0.5 rounded">Save 15%</span>
+        <span>with coupon</span>
+      </div>
+  
+      <!-- Delivery -->
+      <div class="text-sm text-gray-800">
+        Delivery <strong>Tue, May 13</strong><br />
+        <span class="text-gray-500">Ships to Pakistan</span>
+      </div>
+  
+      <!-- Sustainability -->
+      <div class="flex items-center justify-start md:justify-start space-x-1 text-sm text-green-700 mt-1">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c1.333-1.667 2.667-2.5 4-2.5 2.5 0 4 2 4 4.5 0 4.5-8 9-8 9s-8-4.5-8-9c0-2.5 1.5-4.5 4-4.5 1.333 0 2.667.833 4 2.5z" />
+        </svg>
+        <span>1 sustainability feature</span>
+      </div>
+  
+      <!-- Color Options -->
+      <div class="flex items-center justify-start md:justify-start space-x-2 mt-2">
+        <div class="w-5 h-5 rounded-full bg-gray-800 border-2 border-white shadow-sm"></div>
+        <div class="w-5 h-5 rounded-full bg-gray-600 border-2 border-white shadow-sm"></div>
+        <div class="w-5 h-5 rounded-full bg-gray-500 border-2 border-white shadow-sm"></div>
+        <div class="w-5 h-5 rounded-full bg-gray-700 border-2 border-white shadow-sm"></div>
+        <span class="text-sm text-gray-500">+4</span>
+      </div>
+  
+      <!-- Add to Cart Button -->
+      <div class="mt-3">
+        <button class="w-full md:w-auto bg-yellow-400 hover:bg-yellow-500 text-black font-semibold px-6 py-2 rounded-lg shadow">
+          Add to cart
+        </button>
+      </div>
+  
+    </div>
+  </div>
+
+  <!-- Card 1 -->
+        <!-- <div class="max-w-sm md:max-w-md lg:max-w-xl mx-auto bg-white rounded-lg shadow-2xl p-8 flex flex-col sm:flex-row items-center text-center sm:space-x-6 space-y-4 sm:space-y-0" style=" border-width: 2px; border-color:#80b2cf;">
+
+          <img src="keyboard.jpeg" alt="Wired Keyboard" class="w-24 h-auto object-contain">
+          <div class="sm:text-left">
+            <h3 class="text-lg font-serif font-semibold text-gray-800">Wired Keyboard</h3>
+            <p class="text-sm text-gray-500 mt-1 leading-snug">
+              Recommend-d-atertaudlo-nead onl mo-prelca-eleform luni-numic pureada, apollate.
+            </p>
+            <a href="prodes.html"><button class="mt-3 px-4 py-2 text-white text-sm font-semibold rounded shadow" style="background-color: #1A365D; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#153e75'" onmouseout="this.style.backgroundColor='#1A365D'">
+               VIEW DETAILS
+            </button>
+          </a>
+          </div>
+        </div>
+
+        <div class="max-w-sm md:max-w-md lg:max-w-xl mx-auto bg-white rounded-lg shadow-2xl p-4 flex flex-col sm:flex-row items-center text-center sm:space-x-6 space-y-4 sm:space-y-0">
+          <img src="keyboard.jpeg" alt="Wired Keyboard" class="w-24 h-auto object-contain">
+          <div class="sm:text-left">
+            <h3 class="text-lg font-serif font-semibold text-gray-800">Wired Keyboard</h3>
+            <p class="text-sm text-gray-500 mt-1 leading-snug">
+              Recommend-d-atertaudlo-nead onl mo-prelca-eleform luni-numic pureada, apollate.
+            </p>
+            <a href="prodes.html"><button class="mt-3 px-4 py-2 text-white text-sm font-semibold rounded shadow" style="background-color: #1A365D; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#153e75'" onmouseout="this.style.backgroundColor='#1A365D'">
+               VIEW DETAILS
+            </button>
+          </a>
+          </div>
+        </div> -->
+
+
+        <!-- Body with Search and Filter
+<div class="container py-5">
+<div class="max-w-8xl mx-auto p-6">
+    <div class="p-6 rounded-lg shadow-md flex flex-col md:flex-row items-center gap-4" style="background-color:#1a3b4f;">
+      
+      Search Bar
+      <input 
+        type="text" 
+        id="searchInput" 
+        placeholder="Search..." 
+        class="w-full md:flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+      >
+
+      Dropdown Filter 
+      <div class="relative w-full md:w-48" style="margin-top: -20px;">
+        <label for="filterSelect" class="block text-gray-200 mb-0 flex items-center space-x-2">
+          <i class="fas fa-filter"></i>
+          <span>Filters</span>
+        </label>
+        <div class="relative">
+          <select 
+            id="filterSelect"
+            class="block appearance-none w-full bg-white border border-gray-300 hover:border-gray-400 px-4 py-2 pr-8 rounded-lg shadow leading-tight focus:outline-none focus:ring-2 focus:ring-blue-400 pl-10"
+          >
+            <option value="alphabetical">Alphabetical</option>
+            <option value="low-high">Lowest to Highest</option>
+            <option value="high-low">Highest to Lowest</option>
+          </select>
+        </div>
+      </div>
+      
+      
+
+    </div> -->
+  
+
+    <!-- Example Results -->
+    <!-- <div id="results" class="mt-6 grid grid-cols-1 md:grid-cols-2 gap-4">
+       Results will be shown here 
+    </div>
+
+    </div>
+    </div> -->
+
+
+
+    <!-- Frequently Bought Together Section -->
+<div id="fbtSection" class="max-w-7xl mx-auto px-4 py-6">
+  <h2 class="text-xl font-semibold mb-4">Frequently bought together</h2>
+  <div class="flex flex-col lg:flex-row items-center gap-6 bg-white p-4 rounded shadow-md">
+
+    <!-- Products -->
+    <div class="flex items-center gap-4">
+      <!-- Product 1 -->
+      <div class="flex flex-col items-center text-center">
+        <input type="checkbox" checked class="mb-2 w-5 h-5 accent-blue-500" />
+        <img src="https://m.media-amazon.com/images/I/91RrTkSTqVL._SX522_.jpg" alt="Headset" class="w-24 h-24 object-contain rounded" />
+        <p class="text-xs mt-2 font-medium">This item: SteelSeries Arctis Nova 1X...</p>
+        <span class="text-sm text-gray-700">$59.00</span>
+      </div>
+
+      <!-- Plus Sign -->
+      <div class="text-2xl font-bold">+</div>
+
+      <!-- Product 2 -->
+      <div class="flex flex-col items-center text-center">
+        <input type="checkbox" checked class="mb-2 w-5 h-5 accent-blue-500" />
+        <img src="https://m.media-amazon.com/images/I/91RrTkSTqVL._SX522_.jpg" alt="Controller" class="w-24 h-24 object-contain rounded" />
+        <p class="text-xs mt-2 font-medium">GameSir G7 SE Wired Controller...</p>
+        <span class="text-sm text-gray-700">$35.50</span>
+      </div>
+    </div>
+
+    <!-- Add to Cart Column -->
+    <div class="text-center">
+      <p class="text-base font-semibold mb-2">Total price: <span class="text-yellow-600 text-lg">$94.50</span></p>
+      <button class="bg-yellow-400 hover:bg-yellow-500 text-black font-semibold py-2 px-6 rounded-full shadow">
+        Add both to Cart
+      </button>
+      <p class="text-xs text-gray-500 mt-2">These items are shipped from and sold by different sellers.</p>
+    </div>
+  </div>
+</div>
+
+
+<button class="text-gray-600 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1 transition">Smart Watches</button>
+        <button class="text-gray-600 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1 transition">Wireless Earbuds</button>
+        <button class="text-gray-600 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1 transition">Power Banks</button>
+        <button class="text-gray-600 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1 transition">Mobile Accessories</button>
+        <button class="text-gray-600 hover:text-blue-600 hover:border-b-2 hover:border-blue-600 pb-1 transition">TV Devices</button>
+        <button class="ml-auto text-blue-500 hover:underline text-sm">View All</button>

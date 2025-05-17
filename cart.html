@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="include.js"></script>
+
+    <title>Document</title>
+</head>
+<body class="flex flex-col min-h-screen">
+    <div id="root" class="flex flex-col flex-grow">
+      <!-- Inject Navbar -->
+      <div data-include="navbar.html"></div>
+  
+      <main class="flex-grow">
+        <div class="max-w-screen-2xl mx-auto px-4 py-6">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <!-- Left: Cart Items Container -->
+            <div class="lg:col-span-9 min-w-0">
+              <div class="bg-white p-4 shadow-md rounded" id="cart-items-container">
+                <h1 class="text-2xl font-semibold border-b pb-4 mb-6">Shopping Cart</h1>
+      
+                <!-- Cart Item -->
+                <div class="flex flex-col md:flex-row items-center md:items-start gap-4 border-b pb-4 pt-4 cart-item" data-price="34.99">
+                  <img src="https://m.media-amazon.com/images/I/71UnL+fUeWL._AC_AA180_.jpg" class="w-44 h-44 object-contain" />
+                  <div class="flex-grow">
+                    <h2 style="font-size: 22px; font-weight: lighter; font-family: 'Lato', sans-serif;">SteelSeries Apex 3 TKL RGB Gaming Keyboard – Tenkeyless...</h2>
+                    <p class="text-green-600 text-sm mt-1">In Stock</p>
+                    <label class="flex items-center text-sm mt-1">
+                      <input type="checkbox" class="accent-yellow-500 mr-2" /> This is a gift
+                    </label>
+                    <p class="text-sm mt-1">Size: Apex 3 TKL</p>
+                    <p class="text-sm">Style: Whisper Quiet</p>
+                    <div class="flex items-center gap-4 mt-2 text-sm text-blue-600">
+                      <div class="flex items-center border rounded px-2 py-1 w-28 justify-between">
+                        <button class="decrease-qty w-7 h-7 text-xl font-bold flex items-center justify-center" aria-label="Decrease Quantity">-</button>
+                        <span class="px-2 quantity text-base">1</span>
+                        <button class="increase-qty w-7 h-7 text-xl font-bold flex items-center justify-center" aria-label="Increase Quantity">+</button>
+                      </div>
+                     <div class="flex items-center gap-2 mt-2 text-sm text-blue-600">
+                      <span class="h-4 border-l border-gray-400"></span>
+                      <button class="hover:text-blue-800 hover:underline delete-item">Delete</button>
+                      <span class="h-4 border-l border-gray-400"></span>
+                      <button class="hover:text-blue-800 hover:underline">Save for later</button>
+                      <span class="h-4 border-l border-gray-400"></span>
+                      <button class="hover:text-blue-800 hover:underline">Compare</button>
+                      </div>
+                    </div>
+                    <div class="text-right text-lg font-semibold item-price">$34.99</div>
+                  </div>
+                </div>
+      
+                <!-- Another Cart Item -->
+                <div class="flex flex-col md:flex-row items-center md:items-start gap-4 border-b pb-4 pt-4 cart-item" data-price="177.99">
+                  <img src="https://m.media-amazon.com/images/I/71VV0kyOKCL._AC_AA180_.jpg" class="w-44 h-44 object-contain" />
+                  <div class="flex-grow">
+                    <h2 style="font-size: 22px; font-weight: lighter; font-family: 'Lato', sans-serif;">Samsung Galaxy A16 5G Smartphone, 128GB, Light Gray</h2>
+                    <p class="text-green-600 text-sm mt-1">In Stock</p>
+                    <label class="flex items-center text-sm mt-1">
+                      <input type="checkbox" class="accent-yellow-500 mr-2" /> This is a gift
+                    </label>
+                    <p class="text-sm mt-1">Color: Light Gray</p>
+                    <p class="text-sm">Style: A16 Only</p>
+                    <div class="flex items-center gap-4 mt-2 text-sm text-blue-600">
+                     <div class="flex items-center border rounded px-2 py-1 w-28 justify-between">
+                        <button class="decrease-qty w-7 h-7 text-xl font-bold flex items-center justify-center" aria-label="Decrease Quantity">-</button>
+                        <span class="px-2 quantity text-base">1</span>
+                        <button class="increase-qty w-7 h-7 text-xl font-bold flex items-center justify-center" aria-label="Increase Quantity">+</button>
+                      </div>
+                       <div class="flex items-center gap-2 mt-2 text-sm text-blue-600">
+                       <span class="h-4 border-l border-gray-400"></span>
+                      <button class="hover:text-blue-800 hover:underline delete-item">Delete</button>
+                      <span class="h-4 border-l border-gray-400"></span>
+                      <button class="hover:text-blue-800 hover:underline">Save for later</button>
+                      <span class="h-4 border-l border-gray-400"></span>
+                      <button class="hover:text-blue-800 hover:underline">Compare</button>
+                      </div>
+                    </div>
+                    <div class="text-right text-lg font-semibold item-price">$177.99</div>
+                  </div>
+                </div>
+      
+              </div>
+            </div>
+      
+            <!-- Right: Summary -->
+            <div class="lg:col-span-3 w-full max-w-screen-xl:w-72">
+              <div class="sticky top-6 border rounded p-4 shadow-md">
+                <p class="text-lg font-semibold mb-2">
+                  Subtotal (<span id="item-count">0</span> items): <span id="subtotal">$0.00</span>
+                </p>
+                <label class="flex items-center text-sm mb-4">
+                  <input type="checkbox" class="accent-yellow-500 mr-2" /> This order contains a gift
+                </label>
+                <button class="w-full bg-yellow-400 hover:bg-yellow-500 text-black font-semibold py-2 rounded-full mb-2">
+                  Proceed to checkout
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+      
+      
+      
+  
+      <!-- Inject Footer -->
+      <div data-include="footer.html"></div>
+    </div>
+  
+      
+      
+      
+</body>
+<script src="https://kit.fontawesome.com/f4157f3a9f.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+<script src="https://unpkg.com/heroicons@2.0.16/dist/24/outline.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+<script src="tailwind.config.js"></script>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const subtotalElement = document.getElementById('subtotal');
+        const itemCountElement = document.getElementById('item-count');
+        
+    
+        function loadCartState() {
+            const saved = localStorage.getItem('cartQuantities');
+            return saved ? JSON.parse(saved) : {};
+        }
+    
+        function saveCartState(state) {
+            localStorage.setItem('cartQuantities', JSON.stringify(state));
+        }
+    
+        function updateCartSummary() {
+            const cartItems = document.querySelectorAll('.cart-item');
+            let subtotal = 0;
+            let totalCount = 0;
+    
+            cartItems.forEach(item => {
+                const price = parseFloat(item.getAttribute('data-price'));
+                const quantity = parseInt(item.querySelector('.quantity').textContent);
+                subtotal += price * quantity;
+                totalCount += quantity;
+            });
+    
+            subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
+            itemCountElement.textContent = totalCount;
+        }
+    
+        const cartQuantities = loadCartState();
+    
+        function attachEvents(item) {
+    const itemId = item.querySelector('h2').textContent.trim();
+    const quantityElement = item.querySelector('.quantity');
+    const decreaseBtn = item.querySelector('.decrease-qty');
+    const increaseBtn = item.querySelector('.increase-qty');
+    const deleteBtn = item.querySelector('.delete-item');
+
+    function updateDecreaseButton(quantity) {
+    const decreaseBtn = item.querySelector('.decrease-qty');
+    if (quantity <= 1) {
+        decreaseBtn.innerHTML = `
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3m4 0H7"/>
+            </svg>
+        `;
+        decreaseBtn.className = 'decrease-qty w-7 h-7 flex items-center justify-center'; // Keep size/spacing
+    } else {
+        decreaseBtn.textContent = '-';
+        decreaseBtn.className = 'decrease-qty w-7 h-7 text-xl font-bold flex items-center justify-center';
+    }
+}
+
+    increaseBtn.addEventListener('click', function () {
+        let quantity = parseInt(quantityElement.textContent);
+        quantity++;
+        quantityElement.textContent = quantity;
+        cartQuantities[itemId] = quantity;
+        updateDecreaseButton(quantity);
+        saveCartState(cartQuantities);
+        updateCartSummary();
+    });
+
+    decreaseBtn.addEventListener('click', function () {
+        let quantity = parseInt(quantityElement.textContent);
+        if (quantity > 1) {
+            quantity--;
+            quantityElement.textContent = quantity;
+            cartQuantities[itemId] = quantity;
+            updateDecreaseButton(quantity);
+            saveCartState(cartQuantities);
+            updateCartSummary();
+        } else {
+            // If quantity is 1 and trash icon is showing, remove the item
+            item.querySelector('.delete-item').click();
+        }
+    });
+
+    deleteBtn.addEventListener('click', function () {
+        if (confirm(`Are you sure you want to delete "${itemId}" from your cart?`)) {
+            const deletedItemHTML = item.outerHTML;
+            item.remove();
+            delete cartQuantities[itemId];
+            saveCartState(cartQuantities);
+            updateCartSummary();
+
+            const undoContainer = document.createElement('div');
+            undoContainer.className = 'fixed bottom-4 right-4 bg-white border p-3 rounded shadow';
+            undoContainer.innerHTML = `
+                <span>Item removed.</span>
+                <button class="ml-2 underline text-blue-600 undo-btn">Undo</button>
+            `;
+            document.body.appendChild(undoContainer);
+
+            undoContainer.querySelector('.undo-btn').addEventListener('click', function () {
+                const tempContainer = document.createElement('div');
+                tempContainer.innerHTML = deletedItemHTML.trim();
+                const restoredItem = tempContainer.firstElementChild;
+                document.querySelector('#cart-items-container').appendChild(restoredItem);
+                cartQuantities[itemId] = 1;
+                saveCartState(cartQuantities);
+                updateCartSummary();
+                attachEvents(restoredItem);
+                undoContainer.remove();
+            });
+
+            setTimeout(() => undoContainer.remove(), 5000);
+        }
+    });
+
+    updateDecreaseButton(parseInt(quantityElement.textContent));
+}
+
+    
+        // Initialize all cart items
+        document.querySelectorAll('.cart-item').forEach(item => {
+            const itemId = item.querySelector('h2').textContent.trim();
+            const quantityElement = item.querySelector('.quantity');
+    
+            if (cartQuantities[itemId]) {
+                quantityElement.textContent = cartQuantities[itemId];
+            } else {
+                cartQuantities[itemId] = parseInt(quantityElement.textContent);
+            }
+    
+            attachEvents(item);
+        });
+    
+        saveCartState(cartQuantities);
+        updateCartSummary();
+    });
+    </script>
+      
+</html>

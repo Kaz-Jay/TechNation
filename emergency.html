@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <title>Document</title>
+</head>
+<body class="d-flex flex-column min-vh-100">
+  <div id="root">
+    <nav class="navbar navbar-dark fixed-top py-2.5" style="background-color: #152e3b;">
+        <div class="container-fluid d-flex justify-content-between align-items-center">
+      
+          
+          
+          <!-- Left Side: Menu Button -->
+          <button class="navbar-toggler border-0 md:border d-md-block" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+           
+
+
+          <div class="position-absolute top-12 start-50 translate-middle">
+            <a class="navbar-brand fw-bold text-white" href="#"><img class="size-70" src="WhatsApp Image 2025-05-10 at 01.25.54_3094bcae.png" alt=""></a>
+          </div>
+          <!-- Hidden Search Icon (appears on scroll) -->
+
+          <div class="d-flex align-items-center gap-1 gap-md-3 ms-auto">
+
+  <div id="searchIcon" class="navbar-brand z-50 hidden me-2">
+    <a href="#searchInput"><button class="p-2 rounded-full bg-white shadow">
+      <svg class="w-3 h-3 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M21 21l-4.35-4.35M10 18a8 8 0 100-16 8 8 0 000 16z" />
+      </svg>
+    </button></a>
+  </div>
+  
+  <a class="navbar-brand d-flex align-items-center gap-2 text-white me-2" href="#">
+    <i class="fa-solid fa-bolt text-danger"></i>
+    <span class="fw-semibold d-none d-md-inline hover:text-blue-200" style="font-size: 16px;">Gaming</span>
+  </a>
+          <!-- Profile Dropdown -->
+          <div x-data="{ open: false }" class="relative hidden lg:block">
+            <!-- Trigger Icon -->
+            <a href="#" @click.prevent="open = !open" class="navbar-brand mx-right d-flex align-items-center gap-2 text-white hover:text-gray-300 me-3">
+              <i class="fa-solid fa-user text-xl"></i>
+              <span class="fw-semibold d-none d-md-inline hover:text-blue-200" style="font-size: 16px;">Account</span>
+            </a>
+
+  <!-- Dropdown Menu -->
+  <div x-show="open" @click.away="open = false" x-transition
+       class="absolute right-0 mt-2 w-64 bg-white text-black rounded-lg shadow-lg border border-neutral-700 z-50 overflow-hidden">
+
+    <!-- Profile Section -->
+    <div class="p-4 border-b border-neutral-700 flex items-center space-x-4">
+      <img src="nature-3082832_1280.jpg"
+           alt="Profile" class="w-12 h-12 rounded-full object-cover">
+      <div>
+        <div class="text-lg font-semibold">ammar</div>
+        <div class="text-yellow-400 text-sm">👑 Admin</div>
+      </div>
+    </div>
+
+    <!-- Menu Items -->
+    <ul class="text-sm divide-y divide-neutral-700">
+      <li><a href="#" class="flex items-center px-4 py-3 hover:bg-neutral-800"><i class="fa-solid fa-right-left mr-3 w-5"></i> Switch Profile</a></li>
+      <li><a href="#" class="flex items-center px-4 py-3 hover:bg-gray-300"><i class="fa-solid fa-gear mr-3 w-5"></i> Settings</a></li>
+      <li><a href="#" class="flex items-center px-4 py-3 hover:bg-gray-300"><i class="fa-solid fa-bookmark mr-3 w-5"></i> Bookmarks</a></li>
+      <li><a href="#" class="flex items-center px-4 py-3 hover:bg-gray-300"><i class="fa-solid fa-clock-rotate-left mr-3 w-5"></i> History</a></li>
+      <li><a href="#" class="flex items-center px-4 py-3 hover:bg-gray-300"><i class="fa-solid fa-bell mr-3 w-5"></i> Notifications</a></li>
+      <li>
+        <a href="#" class="flex flex-col px-4 py-3 hover:bg-gray-300">
+          <div class="flex items-center"><i class="fa-solid fa-gift mr-3 w-5"></i> Gift Card</div>
+          <span class="text-xs text-gray-400 ml-8">Have a gift card? Redeem it here.</span>
+        </a>
+      </li>
+    </ul>
+
+    <!-- Logout -->
+    <div class="border-t border-neutral-700">
+      <a href="#" class="flex items-center px-4 py-3 text-red-400 hover:bg-gray-300"><i class="fa-solid fa-right-from-bracket mr-3 w-5"></i> Log Out</a>
+    </div>
+  </div>
+</div>
+
+          
+          
+          <!-- Right Side: Cart Toggle -->
+<button class="navbar-toggler d-flex align-items-center gap-1 text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCartRight" aria-controls="offcanvasCartRight">
+  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+    <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
+  </svg>
+  <span class="fw-semibold d-none d-md-inline hover:text-blue-200" style="font-size: 15px;">Cart</span>
+</button>
+</div>
+
+        <!-- Offcanvas Cart Section -->
+<div class="offcanvas offcanvas-end" style="background-color: #152e3b;" tabindex="-1" id="offcanvasCartRight" aria-labelledby="offcanvasCartRightLabel">
+  <div class="offcanvas-header">
+      <h5 class="offcanvas-title text-gray-200" id="offcanvasCartRightLabel">Cart</h5>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body text-gray-200">
+      <p style="color: white;" id="empty-cart-message" class="text-muted">Your cart is currently empty.</p>
+      <div id="offcanvas-cart-items"></div>
+      <hr>
+      <div id="offcanvas-cart-total" class="fw-bold">Total: $0.00</div>
+      <button class="btn btn-success mt-3" id="checkout-btn">Proceed to Checkout</button>
+  </div>
+</div>
+
+
+      
+        <!-- Offcanvas Menu (Left Side) -->
+<div class="offcanvas offcanvas-start" style="background-color: #152e3b; max-height: 100vh;" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
+  <div class="offcanvas-header">
+    <h5 style="font-size: 22px;" class="offcanvas-title text-gray-200" id="offcanvasMenuLabel">Menu</h5>
+    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+
+  <!-- Scrollable Offcanvas Body -->
+  <div class="offcanvas-body p-0 flex flex-col" style="height: calc(100vh - 56px);">
+    <!-- Container for sidebar content and sticky footer -->
+    <div class="flex flex-col h-full text-gray-200" style="background-color: #152e3b;">
+      
+      <!-- Scrollable content area -->
+      <div class="flex-1 overflow-y-auto">
+        <aside class="w-full" style="font-size: 20px; background-color: #152e3b;">
+          <div class="px-0 py-2 flex flex-col">
+            <nav class="px-2 space-y-2">
+
+              <a href="#" class="flex items-center px-2 block lg:hidden" style="font-size: 25px;">
+                <i class="fa-regular fa-user text-gray-400 mr-2" style="font-size: 20px;"></i>
+                <span class="px-1">Sign in</span>
+              </a>
+
+              <a href="#" class="flex items-center p-2" style="font-size: 25px;">
+                <svg class="w-5 h-5 mr-3 text-gray-400" fill="none" stroke="currentColor" stroke-width="2"
+                  viewBox="0 0 24 24"><path d="M3 12l9-9 9 9v8a2 2 0 01-2 2h-4a2 2 0 01-2-2v-4H9v4a2 2 0 01-2 2H5a2 2 0 01-2-2z" /></svg>
+                <span>Home</span>
+              </a>
+
+              <!-- Products Dropdown Section -->
+              <div x-data="{ open: false }" class="text-sm">
+                <button @click="open = !open" class="w-full flex items-center justify-between p-2 transition focus:outline-none">
+                  <div class="flex items-center">
+                    <svg class="w-5 h-5 mr-3 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                      <path d="M20 13V6a2 2 0 00-2-2h-3V2h-6v2H6a2 2 0 00-2 2v7M5 20h14a1 1 0 001-1v-5H4v5a1 1 0 001 1z" />
+                    </svg>
+                    <a href="prolist.html"><span style="font-size: 25px;">Products</span></a>
+                  </div>
+                  <svg :class="{ 'rotate-180': open }" class="w-4 h-4 text-gray-200 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path d="M19 9l-7 7-7-7" />
+                  </svg>
+                </button>
+
+                <div x-show="open" x-transition class="flex flex-col mt-2 ml-10 space-y-2" style="font-size: 21px;">
+                  <a href="#" class="py-2 hover:text-blue-400 transition">Keyboards</a>
+                  <a href="#" class="py-2 hover:text-blue-400 transition">Mice</a>
+                  <a href="#" class="py-2 hover:text-blue-400 transition">Headsets</a>
+                  <a href="#" class="py-2 hover:text-blue-400 transition">WebCams</a>
+                </div>
+              </div>
+
+              <a href="#" class="flex items-center px-1 py-1" style="font-size: 25px;">
+                <!-- Hollow Bolt -->
+                <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-3 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                </svg>
+                <span class="px-0">Gaming</span>
+              </a>
+
+              <a href="#" class="flex items-center px-2 py-1" style="font-size: 25px;">
+                <svg class="w-5 h-5 mr-3 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M18.364 5.636a9 9 0 11-12.728 0M9 9h.01M15 15h.01M9 15h.01M15 9h.01" />
+                </svg>
+                <span class="px-1">About TechNation</span>
+              </a>
+            </nav>
+          </div>
+        </aside>
+      </div>
+
+      <!-- Footer -->
+      <div class="border-t px-4 py-3 text-sm text-gray-400 text-center" style="background-color: #152e3b;">
+        © 2025 TechNation. All rights reserved.
+      </div>
+    </div>
+  </div>
+</div>
+            </nav>
+
+            <div id="searchBar">
+            <div class="shadow py-3 px-4 mt-5 sticky-top z-10" style="margin-top: 40px; background-color: #152e3b">
+                <div class="container">
+                  <form class="d-flex" role="search">
+                    <input id="searchInput" class="form-control me-2" type="search" placeholder="Search products..." aria-label="Search">
+                    <button class="btn btn-outline-success text-white" type="submit">Search</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+      
+      <div id="carouselExampleRide" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+        <div class="carousel-inner">
+            <div class="carousel-img">
+          <div class="carousel-item active">
+            <img src="https://danytech.com.pk/cdn/shop/files/Web_Banner_Launch_copy_9d292599-998f-4433-95f6-743bb1fd5eb5.jpg?v=1741952540" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="https://danytech.com.pk/cdn/shop/files/banner-1_cc0eace7-6365-4fae-a2ff-19c2e77913f2.jpg?v=1741343300" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item">
+            <img src="nature-3082832_1280.jpg" class="d-block w-100" alt="...">
+          </div>
+        </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleRide" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
+      <!-- <div class="container py-5">
+        <div class="row row-cols-1 row-cols-md-3 g-4 ">
+            <div class="col">
+                <div class="card" id="product1">
+                    <img src="MarkPro-5.png" class="card-img-top" alt="Product 1">
+                    <div class="card-body">
+                        <h5 class="card-title">Product 1</h5>
+                        <p class="card-text">$499.99</p>
+                        <button class="btn btn-primary add-to-cart" data-id="1" data-name="Product 1" data-price="499.99">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-sm-6 col-lg-4">
+                <div class="card" id="product2">
+                    <img src="MarkPro-5.png" class="card-img-top" alt="Product 2">
+                    <div class="card-body">
+                        <h5 class="card-title">Product 2</h5>
+                        <p class="card-text">$299.99</p>
+                        <button class="btn btn-primary add-to-cart" data-id="2" data-name="Product 2" data-price="299.99">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col col-sm-6 col-lg-4">
+                <div class="card" id="product3">
+                    <img src="MarkPro-5.png" class="card-img-top" alt="Product 3">
+                    <div class="card-body">
+                        <h5 class="card-title">Product 3</h5>
+                        <p class="card-text">$149.99</p>
+                        <button class="btn btn-primary add-to-cart" data-id="3" data-name="Product 3" data-price="149.99">Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+
+    <div class="max-w-screen-2xl mx-auto py-12">
+      <!-- Category Tabs -->
+      
+        <h2 class="text-3xl font-bold text-center mb-10 border-b pb-2">Best Selling</h2>
+    
+      <!-- Scrollable Grid with Arrows -->
+      <div class="relative">
+        <!-- Scrollable Container -->
+        <div id="scrollContainer" class="overflow-x-auto scroll-smooth hide-scrollbar">
+          <div class="flex gap-12 w-max px-10 py-4">
+            <!-- Repeat Product Cards (4+ for scrollability) -->
+            <!-- Example card (repeat or loop for real content) -->
+            <div class="bg-white rounded-xl shadow-md p-4 w-80 sm:w-100 flex-shrink-0 relative" style="height: 500px;">
+              <!-- <div class="absolute top-3 left-3 bg-yellow-400 text-xs font-semibold text-black px-2 py-1 rounded">BT Calling</div> -->
+              <a href="demodes.html"><img src="https://m.media-amazon.com/images/I/71VV0kyOKCL._AC_SX522_.jpg" alt="Product" class="w-full h-72 object-contain mb-3" />
+              <h3 class="font-semibold text-lg">D-Force Smart Watch</h3>
+              <p class="text-sm text-gray-500">Zinc Alloy Body with Silicon Strap</p>
+              <div class="mt-2">
+                <span class="text-black font-bold text-lg">Rs. 7,999</span>
+                <span class="line-through text-gray-400 text-sm ml-2">Rs. 20,999</span>
+              </div></a>
+              <button class="mt-4 w-full text-white py-2 rounded-md font-bold transition" style="background-color: #152e3b;" onmouseover="this.style.backgroundColor='#305c80'" onmouseout="this.style.backgroundColor='#152e3b'">ADD TO CART</button>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-4 w-80 sm:w-100 flex-shrink-0 relative" style="height: 500px;">
+              <!-- <div class="absolute top-3 left-3 bg-yellow-400 text-xs font-semibold text-black px-2 py-1 rounded">BT Calling</div> -->
+              <img src="Amazons_headphones.png" alt="Product" class="w-full h-72 object-contain mb-3" />
+              <h3 class="font-semibold text-lg">D-Force Smart Watch</h3>
+              <p class="text-sm text-gray-500">Zinc Alloy Body with Silicon Strap</p>
+              <div class="mt-2">
+                <span class="text-black font-bold text-lg">Rs. 7,999</span>
+                <span class="line-through text-gray-400 text-sm ml-2">Rs. 20,999</span>
+              </div>
+              <button class="mt-4 w-full text-white py-2 rounded-md font-bold transition" style="background-color: #152e3b;" onmouseover="this.style.backgroundColor='#305c80'" onmouseout="this.style.backgroundColor='#152e3b'">ADD TO CART</button>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-4 w-80 sm:w-100 flex-shrink-0 relative" style="height: 500px;">
+              <!-- <div class="absolute top-3 left-3 bg-yellow-400 text-xs font-semibold text-black px-2 py-1 rounded">BT Calling</div> -->
+              <img src="keyboard.jpeg" alt="Product" class="w-full h-72 object-contain mb-3" />
+              <h3 class="font-semibold text-lg">D-Force Smart Watch</h3>
+              <p class="text-sm text-gray-500">Zinc Alloy Body with Silicon Strap</p>
+              <div class="mt-2">
+                <span class="text-black font-bold text-lg">Rs. 7,999</span>
+                <span class="line-through text-gray-400 text-sm ml-2">Rs. 20,999</span>
+              </div>
+              <button class="mt-4 w-full text-white py-2 rounded-md font-bold transition" style="background-color: #152e3b;" onmouseover="this.style.backgroundColor='#305c80'" onmouseout="this.style.backgroundColor='#152e3b'">ADD TO CART</button>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-4 w-80 sm:w-100 flex-shrink-0 relative" style="height: 500px;">
+              <!-- <div class="absolute top-3 left-3 bg-yellow-400 text-xs font-semibold text-black px-2 py-1 rounded">BT Calling</div> -->
+              <img src="MarkPro-5.png" alt="Product" class="w-full h-72 object-contain mb-3" />
+              <h3 class="font-semibold text-lg">D-Force Smart Watch</h3>
+              <p class="text-sm text-gray-500">Zinc Alloy Body with Silicon Strap</p>
+              <div class="mt-2">
+                <span class="text-black font-bold text-lg">Rs. 7,999</span>
+                <span class="line-through text-gray-400 text-sm ml-2">Rs. 20,999</span>
+              </div>
+              <button class="mt-4 w-full text-white py-2 rounded-md font-bold transition" style="background-color: #152e3b;" onmouseover="this.style.backgroundColor='#305c80'" onmouseout="this.style.backgroundColor='#152e3b'">ADD TO CART</button>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-4 w-80 sm:w-100 flex-shrink-0 relative" style="height: 500px;">
+              <!-- <div class="absolute top-3 left-3 bg-yellow-400 text-xs font-semibold text-black px-2 py-1 rounded">BT Calling</div> -->
+              <img src="https://m.media-amazon.com/images/I/71HdQd9tjaL._AC_UF480,480_SR480,480_.jpg" alt="Product" class="w-full h-72 object-contain mb-3" />
+              <h3 class="font-semibold text-lg">D-Force Smart Watch</h3>
+              <p class="text-sm text-gray-500">Zinc Alloy Body with Silicon Strap</p>
+              <div class="mt-2">
+                <span class="text-black font-bold text-lg">Rs. 7,999</span>
+                <span class="line-through text-gray-400 text-sm ml-2">Rs. 20,999</span>
+              </div>
+              <button class="mt-4 w-full text-white py-2 rounded-md font-bold transition" style="background-color: #152e3b;" onmouseover="this.style.backgroundColor='#305c80'" onmouseout="this.style.backgroundColor='#152e3b'">ADD TO CART</button>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-4 w-80 sm:w-100 flex-shrink-0 relative" style="height: 500px;">
+              <!-- <div class="absolute top-3 left-3 bg-yellow-400 text-xs font-semibold text-black px-2 py-1 rounded">BT Calling</div> -->
+              <img src="https://m.media-amazon.com/images/I/81Fk-T0USaL._AC_UF480,480_SR480,480_.jpg" alt="Product" class="w-full h-72 object-contain mb-3" />
+              <h3 class="font-semibold text-lg">D-Force Smart Watch</h3>
+              <p class="text-sm text-gray-500">Zinc Alloy Body with Silicon Strap</p>
+              <div class="mt-2">
+                <span class="text-black font-bold text-lg">Rs. 7,999</span>
+                <span class="line-through text-gray-400 text-sm ml-2">Rs. 20,999</span>
+              </div>
+              <button class="mt-4 w-full text-white py-2 rounded-md font-bold transition" style="background-color: #152e3b;" onmouseover="this.style.backgroundColor='#305c80'" onmouseout="this.style.backgroundColor='#152e3b'">ADD TO CART</button>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-4 w-80 sm:w-100 flex-shrink-0 relative" style="height: 500px;">
+              <!-- <div class="absolute top-3 left-3 bg-yellow-400 text-xs font-semibold text-black px-2 py-1 rounded">BT Calling</div> -->
+              <img src="https://images-na.ssl-images-amazon.com/images/I/71MRJINDIGL._AC_UL165_SR165,165_.jpg" alt="Product" class="w-full h-72 object-contain mb-3" />
+              <h3 class="font-semibold text-lg">D-Force Smart Watch</h3>
+              <p class="text-sm text-gray-500">Zinc Alloy Body with Silicon Strap</p>
+              <div class="mt-2">
+                <span class="text-black font-bold text-lg">Rs. 7,999</span>
+                <span class="line-through text-gray-400 text-sm ml-2">Rs. 20,999</span>
+              </div>
+              <button class="mt-4 w-full text-white py-2 rounded-md font-bold transition" style="background-color: #152e3b;" onmouseover="this.style.backgroundColor='#305c80'" onmouseout="this.style.backgroundColor='#152e3b'">ADD TO CART</button>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-4 w-80 sm:w-100 flex-shrink-0 relative" style="height: 500px;">
+              <!-- <div class="absolute top-3 left-3 bg-yellow-400 text-xs font-semibold text-black px-2 py-1 rounded">BT Calling</div> -->
+              <img src="https://m.media-amazon.com/images/I/61cwKSK03HL._AC_UF480,480_SR480,480_.jpg" alt="Product" class="w-full h-72 object-contain mb-3" />
+              <h3 class="font-semibold text-lg">D-Force Smart Watch</h3>
+              <p class="text-sm text-gray-500">Zinc Alloy Body with Silicon Strap</p>
+              <div class="mt-2">
+                <span class="text-black font-bold text-lg">Rs. 7,999</span>
+                <span class="line-through text-gray-400 text-sm ml-2">Rs. 20,999</span>
+              </div>
+              <button class="mt-4 w-full text-white py-2 rounded-md font-bold transition" style="background-color: #152e3b;" onmouseover="this.style.backgroundColor='#305c80'" onmouseout="this.style.backgroundColor='#152e3b'">ADD TO CART</button>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-4 w-80 sm:w-100 flex-shrink-0 relative" style="height: 500px;">
+              <!-- <div class="absolute top-3 left-3 bg-yellow-400 text-xs font-semibold text-black px-2 py-1 rounded">BT Calling</div> -->
+              <img src="https://m.media-amazon.com/images/I/71VV0kyOKCL._AC_SX522_.jpg" alt="Product" class="w-full h-72 object-contain mb-3" />
+              <h3 class="font-semibold text-lg">D-Force Smart Watch</h3>
+              <p class="text-sm text-gray-500">Zinc Alloy Body with Silicon Strap</p>
+              <div class="mt-2">
+                <span class="text-black font-bold text-lg">Rs. 7,999</span>
+                <span class="line-through text-gray-400 text-sm ml-2">Rs. 20,999</span>
+              </div>
+              <button class="mt-4 w-full text-white py-2 rounded-md font-bold transition" style="background-color: #152e3b;" onmouseover="this.style.backgroundColor='#305c80'" onmouseout="this.style.backgroundColor='#152e3b'">ADD TO CART</button>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-4 w-80 sm:w-100 flex-shrink-0 relative" style="height: 500px;">
+              <!-- <div class="absolute top-3 left-3 bg-yellow-400 text-xs font-semibold text-black px-2 py-1 rounded">BT Calling</div> -->
+              <img src="https://via.placeholder.com/250x200" alt="Product" class="w-full h-72 object-contain mb-3" />
+              <h3 class="font-semibold text-lg">D-Force Smart Watch</h3>
+              <p class="text-sm text-gray-500">Zinc Alloy Body with Silicon Strap</p>
+              <div class="mt-2">
+                <span class="text-black font-bold text-lg">Rs. 7,999</span>
+                <span class="line-through text-gray-400 text-sm ml-2">Rs. 20,999</span>
+              </div>
+              <button class="mt-4 w-full text-white py-2 rounded-md font-bold transition" style="background-color: #152e3b;" onmouseover="this.style.backgroundColor='#305c80'" onmouseout="this.style.backgroundColor='#152e3b'">ADD TO CART</button>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md p-4 w-80 sm:w-100 flex-shrink-0 relative" style="height: 500px;">
+              <!-- <div class="absolute top-3 left-3 bg-yellow-400 text-xs font-semibold text-black px-2 py-1 rounded">BT Calling</div> -->
+              <img src="https://m.media-amazon.com/images/I/71VV0kyOKCL._AC_SX522_.jpg" alt="Product" class="w-full h-72 object-contain mb-3" />
+              <h3 class="font-semibold text-lg">D-Force Smart Watch</h3>
+              <p class="text-sm text-gray-500">Zinc Alloy Body with Silicon Strap</p>
+              <div class="mt-2">
+                <span class="text-black font-bold text-lg">Rs. 7,999</span>
+                <span class="line-through text-gray-400 text-sm ml-2">Rs. 20,999</span>
+              </div>
+              <button class="mt-4 w-full text-white py-2 rounded-md font-bold transition" style="background-color: #152e3b;" onmouseover="this.style.backgroundColor='#305c80'" onmouseout="this.style.backgroundColor='#152e3b'">ADD TO CART</button>
+            </div>
+            <!-- Duplicate the card above for more products -->
+          </div>
+        </div>
+        
+    
+        <!-- Stylish Arrows -->
+         <div id="backBtn">
+        <button class="absolute left-2 top-1/2 transform -translate-y-1/2 z-20 bg-white text-gray-700 shadow-lg hover:bg-blue-100 hover:text-blue-600 transition p-3 rounded-full">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+      </div>
+    
+      <div id="nextBtn">
+        <button class="absolute right-2 top-1/2 transform -translate-y-1/2 z-20 bg-white text-gray-700 shadow-lg hover:bg-blue-100 hover:text-blue-600 transition p-3 rounded-full">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+      </div>
+    </div>
+    
+    
+    
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 p-8">
+  <!-- Smart Watches Card -->
+  <a href="/smartwatches" class="relative overflow-hidden rounded-xl shadow-lg group block h-80">
+    <img src="https://danytech.com.pk/cdn/shop/files/smart-watch-banner.jpg?v=1741343337" alt="Smart Watches"
+         class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-end justify-center p-4">
+      <h2 class="text-white text-xl font-bold tracking-wide group-hover:text-green-400 transition-colors">SMART WATCHES</h2>
+    </div>
+  </a>
+
+  <!-- Powerbank Card -->
+  <a href="/powerbank" class="relative overflow-hidden rounded-xl shadow-lg group block h-80">
+    <img src="https://danytech.com.pk/cdn/shop/files/powerbank-banner.jpg?v=1741343431" alt="Powerbank"
+         class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-end justify-center p-4">
+      <h2 class="text-white text-xl font-bold tracking-wide group-hover:text-yellow-400 transition-colors">POWERBANK</h2>
+    </div>
+  </a>
+
+  <!-- Charger Card -->
+  <a href="/chargers" class="relative overflow-hidden rounded-xl shadow-lg group block h-80">
+    <img src="https://danytech.com.pk/cdn/shop/files/Accessories-banner.jpg?v=1741343443" alt="Charger"
+         class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-end justify-center p-4">
+      <h2 class="text-white text-xl font-bold tracking-wide group-hover:text-red-400 transition-colors">CHARGERS</h2>
+    </div>
+  </a>
+
+  <!-- Earbuds Card -->
+  <a href="/earbuds" class="relative overflow-hidden rounded-xl shadow-lg group block h-80">
+    <img src="https://danytech.com.pk/cdn/shop/files/earbud-banner.jpg?v=1741344790" alt="Earbuds"
+         class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-110" />
+    <div class="absolute inset-0 bg-black bg-opacity-50 flex items-end justify-center p-4">
+      <h2 class="text-white text-xl font-bold tracking-wide group-hover:text-blue-400 transition-colors">EARBUDS</h2>
+    </div>
+  </a>
+</div>
+
+
+    <!-- <div id="carouselExampleOne" class="carousel slide mb-5" data-bs-ride="carousel" data-bs-interval="5000">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://danytech.com.pk/cdn/shop/files/Web_Banner_Launch_copy_9d292599-998f-4433-95f6-743bb1fd5eb5.jpg?v=1741952540" class="d-block w-100" alt="Green Background">
+        </div>
+        <div class="carousel-item">
+          <img src="https://danytech.com.pk/cdn/shop/files/banner-1_cc0eace7-6365-4fae-a2ff-19c2e77913f2.jpg?v=1741343300" class="d-block w-100" alt="Pakistan Nature">
+        </div>
+        <div class="carousel-item">
+          <img src="nature-3082832_1280.jpg" class="d-block w-100" alt="Nature">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleOne" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleOne" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div> -->
+    
+
+    <section class="bg-gray-100 py-10 px-4">
+      <div class="container">
+        <h2 class="text-3xl font-bold text-center mb-10 border-b pb-2">Latest Posts</h2>
+        
+        <div class="row g-5">
+          <!-- First Post -->
+          <div class="col-md-3">
+            <div class="bg-white rounded-lg overflow-hidden shadow-md">
+              <img src="https://danytech.com.pk/cdn/shop/articles/Untitled_design_15_2d79a2a3-0174-42da-902e-504def98e0d8_570x.png?v=1744008137" alt="Airdots 500 Alpha" class="w-full">
+              <div class="p-4">
+                <h3 class="text-lg font-semibold mb-2">Introducing The Airdots 500 Alpha</h3>
+                <p class="text-gray-600">
+                  Dany has raised the bar yet again with the launch of the Airdots 500 Alpha, a set of wireless earbuds that combines style, performance, and advanced technology...
+                </p>
+              </div>
+            </div>
+          </div>
+    
+          <!-- Second Post -->
+          <div class="col-md-3">
+            <div class="bg-white rounded-lg overflow-hidden shadow-md">
+              <img src="https://danytech.com.pk/cdn/shop/articles/Untitled_design_14_570x.png?v=1740550456" alt="What is ANC?" class="w-full">
+              <div class="p-4">
+                <h3 class="text-lg font-semibold mb-2">What Is Active Noise Cancellation In Wireless Earbuds?</h3>
+                <p class="text-gray-600">
+                  In today’s fast-paced world, wireless earbuds have become an essential gadget. Learn how Active Noise Cancellation (ANC) improves sound quality in noisy environments...
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- First Post -->
+        <div class="col-md-3">
+          <div class="bg-white rounded-lg overflow-hidden shadow-md">
+            <img src="https://danytech.com.pk/cdn/shop/articles/Untitled_design_15_2d79a2a3-0174-42da-902e-504def98e0d8_570x.png?v=1744008137" alt="Airdots 500 Alpha" class="w-full">
+            <div class="p-4">
+              <h3 class="text-lg font-semibold mb-2">Introducing The Airdots 500 Alpha</h3>
+              <p class="text-gray-600">
+                Dany has raised the bar yet again with the launch of the Airdots 500 Alpha, a set of wireless earbuds that combines style, performance, and advanced technology...
+              </p>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Second Post -->
+        <div class="col-md-3">
+          <div class="bg-white rounded-lg overflow-hidden shadow-md">
+            <img src="https://danytech.com.pk/cdn/shop/articles/Untitled_design_14_570x.png?v=1740550456" alt="What is ANC?" class="w-full">
+            <div class="p-4">
+              <h3 class="text-lg font-semibold mb-2">What Is Active Noise Cancellation In Wireless Earbuds?</h3>
+              <p class="text-gray-600">
+                In today’s fast-paced world, wireless earbuds have become an essential gadget. Learn how Active Noise Cancellation (ANC) improves sound quality in noisy environments...
+              </p>
+            </div>
+          </div>
+        </div>
+        </div>
+    
+        <!-- Button -->
+        <div class="text-center mt-10">
+          <button class="bg-gray-700 hover:bg-gray-800 text-white px-6 py-2 rounded font-semibold">
+            Explore Blog
+          </button>
+        </div>
+      </div>
+    </section>
+    
+    
+
+      <footer class="text-gray-400 py-12" style="background-color: #152e3b;">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div class="grid grid-cols-1 md:grid-cols-5 gap-10">
+            
+            <!-- Brand -->
+            <div class="md:col-span-2">
+              <h3 class="text-white text-2xl font-bold mb-4">TechNation</h3>
+              <p class="text-sm leading-relaxed">Precision hardware meets smart software. Explore gear crafted for creators, gamers, and professionals alike.</p>
+              <!-- Social icons -->
+              <div class="flex space-x-4 mt-6">
+                <a href="#" class="text-gray-500 hover:text-white" aria-label="Facebook">
+                    <i class="fa-brands fa-facebook"></i>
+                      </svg>
+                </a>
+                <a href="#" class="text-gray-500 hover:text-white" aria-label="X">
+                    <i class="fa-brands fa-x-twitter"></i>
+                      </svg>
+                </a>
+                <a href="#" class="text-gray-500 hover:text-white" aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="#" class="text-gray-500 hover:text-white" aria-label="LinkedIn">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+              </div>
+            </div>
+      
+            <!-- Products -->
+            <div>
+              <h4 class="text-white text-sm font-semibold mb-4 uppercase tracking-wider">Products</h4>
+              <ul class="space-y-2 text-sm">
+                <li><a href="#" class="hover:text-white">Keyboards</a></li>
+                <li><a href="#" class="hover:text-white">Mice</a></li>
+                <li><a href="#" class="hover:text-white">Headsets</a></li>
+                <li><a href="#" class="hover:text-white">Streaming Gear</a></li>
+              </ul>
+            </div>
+      
+            <!-- Support -->
+            <div>
+              <h4 class="text-white text-sm font-semibold mb-4 uppercase tracking-wider">Support</h4>
+              <ul class="space-y-2 text-sm">
+                <li><a href="#" class="hover:text-white">Downloads</a></li>
+                <li><a href="#" class="hover:text-white">FAQs</a></li>
+                <li><a href="#" class="hover:text-white">Warranty</a></li>
+                <li><a href="#" class="hover:text-white">Contact</a></li>
+              </ul>
+            </div>
+      
+            <!-- Company -->
+            <div>
+              <h4 class="text-white text-sm font-semibold mb-4 uppercase tracking-wider">Company</h4>
+              <ul class="space-y-2 text-sm">
+                <li><a href="#" class="hover:text-white">About</a></li>
+                <li><a href="#" class="hover:text-white">Careers</a></li>
+                <li><a href="#" class="hover:text-white">Newsroom</a></li>
+                <li><a href="#" class="hover:text-white">Investors</a></li>
+              </ul>
+            </div>
+          </div>
+      
+          <!-- Bottom -->
+          <div class="mt-12 border-t border-gray-800 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+            <p>&copy; 2025 TechNation. All rights reserved.</p>
+            <div class="flex space-x-6 mt-4 md:mt-0">
+              <a href="#" class="hover:text-white">Privacy</a>
+              <a href="#" class="hover:text-white">Terms</a>
+              <a href="#" class="hover:text-white">Accessibility</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+      
+      
+      
+</body>
+<script src="https://kit.fontawesome.com/f4157f3a9f.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+<script src="https://unpkg.com/heroicons@2.0.16/dist/24/outline.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+<script>
+    // let lastScroll = 0;
+    // const searchBar = document.getElementById('searchBar');
+    // const searchIcon = document.getElementById('searchIcon');
+  
+    // window.addEventListener('scroll', () => {
+    //   const currentScroll = window.scrollY;
+  
+    //   if (currentScroll > lastScroll && currentScroll > 50) {
+    //     // Scrolling down
+    //     searchBar.classList.add('-translate-y-full');
+    //     searchIcon.classList.remove('hidden');
+    //   } else if (currentScroll < lastScroll) {
+    //     // Scrolling up
+    //     searchBar.classList.remove('-translate-y-full');
+    //     searchIcon.classList.add('hidden');
+    //   }
+  
+    //   lastScroll = currentScroll;
+    // });
+  </script>
+
+<script>
+  // Show search icon on scroll
+  window.addEventListener("scroll", () => {
+    const icon = document.getElementById("searchIcon");
+    if (window.scrollY > 100) {
+      icon.classList.remove("hidden");
+    } else {
+      icon.classList.add("hidden");
+    }
+  });
+
+  // Cart and checkout logic placeholder
+  document.getElementById("checkout-btn").addEventListener("click", () => {
+    alert("Proceeding to checkout...");
+  });
+</script>
+
+<script>
+  const container = document.getElementById('scrollContainer');
+  const cardWidth = 315; // Tailwind w-72 = 18rem = 288px
+  const gap = 48;        // Tailwind gap-6 = 1.5rem = 24px
+  const scrollAmount = (cardWidth + gap) * 4;
+  const stepSize = 10;   // 10px per move
+  const stepTime = 2;    // 2ms between moves (you had 10ms, adjusted to match 2ms)
+
+  const backBtn = document.getElementById("backBtn");
+  const nextBtn = document.getElementById("nextBtn");
+
+  function smoothScroll(container, distance, step, intervalTime) {
+    let scrolled = 0;
+    const direction = distance > 0 ? 1 : -1;
+    const interval = setInterval(() => {
+      container.scrollLeft += step * direction;
+      scrolled += step;
+      if (scrolled >= Math.abs(distance)) {
+        clearInterval(interval);
+        updateArrowVisibility(); // Recheck after scroll finishes
+      }
+    }, intervalTime);
+  }
+
+  nextBtn.addEventListener("click", () => {
+    smoothScroll(container, scrollAmount, stepSize, stepTime);
+  });
+
+  backBtn.addEventListener("click", () => {
+    smoothScroll(container, -scrollAmount, stepSize, stepTime);
+  });
+
+  function updateArrowVisibility() {
+    const scrollLeft = container.scrollLeft;
+    const maxScrollLeft = container.scrollWidth - container.clientWidth;
+
+    if (scrollLeft <= 0) {
+      backBtn.style.display = 'none';
+    } else {
+      backBtn.style.display = 'block';
+    }
+
+    if (scrollLeft >= maxScrollLeft - 1) {
+      nextBtn.style.display = 'none';
+    } else {
+      nextBtn.style.display = 'block';
+    }
+  }
+
+  // Button show/hide based on screen size
+  function updateButtonVisibility() {
+    if (window.innerWidth < 768) {
+      backBtn.style.display = 'none';
+      nextBtn.style.display = 'none';
+    } else {
+      updateArrowVisibility(); // Smart: call scroll-based check
+    }
+  }
+
+  // Initial check
+  updateButtonVisibility();
+
+  // Update on resize
+  window.addEventListener('resize', updateButtonVisibility);
+</script>
+
+
+
+</html>
