@@ -121,3 +121,19 @@ html {
     transition: transform 0.3s ease;
   }
 
+.post-card {
+  max-width: 320px; /* default width */
+  width: 100%;
+}
+
+@media (max-width: 640px) {
+  .post-card {
+    max-width: 224px; /* smaller width on small/mobile */
+  }
+}
+
+@media (min-width: 1367px) {
+  .post-card {
+    max-width: 330px; /* larger width on large screens */
+  }
+}
