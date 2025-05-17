@@ -35,15 +35,27 @@ html {
   }
 
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1023px) {
     .carousel-item img {
       max-height: 450px;
     }
   }
 
+  @media (min-width: 1024px) {
+    .carousel-item img {
+      max-height: 550px;
+    }
+  }
+
+  @media (min-width: 1366px) {
+    .carousel-item img {
+      max-height: 700px;
+    }
+  }
+
   .carousel-item img {
     width: 100%; /* Set the width of the image */
-    height: 550px; /* Set the height of the image */
+    height: 700px; /* Set the height of the image */
     /* object-fit: cover; /* This ensures the image covers the entire area without distorting */
 } 
 
