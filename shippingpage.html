@@ -28,73 +28,234 @@
     <!-- Left: Checkout Steps & Form -->
     <div class="md:col-span-2 space-y-6">
       
-      <!-- Step 1: Shipping Address -->
-      <div class="bg-white p-6 rounded shadow">
-        <div class="flex items-center space-x-4 mb-6">
-          <div class="w-8 h-8 rounded-full bg-black text-white flex items-center justify-center font-bold">1</div>
-          <h2 class="text-lg font-semibold">Shipping address</h2>
+    <h1 class="text-3xl font-bold mb-8">Checkout</h1>
+
+    <!-- Step 1: Shipping Address -->
+    <div class="bg-white p-6 rounded shadow mb-10">
+      <h2 class="text-xl font-bold mb-6">1. Shipping address</h2>
+
+      <form class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+        <!-- First & Last Name -->
+        <div>
+          <label class="block text-sm font-semibold mb-1">First Name *</label>
+          <input type="text" class="w-full border border-gray-300 rounded px-4 py-2" required />
         </div>
-        
-        <form class="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <div>
-            <label class="block text-sm font-medium text-gray-700 mb-1">First Name *</label>
-            <input type="text" class="w-full border border-gray-300 px-3 py-2 rounded" />
-          </div>
-          <div>
-            <label class="block text-sm font-medium text-gray-700 mb-1">Last Name *</label>
-            <input type="text" class="w-full border border-gray-300 px-3 py-2 rounded" />
-          </div>
-          <div class="md:col-span-2">
-            <label class="block text-sm font-medium text-gray-700 mb-1">Address 1 - Street or P.O. Box *</label>
-            <input type="text" class="w-full border border-gray-300 px-3 py-2 rounded" />
-          </div>
-          <div class="md:col-span-2">
-            <label class="block text-sm font-medium text-gray-700 mb-1">Address 2 - Apt, Suite, Floor</label>
-            <input type="text" class="w-full border border-gray-300 px-3 py-2 rounded" />
-          </div>
-          <div>
-            <label class="block text-sm font-medium text-gray-700 mb-1">ZIP Code *</label>
-            <input type="text" class="w-full border border-gray-300 px-3 py-2 rounded" />
-          </div>
-          <div>
-            <label class="block text-sm font-medium text-gray-700 mb-1">City *</label>
-            <input type="text" class="w-full border border-gray-300 px-3 py-2 rounded" />
-          </div>
-          <div class="md:col-span-2 md:flex md:space-x-4">
-            <div class="w-full md:w-1/2">
-              <label class="block text-sm font-medium text-gray-700 mb-1">State *</label>
-              <select class="w-full border border-gray-300 px-3 py-2 rounded">
-                <option>Select</option>
-              </select>
+        <div>
+          <label class="block text-sm font-semibold mb-1">Last Name *</label>
+          <input type="text" class="w-full border border-gray-300 rounded px-4 py-2" required />
+        </div>
+
+        <!-- Address 1 & 2 -->
+        <div class="md:col-span-2">
+          <label class="block text-sm font-semibold mb-1">Address 1 - Street or P.O. Box *</label>
+          <input type="text" class="w-full border border-gray-300 rounded px-4 py-2" required />
+        </div>
+        <div class="md:col-span-2">
+          <label class="block text-sm font-semibold mb-1">Address 2 - Apt, Suite, Floor</label>
+          <input type="text" class="w-full border border-gray-300 rounded px-4 py-2" />
+        </div>
+
+        <!-- ZIP, City, State -->
+        <div>
+          <label class="block text-sm font-semibold mb-1">ZIP Code *</label>
+          <input type="text" class="w-full border border-gray-300 rounded px-4 py-2" required />
+        </div>
+        <div>
+          <label class="block text-sm font-semibold mb-1">City *</label>
+          <input type="text" class="w-full border border-gray-300 rounded px-4 py-2" required />
+        </div>
+        <div class="md:col-span-2">
+          <label class="block text-sm font-semibold mb-1">State *</label>
+          <select class="w-full border border-gray-300 rounded px-4 py-2" required>
+            <option value="">Select</option>
+            <option>California</option>
+            <option>Texas</option>
+            <option>New York</option>
+            <!-- Add more states as needed -->
+          </select>
+        </div>
+
+        <!-- Button -->
+        <div class="md:col-span-2 mt-4">
+          <button type="button" class="w-full bg-black text-white py-3 rounded font-semibold hover:bg-gray-800">
+            Continue to shipping method
+          </button>
+        </div>
+
+      </form>
+    </div>
+
+    <!-- Step 2: Shipping Method -->
+    <div class="bg-white p-6 rounded shadow">
+      <h2 class="text-xl font-bold mb-6">2. Shipping method</h2>
+
+      <form class="space-y-6">
+
+        <!-- Standard -->
+        <label class="flex items-start space-x-4 cursor-pointer">
+          <input type="radio" name="shipping" value="standard" class="mt-1 accent-black" checked />
+          <div class="flex-1">
+            <div class="flex justify-between items-center">
+              <span class="font-semibold">Standard</span>
+              <span>
+                <span class="line-through text-sm text-gray-500 mr-1">$10.00</span>
+                <span class="text-red-600 font-semibold">FREE</span>
+              </span>
             </div>
+            <p class="text-sm text-gray-600 mt-1">
+              Estimated delivery date is between <strong>Monday, 5/26</strong> – <strong>Thursday, 5/29</strong>
+            </p>
+            <p class="text-xs text-blue-600 mt-1">Helps reduce our environmental impact <span title="Info" class="ml-1">ℹ️</span></p>
           </div>
-          <div class="md:col-span-2 mt-4">
-            <button type="submit" class="w-full bg-black text-white py-3 rounded font-medium hover:bg-gray-800">Continue to shipping method</button>
+        </label>
+
+        <hr />
+
+        <!-- Express -->
+        <label class="flex items-start space-x-4 cursor-pointer">
+          <input type="radio" name="shipping" value="express" class="mt-1 accent-black" />
+          <div class="flex-1">
+            <div class="flex justify-between items-center">
+              <span class="font-semibold">Express</span>
+              <span class="font-semibold">$15.00</span>
+            </div>
+            <p class="text-sm text-gray-600 mt-1">
+              Estimated delivery date is <strong>Wednesday, 5/21</strong>
+            </p>
           </div>
-        </form>
-      </div>
+        </label>
 
-      <!-- Other Steps (Placeholders) -->
-      <div class="bg-white p-4 rounded shadow">
-        <div class="flex items-center space-x-4">
-          <div class="w-8 h-8 rounded-full border-2 border-gray-300 text-gray-500 flex items-center justify-center font-bold">2</div>
-          <h2 class="text-sm font-semibold text-gray-700">Shipping method</h2>
-        </div>
-      </div>
+        <hr />
 
-      <div class="bg-white p-4 rounded shadow">
-        <div class="flex items-center space-x-4">
-          <div class="w-8 h-8 rounded-full border-2 border-gray-300 text-gray-500 flex items-center justify-center font-bold">3</div>
-          <h2 class="text-sm font-semibold text-gray-700">Payment</h2>
-        </div>
-      </div>
+        <!-- Next Day -->
+        <label class="flex items-start space-x-4 cursor-pointer">
+          <input type="radio" name="shipping" value="nextday" class="mt-1 accent-black" />
+          <div class="flex-1">
+            <div class="flex justify-between items-center">
+              <span class="font-semibold">Next Day</span>
+              <span class="font-semibold">$25.00</span>
+            </div>
+            <p class="text-sm text-gray-600 mt-1">
+              Estimated delivery date is <strong>Tuesday, 5/20</strong>
+            </p>
+          </div>
+        </label>
 
-      <div class="bg-white p-4 rounded shadow">
-        <div class="flex items-center space-x-4">
-          <div class="w-8 h-8 rounded-full border-2 border-gray-300 text-gray-500 flex items-center justify-center font-bold">4</div>
-          <h2 class="text-sm font-semibold text-gray-700">Review & place order</h2>
+        <!-- Button -->
+        <div class="pt-6">
+          <button type="submit" class="w-full bg-black text-white py-3 rounded font-semibold hover:bg-gray-800">
+            Continue to payment
+          </button>
         </div>
+
+      </form>
+    </div>
+
+
+      <!-- Step 3: Payment -->
+<div class="bg-white p-6 rounded shadow mb-10 mt-10">
+  <div class="flex items-center space-x-4 mb-6">
+    <div class="w-8 h-8 rounded-full border-2 border-gray-300 text-gray-500 flex items-center justify-center font-bold">3</div>
+    <h2 class="text-xl font-semibold text-gray-700">Payment</h2>
+  </div>
+
+  <form class="space-y-6">
+
+    <!-- Credit Card -->
+    <label class="flex items-start space-x-4 cursor-pointer">
+      <input type="radio" name="payment" value="credit-card" class="mt-1 accent-black" checked />
+      <div class="flex-1">
+        <span class="font-semibold">Credit/Debit Card</span>
+        <p class="text-sm text-gray-600">Visa, Mastercard, AMEX</p>
       </div>
+    </label>
+
+    <!-- PayPal -->
+    <label class="flex items-start space-x-4 cursor-pointer">
+      <input type="radio" name="payment" value="paypal" class="mt-1 accent-black" />
+      <div class="flex-1">
+        <span class="font-semibold">PayPal</span>
+        <p class="text-sm text-gray-600">You will be redirected to PayPal</p>
+      </div>
+    </label>
+
+    <!-- Afterpay -->
+    <label class="flex items-start space-x-4 cursor-pointer">
+      <input type="radio" name="payment" value="afterpay" class="mt-1 accent-black" />
+      <div class="flex-1">
+        <span class="font-semibold">Afterpay</span>
+        <p class="text-sm text-gray-600">4 interest-free payments of $75.00</p>
+      </div>
+    </label>
+
+    <div class="pt-6">
+      <button type="button" class="w-full bg-black text-white py-3 rounded font-semibold hover:bg-gray-800">
+        Continue to review
+      </button>
+    </div>
+  </form>
+</div>
+
+<!-- Step 4: Review & Place Order -->
+<div class="bg-white p-6 rounded shadow mb-10">
+  <div class="flex items-center space-x-4 mb-6">
+    <div class="w-8 h-8 rounded-full border-2 border-gray-300 text-gray-500 flex items-center justify-center font-bold">4</div>
+    <h2 class="text-xl font-semibold text-gray-700">Review & Place Order</h2>
+  </div>
+
+  <!-- Summary -->
+  <div class="space-y-4">
+
+    <!-- Shipping Info -->
+    <div class="border-b pb-4">
+      <h3 class="text-lg font-semibold mb-1">Shipping Address</h3>
+      <p class="text-sm text-gray-700">John Doe</p>
+      <p class="text-sm text-gray-700">123 Main St, Apt 4B</p>
+      <p class="text-sm text-gray-700">New York, NY 10001</p>
+    </div>
+
+    <!-- Shipping Method -->
+    <div class="border-b pb-4">
+      <h3 class="text-lg font-semibold mb-1">Shipping Method</h3>
+      <p class="text-sm text-gray-700">Standard Shipping (FREE)</p>
+      <p class="text-sm text-gray-500">Est. delivery: Mon 5/26 – Thu 5/29</p>
+    </div>
+
+    <!-- Payment Method -->
+    <div class="border-b pb-4">
+      <h3 class="text-lg font-semibold mb-1">Payment</h3>
+      <p class="text-sm text-gray-700">Credit/Debit Card ending in **** 1234</p>
+    </div>
+
+    <!-- Cart Summary -->
+    <div>
+      <h3 class="text-lg font-semibold mb-2">Cart Summary</h3>
+      <ul class="text-sm text-gray-700 space-y-2">
+        <li class="flex justify-between">
+          <span>Ghost 15 (Men's - Size 11)</span>
+          <span>$140.00</span>
+        </li>
+        <li class="flex justify-between">
+          <span>Beast GTS 23 (Men's - Size 11)</span>
+          <span>$160.00</span>
+        </li>
+        <li class="flex justify-between font-semibold pt-2 border-t">
+          <span>Total</span>
+          <span>$300.00</span>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Place Order Button -->
+    <div class="pt-6">
+      <button type="submit" class="w-full bg-black text-white py-3 rounded font-semibold hover:bg-gray-800">
+        Place Order
+      </button>
+    </div>
+  </div>
+</div>
+
 
     </div>
 
@@ -143,14 +304,14 @@
       </div>
 
       <!-- Help Section -->
-      <div class="text-sm text-gray-700">
+      <!-- <div class="text-sm text-gray-700">
         <p><strong>Need help?</strong></p>
         <p><a href="#" class="text-blue-600 underline">Visit our Help Center</a></p>
         <p class="mt-2">Call us:<br />855-427-6657<br />Mon–Fri 6am–5pm PST</p>
       </div>
     </div>
   </div>
-</div>
+</div> -->
 
       </main>
       
@@ -168,140 +329,5 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
 <script src="tailwind.config.js"></script>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        const subtotalElement = document.getElementById('subtotal');
-        const itemCountElement = document.getElementById('item-count');
-        
-    
-        function loadCartState() {
-            const saved = localStorage.getItem('cartQuantities');
-            return saved ? JSON.parse(saved) : {};
-        }
-    
-        function saveCartState(state) {
-            localStorage.setItem('cartQuantities', JSON.stringify(state));
-        }
-    
-        function updateCartSummary() {
-            const cartItems = document.querySelectorAll('.cart-item');
-            let subtotal = 0;
-            let totalCount = 0;
-    
-            cartItems.forEach(item => {
-                const price = parseFloat(item.getAttribute('data-price'));
-                const quantity = parseInt(item.querySelector('.quantity').textContent);
-                subtotal += price * quantity;
-                totalCount += quantity;
-            });
-    
-            subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
-            itemCountElement.textContent = totalCount;
-        }
-    
-        const cartQuantities = loadCartState();
-    
-        function attachEvents(item) {
-    const itemId = item.querySelector('h2').textContent.trim();
-    const quantityElement = item.querySelector('.quantity');
-    const decreaseBtn = item.querySelector('.decrease-qty');
-    const increaseBtn = item.querySelector('.increase-qty');
-    const deleteBtn = item.querySelector('.delete-item');
-
-    function updateDecreaseButton(quantity) {
-    const decreaseBtn = item.querySelector('.decrease-qty');
-    if (quantity <= 1) {
-        decreaseBtn.innerHTML = `
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                <path stroke-linecap="round" stroke-linejoin="round"
-                      d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3m4 0H7"/>
-            </svg>
-        `;
-        decreaseBtn.className = 'decrease-qty w-7 h-7 flex items-center justify-center'; // Keep size/spacing
-    } else {
-        decreaseBtn.textContent = '-';
-        decreaseBtn.className = 'decrease-qty w-7 h-7 text-xl font-bold flex items-center justify-center';
-    }
-}
-
-    increaseBtn.addEventListener('click', function () {
-        let quantity = parseInt(quantityElement.textContent);
-        quantity++;
-        quantityElement.textContent = quantity;
-        cartQuantities[itemId] = quantity;
-        updateDecreaseButton(quantity);
-        saveCartState(cartQuantities);
-        updateCartSummary();
-    });
-
-    decreaseBtn.addEventListener('click', function () {
-        let quantity = parseInt(quantityElement.textContent);
-        if (quantity > 1) {
-            quantity--;
-            quantityElement.textContent = quantity;
-            cartQuantities[itemId] = quantity;
-            updateDecreaseButton(quantity);
-            saveCartState(cartQuantities);
-            updateCartSummary();
-        } else {
-            // If quantity is 1 and trash icon is showing, remove the item
-            item.querySelector('.delete-item').click();
-        }
-    });
-
-    deleteBtn.addEventListener('click', function () {
-        if (confirm(`Are you sure you want to delete "${itemId}" from your cart?`)) {
-            const deletedItemHTML = item.outerHTML;
-            item.remove();
-            delete cartQuantities[itemId];
-            saveCartState(cartQuantities);
-            updateCartSummary();
-
-            const undoContainer = document.createElement('div');
-            undoContainer.className = 'fixed bottom-4 right-4 bg-white border p-3 rounded shadow';
-            undoContainer.innerHTML = `
-                <span>Item removed.</span>
-                <button class="ml-2 underline text-blue-600 undo-btn">Undo</button>
-            `;
-            document.body.appendChild(undoContainer);
-
-            undoContainer.querySelector('.undo-btn').addEventListener('click', function () {
-                const tempContainer = document.createElement('div');
-                tempContainer.innerHTML = deletedItemHTML.trim();
-                const restoredItem = tempContainer.firstElementChild;
-                document.querySelector('#cart-items-container').appendChild(restoredItem);
-                cartQuantities[itemId] = 1;
-                saveCartState(cartQuantities);
-                updateCartSummary();
-                attachEvents(restoredItem);
-                undoContainer.remove();
-            });
-
-            setTimeout(() => undoContainer.remove(), 5000);
-        }
-    });
-
-    updateDecreaseButton(parseInt(quantityElement.textContent));
-}
-
-    
-        // Initialize all cart items
-        document.querySelectorAll('.cart-item').forEach(item => {
-            const itemId = item.querySelector('h2').textContent.trim();
-            const quantityElement = item.querySelector('.quantity');
-    
-            if (cartQuantities[itemId]) {
-                quantityElement.textContent = cartQuantities[itemId];
-            } else {
-                cartQuantities[itemId] = parseInt(quantityElement.textContent);
-            }
-    
-            attachEvents(item);
-        });
-    
-        saveCartState(cartQuantities);
-        updateCartSummary();
-    });
-    </script>
       
 </html>
