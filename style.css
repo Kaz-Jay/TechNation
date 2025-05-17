@@ -43,7 +43,7 @@ html {
 
   .carousel-item img {
     width: 100%; /* Set the width of the image */
-    height: 400px; /* Set the height of the image */
+    height: 550px; /* Set the height of the image */
     /* object-fit: cover; /* This ensures the image covers the entire area without distorting */
 } 
 
