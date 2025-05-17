@@ -128,7 +128,7 @@ html {
 
 @media (max-width: 640px) {
   .post-card {
-    max-width: 224px; /* smaller width on small/mobile */
+    max-width: 300px; /* smaller width on small/mobile */
   }
 }
 
