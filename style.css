@@ -122,8 +122,7 @@ html {
   }
 
 .post-card {
-  max-width: 320px; /* default width */
-  width: 100%;
+  max-width: 300px; /* default width */
 }
 
 @media (max-width: 640px) {
@@ -132,8 +131,15 @@ html {
   }
 }
 
+@media (max-width: 1366px) {
+  .post-card {
+    max-width: 250px; /* larger width on large screens */
+    max-height: 100px;
+  }
+}
+
 @media (min-width: 1367px) {
   .post-card {
-    max-width: 330px; /* larger width on large screens */
+    max-width: 300px; /* larger width on large screens */
   }
 }

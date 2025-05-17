@@ -255,7 +255,7 @@
   
   <div class="grid grid-cols-2 lg:grid-cols-4 gap-6">
     <!-- Smart Watches Card -->
-    <a href="/smartwatches" class="post-card relative overflow-hidden rounded-xl shadow-lg group block w-full max-w-sm mx-auto h-40 sm:h-48 md:h-56 lg:h-60 transform-gpu transition-transform duration-500 hover:scale-105">
+    <a href="/smartwatches" class="relative overflow-hidden rounded-xl shadow-lg group block w-full max-w-sm mx-auto h-40 sm:h-48 md:h-56 lg:h-60 transform-gpu transition-transform duration-500 hover:scale-105">
       <img src="https://danytech.com.pk/cdn/shop/files/smart-watch-banner.jpg?v=1741343337" alt="Smart Watches"
            class="absolute inset-0 w-full h-full" />
       <div class="absolute inset-0 bg-black bg-opacity-50 flex items-end justify-center p-4">
@@ -450,7 +450,8 @@ function getScrollAmount() {
 
   if (screenWidth < 640) cardsToScroll = 1;
   else if (screenWidth < 1024) cardsToScroll = 2;
-  else cardsToScroll = 4;
+  else if (screenWidth > 1367) cardsToScroll = 4;
+  else cardsToScroll = 3;
 
   return (cardWidth + gap) * cardsToScroll;
 }
