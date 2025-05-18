@@ -121,25 +121,3 @@ html {
     transition: transform 0.3s ease;
   }
 
-.post-card {
-  max-width: 300px; /* default width */
-}
-
-@media (max-width: 640px) {
-  .post-card {
-    max-width: 300px; /* smaller width on small/mobile */
-  }
-}
-
-@media (max-width: 1366px) {
-  .post-card {
-    max-width: 250px; /* larger width on large screens */
-    max-height: 100px;
-  }
-}
-
-@media (min-width: 1367px) {
-  .post-card {
-    max-width: 300px; /* larger width on large screens */
-  }
-}
