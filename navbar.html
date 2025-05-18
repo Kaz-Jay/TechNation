@@ -137,12 +137,12 @@
       <div class="px-0 py-2 flex flex-col">
         <nav class="px-2 space-y-2">
 
-          <a href="#" class="flex items-center px-2 block lg:hidden" style="font-size: 25px;">
-            <i class="fa-regular fa-user text-gray-400 mr-2" style="font-size: 20px;"></i>
+          <a href="#" class="flex items-center px-2 block lg:hidden sidenavbar-options">
+            <i class="fa-regular fa-user text-gray-400 mr-2 sidenavbar-icons"></i>
             <span class="px-1">Sign in</span>
           </a>
 
-          <a href="#" class="flex items-center p-2" style="font-size: 25px;">
+          <a href="#" class="flex items-center p-2 sidenavbar-options">
             <svg class="w-5 h-5 mr-3 text-gray-400" fill="none" stroke="currentColor" stroke-width="2"
               viewBox="0 0 24 24"><path d="M3 12l9-9 9 9v8a2 2 0 01-2 2h-4a2 2 0 01-2-2v-4H9v4a2 2 0 01-2 2H5a2 2 0 01-2-2z" /></svg>
             <span>Home</span>
@@ -155,22 +155,22 @@
                 <svg class="w-5 h-5 mr-3 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                   <path d="M20 13V6a2 2 0 00-2-2h-3V2h-6v2H6a2 2 0 00-2 2v7M5 20h14a1 1 0 001-1v-5H4v5a1 1 0 001 1z" />
                 </svg>
-                <a href="prolist.html"><span style="font-size: 25px;">Products</span></a>
+                <a href="prolist.html"><span class="sidenavbar-options">Products</span></a>
               </div>
               <svg :class="{ 'rotate-180': open }" class="w-4 h-4 text-gray-200 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path d="M19 9l-7 7-7-7" />
               </svg>
             </button>
 
-            <div x-show="open" x-transition class="flex flex-col mt-2 ml-10 space-y-2" style="font-size: 21px;">
-              <a href="#" class="py-2 hover:text-blue-400 transition">Keyboards</a>
+            <div x-show="open" x-transition class="flex flex-col mt-2 ml-10 space-y-2 sidenavbar-suboptions">
+              <a href="#" class="hover:text-blue-400 transition">Keyboards</a>
               <a href="#" class="py-2 hover:text-blue-400 transition">Mice</a>
               <a href="#" class="py-2 hover:text-blue-400 transition">Headsets</a>
               <a href="#" class="py-2 hover:text-blue-400 transition">WebCams</a>
             </div>
           </div>
 
-          <a href="#" class="flex items-center px-1 py-1" style="font-size: 25px;">
+          <a href="#" class="flex items-center px-1 py-1 sidenavbar-options">
             <!-- Hollow Bolt -->
             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-3 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -178,7 +178,7 @@
             <span class="px-0">Gaming</span>
           </a>
 
-          <a href="#" class="flex items-center px-2 py-1" style="font-size: 25px;">
+          <a href="#" class="flex items-center px-2 py-1 sidenavbar-options">
             <svg class="w-5 h-5 mr-3 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path d="M18.364 5.636a9 9 0 11-12.728 0M9 9h.01M15 15h.01M9 15h.01M15 9h.01" />
             </svg>

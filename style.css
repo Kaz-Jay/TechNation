@@ -121,3 +121,32 @@ html {
     transition: transform 0.3s ease;
   }
 
+  .sidenavbar-options {
+    font-size: 20px;
+  }
+
+  .sidenavbar-suboptions {
+    font-size: 18px;
+  }
+
+  .sidenavbar-icons {
+    font-size: 15px;
+  }
+
+  @media (min-width: 1368px) {
+    .sidenavbar-options {
+      font-size: 25px;
+    }
+  }
+
+  @media (min-width: 1368px) {
+    .sidenavbar-suboptions {
+      font-size: 21px;
+    }
+  }
+
+  @media (min-width: 1368px) {
+    .sidenavbar-icons {
+      font-size: 20px;
+    }
+  }
