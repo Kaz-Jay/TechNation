@@ -169,3 +169,12 @@ html {
   background-color: #1a3b4f;
   color: #fff;
 }
+
+.viewDetails-btn {
+  background-color: #1a3b4f;
+  transition: background-color 0.3s ease;
+}
+
+.viewDetails-btn:hover {
+  background-color: #152e3b;
+}
