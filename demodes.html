@@ -106,13 +106,17 @@
                         <p class="text-xl font-serif font-bold">$59<sup class="text-sm align-top">00</sup></p>
                         <p class="text-xs text-gray-600 mt-1">$375.32 Shipping & Import Charges</p>
                         <p class="text-green-600 font-semibold text-sm mt-2">In Stock</p>
-                        <label class="block mt-3 mb-1 text-xs font-medium">Quantity:</label>
-                        <select class="w-full border rounded px-2 py-1 text-sm">
-                          <option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option><option>7</option><option>8</option><option>9</option>
-                        </select>
-                
-                        <button class="mt-3 w-full bg-yellow-400 hover:bg-yellow-500 text-black py-2 rounded-full font-semibold text-sm">Add to Cart</button>
-                        <button class="mt-2 w-full text-white py-2 rounded-full font-semibold text-sm" style="background-color: #f7991c; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#e28000'" onmouseout="this.style.backgroundColor='#f7991c'">Buy Now</button>
+                        <label for="quantity" class="block mt-3 mb-1 text-xs font-medium">Quantity:</label>
+                        <input
+                        name="quantity"
+                        type="text"
+                        class="w-full border rounded px-2 py-1 text-sm"
+                        placeholder="Enter Quantity"
+                        value="1"
+                        />
+                        
+                        <button type="submit" class="mt-3 w-full text-white py-2 rounded-full font-semibold text-sm" style="background-color: #1a3b4f; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#152e3b'" onmouseout="this.style.backgroundColor='#1a3b4f'">Add to Cart</button>
+                        <!-- <button class="mt-2 w-full text-white py-2 rounded-full font-semibold text-sm" style="background-color: #f7991c; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#e28000'" onmouseout="this.style.backgroundColor='#f7991c'">Buy Now</button> -->
                 
                         <div class="mt-4 text-xs text-gray-600 space-y-1">
                           <p><span class="text-gray-500">Ships from:</span> <span class="font-medium text-gray-800">TechNation.com</span></p>
@@ -172,78 +176,93 @@
                   <!-- Specifications Images -->
 
                 
-                <!-- <section id="fbtSection" class="bg-gray-100 py-10 px-4">
-                  <div class="max-w-7xl mx-auto">
-                
-                    <div class="flex flex-wrap justify-center gap-6">
-                      
-                      <div class="bg-white rounded-lg overflow-hidden shadow-md p-2">
-                        <img
-                          src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/cdb51e99-a3a5-4f8a-ab0c-9405159207e7.__CR0,0,600,600_PT0_SX300_V1___.png"
-                          alt="Airdots 500 Alpha"
-                          class="max-w-full h-auto object-contain rounded"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                  <div class="max-w-7xl mx-auto">
-                
-                    <div class="flex flex-wrap justify-center gap-6">
-                      
-                      <div class="bg-white rounded-lg overflow-hidden shadow-md p-2">
-                        <img
-                          src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/cdb51e99-a3a5-4f8a-ab0c-9405159207e7.__CR0,0,600,600_PT0_SX300_V1___.png"
-                          alt="Airdots 500 Alpha"
-                          class="max-w-full h-auto object-contain rounded"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </section> -->
-
                 <section id="fbtSection" class="bg-gray-100 py-10 px-4">
-  <div class="max-w-7xl mx-auto">
+                  <div class="max-w-7xl mx-auto">
+                
+                    <div class="flex flex-wrap justify-center gap-6">
+                      
+                      <div></div>
+                        
 
-    <!-- Small Images Row (Original size, 3 per row) -->
-    <div class="flex flex-wrap justify-center gap-6 mb-10">
-      <!-- Small Image 1 -->
-      <div class="bg-white rounded-lg overflow-hidden shadow-md p-2">
-        <img
-          src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/cdb51e99-a3a5-4f8a-ab0c-9405159207e7.__CR0,0,600,600_PT0_SX300_V1___.png"
-          alt="Airdots 500 Alpha"
-          class="h-28 w-auto object-contain mx-auto"
-        />
-      </div>
-      <!-- Small Image 2 -->
-      <div class="bg-white rounded-lg overflow-hidden shadow-md p-2">
-        <img
-          src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/cdb51e99-a3a5-4f8a-ab0c-9405159207e7.__CR0,0,600,600_PT0_SX300_V1___.png"
-          alt="Airdots 500 Alpha"
-          class="h-28 w-auto object-contain mx-auto"
-        />
-      </div>
-      <!-- Small Image 3 -->
-      <div class="bg-white rounded-lg overflow-hidden shadow-md p-2">
-        <img
-          src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/cdb51e99-a3a5-4f8a-ab0c-9405159207e7.__CR0,0,600,600_PT0_SX300_V1___.png"
-          alt="Airdots 500 Alpha"
-          class="h-28 w-auto object-contain mx-auto"
-        />
-      </div>
-    </div>
+                      <img
+                          src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/cdb51e99-a3a5-4f8a-ab0c-9405159207e7.__CR0,0,600,600_PT0_SX300_V1___.png"
+                          alt="Airdots 500 Alpha"
+                          class="max-w-full h-auto object-contain"
+                        />
 
-    <!-- Big Image (Full row) -->
-    <div class="flex justify-center">
-      <div class="bg-white rounded-lg overflow-hidden shadow-md p-4 w-full max-w-4xl">
-        <img
-          src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/cdb51e99-a3a5-4f8a-ab0c-9405159207e7.__CR0,0,600,600_PT0_SX300_V1___.png"
-          alt="Airdots 500 Alpha Large"
-          class="w-full h-auto object-contain rounded"
-        />
-      </div>
-    </div>
+                        <img
+                          src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/1c7bd80a-e5d1-4e6d-adf7-d25e31b4f663.__CR0,0,600,600_PT0_SX300_V1___.jpg"
+                          alt="Airdots 500 Alpha"
+                          class="max-w-full h-auto object-contain"
+                        />
 
-  </div>
+                        <img
+                          src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/0430f654-53cb-493e-a876-ca379410fa22.__CR0,0,600,600_PT0_SX300_V1___.jpg"
+                          alt="Airdots 500 Alpha"
+                          class="max-w-full h-auto object-contain"
+                        />
+
+                      <div class="p-2">
+                        <img
+                          src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/cdb51e99-a3a5-4f8a-ab0c-9405159207e7.__CR0,0,600,600_PT0_SX300_V1___.png"
+                          alt="Airdots 500 Alpha"
+                          class="max-w-full h-auto object-contain"
+                        />
+                      </div>
+
+                      <div class="p-2">
+                        <img
+                          src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/cdb51e99-a3a5-4f8a-ab0c-9405159207e7.__CR0,0,600,600_PT0_SX300_V1___.png"
+                          alt="Airdots 500 Alpha"
+                          class="max-w-full h-auto object-contain"
+                        />
+                      </div>
+
+                      <div>
+                        
+
+                        <img
+                          src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/01a576d9-f2d9-453d-b828-f7827a4ecb72.__CR0,0,1464,600_PT0_SX1464_V1___.jpg"
+                          alt="Airdots 500 Alpha"
+                          class="max-w-full h-auto object-contain"
+                        />
+                        <img
+                          src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/39c3aaa7-b7e2-47dd-9508-b058f7371af2.__CR0,0,1464,600_PT0_SX1464_V1___.png"
+                          alt="Airdots 500 Alpha"
+                          class="max-w-full h-auto object-contain"
+                        />
+                        <img
+                          src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/9e04d3df-74b8-4373-a208-be100e6bb8ff.__CR0,0,1464,600_PT0_SX1464_V1___.png"
+                          alt="Airdots 500 Alpha"
+                          class="max-w-full h-auto object-contain"
+                        />
+                      </div>
+
+                      <div class="">
+                        <img
+                          src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/39c3aaa7-b7e2-47dd-9508-b058f7371af2.__CR0,0,1464,600_PT0_SX1464_V1___.png"
+                          alt="Airdots 500 Alpha"
+                          class="max-w-full h-auto object-contain"
+                        />
+                      </div>
+
+                      <div class="">
+                        <img
+                          src="https://m.media-amazon.com/images/S/aplus-media-library-service-media/9e04d3df-74b8-4373-a208-be100e6bb8ff.__CR0,0,1464,600_PT0_SX1464_V1___.png"
+                          alt="Airdots 500 Alpha"
+                          class="max-w-full h-auto object-contain"
+                        />
+                      </div>
+
+
+
+                    </div>
+
+                  </div>
+                  
+                </section>
+
+                
 </section>
 
                 </main>
