@@ -18,97 +18,148 @@
 
     <title>Document</title>
 </head>
-<body class="d-flex flex-column min-vh-100">
-  <div id="root">
+<body class="flex flex-col min-h-screen">
+  <div id="root" class="flex flex-col flex-grow">
   <!-- Inject Navbar -->
 <div data-include="navbar.html"></div>
 
-    <div class="container py-4">
-      <div class="row justify-content-center g-4">
-        <h2 class="text-3xl font-bold text-center mb-4 border-b pb-2" style="font-family: Playfair Display, sans-serif;">Products</h2>
-      </div>
-    </div> 
+<main class="flex-grow">
+
+    <section class="px-4 py-4 2xl:px-6 2xl:py-4">
+  <div class="max-w-4xl 2xl:max-w-7xl mx-auto flex items-center justify-between flex-wrap gap-4">
+    <!-- Filter Buttons -->
+    <div class="flex flex-wrap gap-3">
+      <!-- All Filters Button -->
+      <button class="flex items-center gap-2 text-white px-4 py-2 rounded-full text-sm font-semibold filter-btns-p">
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M3 4a1 1 0 011-1h16a1 1 0 011 1v2a1 1 0 01-.293.707L15 13.414V19a1 1 0 01-1.447.894l-4-2A1 1 0 019 17v-3.586L3.293 6.707A1 1 0 013 6V4z"/>
+        </svg>
+        All Filters
+      </button>
+
+      <!-- Filter Dropdown Buttons -->
+      <button class="border border-gray-300 px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2 filter-btns">
+        Sort <span>▾</span>
+      </button>
+      <button class="border border-gray-300 px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2 filter-btns">
+        Connectivity <span>▾</span>
+      </button>
+      <button class="border border-gray-300 px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2 filter-btns">
+        Series <span>▾</span>
+      </button>
+      <button class="border border-gray-300 px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2 filter-btns">
+        Features <span>▾</span>
+      </button>
+      <button class="border border-gray-300 px-4 py-2 rounded-full text-sm font-medium flex items-center gap-2 filter-btns">
+        Platform <span>▾</span>
+      </button>
+    </div>
+
+     <!-- Product Count -->
+    <div class="text-sm text-gray-600 px-1">
+      Showing: <span class="font-medium text-gray-800">20</span> of <span class="font-medium text-gray-800">41</span> products
+    </div>
+  </div>
+  
+  </div>
+</section>
+
+
+
 
     
     
-    <!-- Card 1 -->
+    
+    <section class="px-4 md:px-0 mt-4">
+  <!-- Card 1 -->
+  <div class="max-w-4xl 2xl:max-w-7xl mx-auto mb-3 bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-150 overflow-hidden border border-gray-200 flex flex-col md:flex-row">
 
-    <div class="max-w-6xl 2xl:max-w-7xl mx-auto px-3">
-      <!-- Product Card -->
-      <div class="bg-white shadow-bottom-left rounded-lg p-4 flex flex-col sm:flex-row items-stretch gap-4 sm:gap-6 mb-6 text-center" style=" border-right-width: 2px; border-top-width: 2px; border-color:#80b2cf;">
-        <!-- Product Image Column with full gray background -->
-    <div class="bg-white flex items-center justify-center w-full sm:w-72 h-60 sm:h-auto rounded-lg">
-      <img src="Amazons_headphones.png" alt="Headset" class="object-contain w-52 sm:w-52 h-52 sm:h-52" />
+    <!-- Image Section -->
+    <div class="w-full md:w-1/3 2xl:w-1/4 bg-gray-100 flex items-center justify-center p-3">
+      <img 
+        src="https://m.media-amazon.com/images/I/81GrCeuCzxL._AC_SL1500_.jpg" 
+        alt="Gaming Headset" 
+        class="w-full h-44 md:h-56 object-contain"
+      />
     </div>
-  
-        <!-- Product Info -->
-        <div class="flex-1 space-y-2 sm:text-left">
-          <h2 class="text-xl text-gray-800" style="font-weight: lighter; font-family: 'Lato', sans-serif;">
-            SteelSeries Arctis Nova Pro Premium multi-system gaming headset with Hi-Res Audio, 360° Spatial Sound, Active Noise Cancellation, and a comfortable design. Compatible with Xbox Series X|S, Xbox One & PC.
-          </h2>
-          <!-- <p class="text-gray-600 text-sm sm:text-base">
-            
-          </p> -->
-          <!-- <p class="text-yellow-500 font-semibold">★ 4.3 (1,325 reviews)</p>
-          <p class="text-green-600 text-sm">Ships to Pakistan</p> -->
-          <div class="text-lg font-bold text-gray-900" style="margin-bottom: 5%;">$189.99 <span class="line-through text-sm text-gray-500 ml-2">$249.99</span></div>
-          <a href="demodes.html"><button class="mt-2 text-white px-4 py-2 rounded" style="background-color: #1a3b4f; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#152e3b'" onmouseout="this.style.backgroundColor='#1a3b4f'">Add to Cart</button></a>
+
+    <!-- Content Section -->
+    <div class="w-full md:w-2/3 2xl:w-3/4 p-5 flex flex-col justify-between space-y-3">
+      <div>
+        <h2 class="text-xl font-semibold text-gray-900 mb-1">
+          SteelSeries Arctis Nova Pro
+        </h2>
+        <p class="text-gray-700 text-sm mb-3">
+          Premium multi-system gaming headset with Hi-Res Audio, 360° Spatial Sound, Active Noise Cancellation, and a comfortable design. Compatible with Xbox Series X|S, Xbox One & PC.
+        </p>
+        <div class="flex items-center space-x-4">
+          <span class="text-lg font-bold text-black">$189.99</span>
+          <span class="text-gray-500 line-through text-sm">$249.99</span>
         </div>
+      </div>
+
+      <div>
+        <a 
+          href="demodes.html" 
+          class="mt-2 text-white px-4 py-2 rounded" 
+          style="background-color: #1a3b4f; transition: background-color 0.3s;" 
+          onmouseover="this.style.backgroundColor='#152e3b'" 
+          onmouseout="this.style.backgroundColor='#1a3b4f'">
+          View Details
+        </a>
       </div>
     </div>
 
+  </div>
 
-    <!-- Card 2 -->
 
-    <div class="max-w-6xl 2xl:max-w-7xl mx-auto px-3">
-      <!-- Product Card -->
-      <div class="bg-white shadow-bottom-left rounded-lg p-4 flex flex-col sm:flex-row items-stretch gap-4 sm:gap-6 mb-6 text-center" style=" border-right-width: 2px; border-top-width: 2px; border-color:#80b2cf;">
-        <!-- Product Image Column with full gray background -->
-    <div class="bg-white flex items-center justify-center w-full sm:w-72 h-60 sm:h-auto rounded-lg">
-      <img src="Amazons_headphones.png" alt="Headset" class="object-contain w-52 sm:w-52 h-52 sm:h-52" />
+  <!-- Card 2 -->
+
+    <div class="max-w-4xl 2xl:max-w-7xl mx-auto mb-3 bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-150 overflow-hidden border border-gray-200 flex flex-col md:flex-row">
+
+    <!-- Image Section -->
+    <div class="w-full md:w-1/3 2xl:w-1/4 bg-gray-100 flex items-center justify-center p-3">
+      <img 
+        src="https://m.media-amazon.com/images/I/81GrCeuCzxL._AC_SL1500_.jpg" 
+        alt="Gaming Headset" 
+        class="w-full h-44 md:h-56 object-contain"
+      />
     </div>
-  
-        <!-- Product Info -->
-        <div class="flex-1 space-y-2 sm:text-left">
-          <h2 class="text-xl text-gray-800" style="font-weight: lighter; font-family: 'Lato', sans-serif;">
-            SteelSeries Arctis Nova Pro Premium multi-system gaming headset with Hi-Res Audio, 360° Spatial Sound, Active Noise Cancellation, and a comfortable design. Compatible with Xbox Series X|S, Xbox One & PC.
-          </h2>
-          <!-- <p class="text-gray-600 text-sm sm:text-base">
-            
-          </p> -->
-          <!-- <p class="text-yellow-500 font-semibold">★ 4.3 (1,325 reviews)</p>
-          <p class="text-green-600 text-sm">Ships to Pakistan</p> -->
-          <div class="text-lg font-bold text-gray-900" style="margin-bottom: 5%;">$189.99 <span class="line-through text-sm text-gray-500 ml-2">$249.99</span></div>
-          <a href="demodes.html"><button class="mt-2 text-white px-4 py-2 rounded" style="background-color: #1a3b4f; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#152e3b'" onmouseout="this.style.backgroundColor='#1a3b4f'">Add to Cart</button></a>
+
+    <!-- Content Section -->
+    <div class="w-full md:w-2/3 2xl:w-3/4 p-5 flex flex-col justify-between space-y-3">
+      <div>
+        <h2 class="text-xl font-semibold text-gray-900 mb-1">
+          SteelSeries Arctis Nova Pro
+        </h2>
+        <p class="text-gray-700 text-sm mb-3">
+          Premium multi-system gaming headset with Hi-Res Audio, 360° Spatial Sound, Active Noise Cancellation, and a comfortable design. Compatible with Xbox Series X|S, Xbox One & PC.
+        </p>
+        <div class="flex items-center space-x-4">
+          <span class="text-lg font-bold text-black">$189.99</span>
+          <span class="text-gray-500 line-through text-sm">$249.99</span>
         </div>
+      </div>
+
+      <div>
+        <a 
+         href="demodes.html" 
+         class="mt-2 text-white px-4 py-2 rounded" 
+         style="background-color: #1a3b4f; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#152e3b'" onmouseout="this.style.backgroundColor='#1a3b4f'">
+         View Details
+        </a>
       </div>
     </div>
 
-    <!-- Card 3 -->
+  </div>
 
-    <div class="max-w-6xl 2xl:max-w-7xl mx-auto px-3">
-      <!-- Product Card -->
-      <div class="bg-white shadow-bottom-left rounded-lg p-4 flex flex-col sm:flex-row items-stretch gap-4 sm:gap-6 mb-6 text-center" style=" border-right-width: 2px; border-top-width: 2px; border-color:#80b2cf;">
-        <!-- Product Image Column with full gray background -->
-    <div class="bg-white flex items-center justify-center w-full sm:w-72 h-60 sm:h-auto rounded-lg">
-      <img src="Amazons_headphones.png" alt="Headset" class="object-contain w-52 sm:w-52 h-52 sm:h-52" />
-    </div>
+
+</section>
+
   
-        <!-- Product Info -->
-        <div class="flex-1 space-y-2 sm:text-left">
-          <h2 class="text-xl text-gray-800" style="font-weight: lighter; font-family: 'Lato', sans-serif;">
-            SteelSeries Arctis Nova Pro Premium multi-system gaming headset with Hi-Res Audio, 360° Spatial Sound, Active Noise Cancellation, and a comfortable design. Compatible with Xbox Series X|S, Xbox One & PC.
-          </h2>
-          <!-- <p class="text-gray-600 text-sm sm:text-base">
-            
-          </p> -->
-          <!-- <p class="text-yellow-500 font-semibold">★ 4.3 (1,325 reviews)</p>
-          <p class="text-green-600 text-sm">Ships to Pakistan</p> -->
-          <div class="text-lg font-bold text-gray-900" style="margin-bottom: 5%;">$189.99 <span class="line-through text-sm text-gray-500 ml-2">$249.99</span></div>
-          <a href="demodes.html"><button class="mt-2 text-white px-4 py-2 rounded" style="background-color: #1a3b4f; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#152e3b'" onmouseout="this.style.backgroundColor='#1a3b4f'">Add to Cart</button></a>
-        </div>
-      </div>
-    </div>
+
+    </main>
 
       <!-- Inject Footer -->
 <div data-include="footer.html"></div>

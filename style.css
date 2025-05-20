@@ -150,3 +150,22 @@ html {
       font-size: 20px;
     }
   }
+
+.filter-btns-p {
+  background-color: #000;
+  transition: background-color 0.3s ease;
+}
+
+.filter-btns-p:hover {
+  background-color: #152e3b;
+}
+
+  .filter-btns {
+  background-color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.filter-btns:hover {
+  background-color: #1a3b4f;
+  color: #fff;
+}
