@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en"
+xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Modern Product Card</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .btn-dark-blue {
+      background-color: #175272;
+      transition: background-color 0.2s ease, transform 0.2s ease;
+    }
+    .btn-dark-blue:hover {
+      background-color: #1d648c;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body class="bg-gray-100 p-6 font-sans">
+
+  <div class="max-w-4xl mx-auto bg-white rounded-2xl shadow-md hover:shadow-xl transition-shadow duration-150 overflow-hidden border border-gray-200 flex flex-col md:flex-row">
+
+    <!-- Image Section -->
+    <div class="w-full md:w-1/3 bg-gray-50 flex items-center justify-center p-4">
+      <img 
+        src="https://m.media-amazon.com/images/I/81GrCeuCzxL._AC_SL1500_.jpg" 
+        alt="Gaming Headset" 
+        class="w-full h-44 md:h-56 object-contain"
+      />
+    </div>
+
+    <!-- Content Section -->
+    <div class="w-full md:w-2/3 p-5 flex flex-col justify-between space-y-3">
+      <div>
+        <h2 class="text-xl font-semibold text-gray-900 mb-1">
+          SteelSeries Arctis Nova Pro
+        </h2>
+        <p class="text-gray-700 text-sm mb-3">
+          Premium multi-system gaming headset with Hi-Res Audio, 360° Spatial Sound, Active Noise Cancellation, and a comfortable design. Compatible with Xbox Series X|S, Xbox One & PC.
+        </p>
+        <div class="flex items-center space-x-4">
+          <span class="text-lg font-bold text-black">$189.99</span>
+          <span class="text-gray-500 line-through text-sm">$249.99</span>
+        </div>
+      </div>
+
+      <div>
+        <a 
+          href="#" 
+          class="inline-block px-5 py-2 rounded-lg text-white text-sm font-medium btn-dark-blue shadow-sm hover:shadow-md"
+        >
+          View Details
+        </a>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>
