@@ -14,14 +14,20 @@
 
     <title>Document</title>
 </head>
-<nav id="mainNavbar" class="navbar navbar-dark fixed-top py-2.5" style="background-color: #000611;">
+<nav id="mainNavbar" class="navbar navbar-lg bg-navy-gradient font-lato fixed-top py-2.5">
     <div class="container-fluid d-flex justify-content-between align-items-center">
   
       
       
       <!-- Left Side: Menu Button -->
-      <button class="navbar-toggler border-0 md:border d-md-block" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasMenu" aria-controls="offcanvasMenu">
-        <span class="navbar-toggler-icon"></span>
+      <button 
+        class="border-0 md:border d-md-block px-2 py-1 bg-transparent" 
+        type="button" 
+        data-bs-toggle="offcanvas" 
+        data-bs-target="#offcanvasMenu" 
+        aria-controls="offcanvasMenu"
+      >
+        <span class="navbar-toggler-icon" style="font-size: 1.2rem; filter: brightness(0) invert(1);"></span>
       </button>
        
 
@@ -47,48 +53,14 @@
 <span class="fw-semibold d-none d-md-inline hover:text-blue-200" style="font-size: 16px;">Gaming</span>
 </a>
       <!-- Profile Dropdown -->
-      <div x-data="{ open: false }" class="relative hidden lg:block">
+      <div class="relative hidden lg:block">
         <!-- Trigger Icon -->
-        <a href="#" @click.prevent="open = !open" class="navbar-brand mx-right d-flex align-items-center gap-2 text-white hover:text-gray-300 me-3">
+        <a href="#" class="navbar-brand mx-right d-flex align-items-center gap-2 text-white hover:text-gray-300 me-3">
           <i class="fa-solid fa-user text-xl"></i>
-          <span class="fw-semibold d-none d-md-inline hover:text-blue-200" style="font-size: 16px;">Account</span>
+          <span class="fw-semibold d-none d-md-inline hover:text-blue-200" style="font-size: 16px;">Profile</span>
         </a>
+      </div>
 
-<!-- Dropdown Menu -->
-<div x-show="open" @click.away="open = false" x-transition
-   class="absolute right-0 mt-2 w-64 bg-white text-black rounded-lg shadow-lg border border-neutral-700 z-50 overflow-hidden">
-
-<!-- Profile Section -->
-<div class="p-4 border-b border-neutral-700 flex items-center space-x-4">
-  <img src="nature-3082832_1280.jpg"
-       alt="Profile" class="w-12 h-12 rounded-full object-cover">
-  <div>
-    <div class="text-lg font-semibold">ammar</div>
-    <div class="text-yellow-400 text-sm">👑 Admin</div>
-  </div>
-</div>
-
-<!-- Menu Items -->
-<ul class="text-sm divide-y divide-neutral-700">
-  <li><a href="#" class="flex items-center px-4 py-3 hover:bg-neutral-800"><i class="fa-solid fa-right-left mr-3 w-5"></i> Switch Profile</a></li>
-  <li><a href="#" class="flex items-center px-4 py-3 hover:bg-gray-300"><i class="fa-solid fa-gear mr-3 w-5"></i> Settings</a></li>
-  <li><a href="#" class="flex items-center px-4 py-3 hover:bg-gray-300"><i class="fa-solid fa-bookmark mr-3 w-5"></i> Bookmarks</a></li>
-  <li><a href="#" class="flex items-center px-4 py-3 hover:bg-gray-300"><i class="fa-solid fa-clock-rotate-left mr-3 w-5"></i> History</a></li>
-  <li><a href="#" class="flex items-center px-4 py-3 hover:bg-gray-300"><i class="fa-solid fa-bell mr-3 w-5"></i> Notifications</a></li>
-  <li>
-    <a href="#" class="flex flex-col px-4 py-3 hover:bg-gray-300">
-      <div class="flex items-center"><i class="fa-solid fa-gift mr-3 w-5"></i> Gift Card</div>
-      <span class="text-xs text-gray-400 ml-8">Have a gift card? Redeem it here.</span>
-    </a>
-  </li>
-</ul>
-
-<!-- Logout -->
-<div class="border-t border-neutral-700">
-  <a href="#" class="flex items-center px-4 py-3 text-red-400 hover:bg-gray-300"><i class="fa-solid fa-right-from-bracket mr-3 w-5"></i> Log Out</a>
-</div>
-</div>
-</div>
 
       
       
@@ -100,23 +72,6 @@
 <span class="fw-semibold d-none d-md-inline hover:text-blue-200" style="font-size: 15px;">Cart</span>
 </button>
 </div>
-
-    <!-- Offcanvas Cart Section -->
-<div class="offcanvas offcanvas-end" style="background-color: #152e3b;" tabindex="-1" id="offcanvasCartRight" aria-labelledby="offcanvasCartRightLabel">
-<div class="offcanvas-header">
-  <h5 class="offcanvas-title text-gray-200" id="offcanvasCartRightLabel">Cart</h5>
-  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-</div>
-<div class="offcanvas-body text-gray-200">
-  <p style="color: white;" id="empty-cart-message" class="text-muted">Your cart is currently empty.</p>
-  <div id="offcanvas-cart-items"></div>
-  <hr>
-  <div id="offcanvas-cart-total" class="fw-bold">Total: $0.00</div>
-  <button class="btn btn-success mt-3" id="checkout-btn">Proceed to Checkout</button>
-  <a href="cart.html"><button class="btn btn-success mt-3" id="checkout-btn">Cart Page</button></a>
-</div>
-</div>
-
 
   
     <!-- Offcanvas Menu (Left Side) -->
@@ -137,12 +92,12 @@
       <div class="px-0 py-2 flex flex-col">
         <nav class="px-2 space-y-2">
 
-          <a href="#" class="flex items-center px-2 block lg:hidden" style="font-size: 25px;">
-            <i class="fa-regular fa-user text-gray-400 mr-2" style="font-size: 20px;"></i>
-            <span class="px-1">Sign in</span>
+          <a href="#" class="flex items-center px-2 block lg:hidden sidenavbar-options">
+            <i class="fa-regular fa-user text-gray-400 sidenavbar-icons" style="font-size: 1.1rem;"></i>
+            <span class="ml-4">Profile</span>
           </a>
 
-          <a href="#" class="flex items-center p-2" style="font-size: 25px;">
+          <a href="#" class="flex items-center p-2 sidenavbar-options">
             <svg class="w-5 h-5 mr-3 text-gray-400" fill="none" stroke="currentColor" stroke-width="2"
               viewBox="0 0 24 24"><path d="M3 12l9-9 9 9v8a2 2 0 01-2 2h-4a2 2 0 01-2-2v-4H9v4a2 2 0 01-2 2H5a2 2 0 01-2-2z" /></svg>
             <span>Home</span>
@@ -155,22 +110,22 @@
                 <svg class="w-5 h-5 mr-3 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                   <path d="M20 13V6a2 2 0 00-2-2h-3V2h-6v2H6a2 2 0 00-2 2v7M5 20h14a1 1 0 001-1v-5H4v5a1 1 0 001 1z" />
                 </svg>
-                <a href="prolist.html"><span style="font-size: 25px;">Products</span></a>
+                <a href="prolist.html"><span class="sidenavbar-options">Products</span></a>
               </div>
               <svg :class="{ 'rotate-180': open }" class="w-4 h-4 text-gray-200 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path d="M19 9l-7 7-7-7" />
               </svg>
             </button>
 
-            <div x-show="open" x-transition class="flex flex-col mt-2 ml-10 space-y-2" style="font-size: 21px;">
-              <a href="#" class="py-2 hover:text-blue-400 transition">Keyboards</a>
+            <div x-show="open" x-transition class="flex flex-col mt-2 ml-10 space-y-2 sidenavbar-suboptions">
+              <a href="#" class="hover:text-blue-400 transition">Keyboards</a>
               <a href="#" class="py-2 hover:text-blue-400 transition">Mice</a>
               <a href="#" class="py-2 hover:text-blue-400 transition">Headsets</a>
               <a href="#" class="py-2 hover:text-blue-400 transition">WebCams</a>
             </div>
           </div>
 
-          <a href="#" class="flex items-center px-1 py-1" style="font-size: 25px;">
+          <a href="#" class="flex items-center px-1 py-1 sidenavbar-options">
             <!-- Hollow Bolt -->
             <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-3 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
@@ -178,7 +133,7 @@
             <span class="px-0">Gaming</span>
           </a>
 
-          <a href="#" class="flex items-center px-2 py-1" style="font-size: 25px;">
+          <a href="#" class="flex items-center px-2 py-1 sidenavbar-options">
             <svg class="w-5 h-5 mr-3 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path d="M18.364 5.636a9 9 0 11-12.728 0M9 9h.01M15 15h.01M9 15h.01M15 9h.01" />
             </svg>
@@ -199,7 +154,7 @@
         </nav>
 
         <div id="searchBar">
-        <div class="shadow py-3 px-4 mt-5 sticky-top z-10" style="margin-top: 40px; background-color: #152e3b">
+        <div class="shadow py-3 px-4 mt-5 sticky-top z-10 bg-navy-gradient" style="margin-top: 40px;">
             <div class="container">
               <form class="d-flex" role="search">
                 <input id="searchInput" class="form-control me-2" type="search" placeholder="Search products..." aria-label="Search">

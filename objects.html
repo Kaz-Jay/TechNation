@@ -368,3 +368,65 @@
         </div>
       </div>
     </div>
+
+
+    <!-- Profile Dropdown -->
+      <div x-data="{ open: false }" class="relative hidden lg:block">
+        <!-- Trigger Icon -->
+        <a href="#" @click.prevent="open = !open" class="navbar-brand mx-right d-flex align-items-center gap-2 text-white hover:text-gray-300 me-3">
+          <i class="fa-solid fa-user text-xl"></i>
+          <span class="fw-semibold d-none d-md-inline hover:text-blue-200" style="font-size: 16px;">Profile</span>
+        </a>
+
+<!-- Dropdown Menu -->
+<div x-show="open" @click.away="open = false" x-transition
+   class="absolute right-0 mt-2 w-64 bg-white text-black rounded-lg shadow-lg border border-neutral-700 z-50 overflow-hidden">
+
+<!-- Profile Section -->
+<div class="p-4 border-b border-neutral-700 flex items-center space-x-4">
+  <img src="nature-3082832_1280.jpg"
+       alt="Profile" class="w-12 h-12 rounded-full object-cover">
+  <div>
+    <div class="text-lg font-semibold">ammar</div>
+    <div class="text-yellow-400 text-sm">👑 Admin</div>
+  </div>
+</div>
+
+<!-- Menu Items -->
+<ul class="text-sm divide-y divide-neutral-700">
+  <li><a href="#" class="flex items-center px-4 py-3 hover:bg-neutral-500"><i class="fa-solid fa-right-left mr-3 w-5"></i> Switch Profile</a></li>
+  <li><a href="#" class="flex items-center px-4 py-3 hover:bg-gray-500"><i class="fa-solid fa-gear mr-3 w-5"></i> Settings</a></li>
+  <li><a href="#" class="flex items-center px-4 py-3 hover:bg-gray-500"><i class="fa-solid fa-bookmark mr-3 w-5"></i> Bookmarks</a></li>
+  <li><a href="#" class="flex items-center px-4 py-3 hover:bg-gray-500"><i class="fa-solid fa-clock-rotate-left mr-3 w-5"></i> History</a></li>
+  <li><a href="#" class="flex items-center px-4 py-3 hover:bg-gray-500"><i class="fa-solid fa-bell mr-3 w-5"></i> Notifications</a></li>
+  <li>
+    <a href="#" class="flex flex-col px-4 py-3 hover:bg-gray-500">
+      <div class="flex items-center"><i class="fa-solid fa-gift mr-3 w-5"></i> Gift Card</div>
+      <span class="text-xs text-gray-400 ml-8">Have a gift card? Redeem it here.</span>
+    </a>
+  </li>
+</ul>
+
+<!-- Logout -->
+<div class="border-t border-neutral-500">
+  <a href="#" class="flex items-center px-4 py-3 text-red-400 hover:bg-gray-300"><i class="fa-solid fa-right-from-bracket mr-3 w-5"></i> Log Out</a>
+</div>
+</div>
+</div>
+
+
+<!-- Offcanvas Cart Section -->
+<!-- <div class="offcanvas offcanvas-end" style="background-color: #152e3b;" tabindex="-1" id="offcanvasCartRight" aria-labelledby="offcanvasCartRightLabel">
+<div class="offcanvas-header">
+  <h5 class="offcanvas-title text-gray-200" id="offcanvasCartRightLabel">Cart</h5>
+  <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+</div>
+<div class="offcanvas-body text-gray-200">
+  <p style="color: white;" id="empty-cart-message" class="text-muted">Your cart is currently empty.</p>
+  <div id="offcanvas-cart-items"></div>
+  <hr>
+  <div id="offcanvas-cart-total" class="fw-bold">Total: $0.00</div>
+  <button class="btn btn-success mt-3" id="checkout-btn">Proceed to Checkout</button>
+  <a href="cart.html"><button class="btn btn-success mt-3" id="checkout-btn">Cart Page</button></a>
+</div>
+</div> -->

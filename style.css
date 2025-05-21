@@ -178,3 +178,32 @@ html {
 .viewDetails-btn:hover {
   background-color: #152e3b;
 }
+
+/* Navbar Background */
+
+:root {
+    --color-navy: #18314F;
+    --color-navy-dark: #0E1C2C;
+    --color-teal-light: #3D89C9;
+
+    --color-charcoal: #333333;
+    --color-charcoal-dark: #222222;
+    --color-charcoal-light: #555555;
+
+    --font-playfair: 'Playfair Display', serif;
+    --font-roboto: 'Roboto', sans-serif;
+    --font-merriweather: 'Merriweather', serif;
+    --font-lato: 'Lato', sans-serif;
+  }
+
+  .bg-navy-gradient {
+    background: linear-gradient(to right, var(--color-navy), var(--color-navy-dark));
+  }
+
+  .bg-charcoal-gradient {
+    background: linear-gradient(to right, var(--color-charcoal), var(--color-charcoal-dark));
+  }
+
+  .font-lato {
+    font-family: var(--font-lato);
+  }

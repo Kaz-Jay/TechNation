@@ -1,0 +1,426 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LUXE - My Profile</title>
+    <meta name="description" content="Manage your LUXE profile, view orders, and update your information." />
+    <meta name="author" content="LUXE" />
+
+    <meta property="og:title" content="LUXE - My Profile" />
+    <meta property="og:description" content="Manage your LUXE profile, view orders, and update your information." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://lovable.dev/opengraph-image.png" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&family=Merriweather:wght@300;400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              navy: {
+                DEFAULT: '#18314F',
+                light: '#405D7D',
+                dark: '#0E1C2C'
+              },
+              charcoal: {
+                DEFAULT: '#333333',
+                light: '#555555',
+                dark: '#222222'
+              },
+              royal: {
+                DEFAULT: '#1E56A0',
+                light: '#3A7BD5',
+                dark: '#0E3B7D'
+              },
+              teal: {
+                DEFAULT: '#20639B',
+                light: '#3D89C9',
+                dark: '#174F7D'
+              }
+            },
+            fontFamily: {
+              'playfair': ['"Playfair Display"', 'serif'],
+              'roboto': ['Roboto', 'sans-serif'],
+              'merriweather': ['Merriweather', 'serif'],
+              'lato': ['Lato', 'sans-serif']
+            }
+          }
+        }
+      }
+    </script>
+    
+    <!-- Custom CSS -->
+    <style>
+      .animate-fade-in {
+        opacity: 0;
+        animation: fadeIn 0.5s ease-out forwards;
+      }
+      
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      
+      .input-field {
+        width: 100%;
+        padding: 12px 16px;
+        border-radius: 8px;
+        background-color: white;
+        border: 1px solid #e2e8f0;
+        transition: all 0.2s ease-in-out;
+        color: #333333;
+      }
+      
+      .input-field:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(30, 86, 160, 0.3);
+        border-color: #1E56A0;
+      }
+      
+      .input-label {
+        display: block;
+        font-size: 14px;
+        font-weight: 500;
+        color: #222222;
+        margin-bottom: 6px;
+      }
+      
+      .btn-primary {
+        background-image: linear-gradient(to right, #18314F, #405D7D);
+        color: white;
+        font-weight: 500;
+        border-radius: 8px;
+        padding: 8px 16px;
+        transition: all 0.3s ease-in-out;
+        transform: translateY(0);
+      }
+      
+      .btn-primary:hover {
+        background-image: linear-gradient(to right, #0E1C2C, #18314F);
+        box-shadow: 0 4px 12px rgba(24, 49, 79, 0.2);
+        transform: translateY(-1px);
+      }
+      
+      .btn-primary:active {
+        transform: translateY(0);
+      }
+      
+      .btn-outline {
+        border: 1px solid #1E56A0;
+        color: #1E56A0;
+        font-weight: 500;
+        border-radius: 8px;
+        padding: 8px 16px;
+        transition: all 0.3s ease-in-out;
+      }
+      
+      .btn-outline:hover {
+        background-color: #1E56A0;
+        color: white;
+      }
+      
+      .nav-link {
+        display: block;
+        padding: 10px 16px;
+        border-radius: 6px;
+        color: #333333;
+        transition: background-color 0.2s ease;
+      }
+      
+      .nav-link:hover {
+        background-color: #f3f4f6;
+      }
+      
+      .nav-link.active {
+        background-image: linear-gradient(to right, #1E56A0, #20639B);
+        color: white;
+        font-weight: 500;
+      }
+    </style>
+  </head>
+
+  <body class="bg-gray-50 font-roboto text-charcoal">
+    <!-- Header with Navigation -->
+    <header class="bg-gradient-to-r from-navy to-navy-dark text-white p-4 md:p-6 shadow-md">
+      <div class="container mx-auto flex justify-between items-center">
+        <a href="index.html" class="font-playfair text-2xl md:text-3xl font-bold">TECHNATION</a>
+        <nav class="hidden md:flex space-x-6">
+          <a href="index.html" class="hover:text-royal-light transition-colors">Home</a>
+          <a href="#" class="hover:text-royal-light transition-colors">Shop</a>
+          <a href="#" class="hover:text-royal-light transition-colors">Orders</a>
+          <a href="#" class="hover:text-royal-light transition-colors">Cart</a>
+        </nav>
+        <div class="flex items-center space-x-4">
+          <a href="profile.html" class="font-medium px-3 py-1.5 rounded-full bg-white/20 text-white hover:bg-white/30 transition-colors">
+            My Account
+          </a>
+        </div>
+      </div>
+    </header>
+    
+    <div class="container mx-auto px-4 py-8 md:py-12">
+      <div class="flex flex-col md:flex-row gap-6 md:gap-10">
+        <!-- Sidebar Navigation -->
+        <aside class="w-full md:w-64 bg-white rounded-lg shadow-sm p-6 animate-fade-in">
+          <h2 class="font-playfair text-xl font-semibold text-charcoal-dark border-b pb-4 mb-4">My Account</h2>
+          <nav class="space-y-1">
+            <a href="profile.html" class="nav-link active">
+              Profile
+            </a>
+            <a href="#" class="nav-link">
+              Orders
+            </a>
+            <!-- <a href="#" class="nav-link">
+              Addresses
+            </a> -->
+            <!-- <a href="#" class="nav-link">
+              Payment Methods
+            </a> -->
+            <a href="#" class="nav-link">
+              Wishlist
+            </a>
+            <a href="sign-in.html" class="nav-link">
+              Sign Out
+            </a>
+          </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 animate-fade-in" style="animation-delay: 0.1s;">
+          <div class="bg-white rounded-lg shadow-sm p-6 md:p-8">
+            <h1 class="font-playfair text-2xl md:text-3xl font-bold text-charcoal-dark mb-6">My Profile</h1>
+            
+            <!-- Profile Header with Avatar -->
+            <div class="flex flex-col md:flex-row items-center md:items-start gap-6 pb-6 border-b mb-8">
+              <div class="w-24 h-24 md:w-32 md:h-32 rounded-full bg-gradient-to-br from-navy to-royal-light flex items-center justify-center text-white text-3xl md:text-4xl font-bold">
+                JD
+              </div>
+              <div>
+                <h2 class="font-playfair text-xl md:text-2xl font-semibold text-charcoal-dark">John Doe</h2>
+                <p class="text-charcoal-light">Member since: January 2023</p>
+              </div>
+            </div>
+            
+            <!-- Profile Information -->
+            <div class="grid md:grid-cols-2 gap-x-8 gap-y-6">
+              <!-- Personal Information Section -->
+              <section>
+                <h3 class="font-playfair text-xl font-semibold text-charcoal-dark mb-4">Personal Information</h3>
+                
+                <div class="space-y-4">
+                  <!-- Full Name -->
+                  <div>
+                    <label class="input-label">Full Name</label>
+                    <input 
+                      type="text" 
+                      class="input-field"
+                      value="John Doe" 
+                      readonly
+                    />
+                  </div>
+                  
+                  <!-- Email -->
+                  <div>
+                    <label class="input-label">Email Address</label>
+                    <input 
+                      type="email" 
+                      class="input-field"
+                      value="john.doe@example.com" 
+                      readonly
+                    />
+                  </div>
+                  
+                  <!-- Phone Number -->
+                  <div>
+                    <label class="input-label">Phone Number</label>
+                    <input 
+                      type="tel" 
+                      class="input-field"
+                      value="+1 (555) 123-4567" 
+                      readonly
+                    />
+                  </div>
+                  
+                  <!-- Edit Button -->
+                  <div>
+                    <button type="button" class="btn-primary">
+                        <a href="editprofile.html">
+                      Edit Personal Information</a>
+                    </button>
+                  </div>
+                </div>
+              </section>
+              
+              <!-- Address Section -->
+              <section>
+                <h3 class="font-playfair text-xl font-semibold text-charcoal-dark mb-4">Default Address</h3>
+                
+                <div class="border rounded-lg p-4 bg-gray-50">
+                  <p class="font-medium text-charcoal-dark">John Doe</p>
+                  <p class="text-charcoal mt-1">123 Main Street</p>
+                  <p class="text-charcoal">Apt 4B</p>
+                  <p class="text-charcoal">New York, NY 10001</p>
+                  <p class="text-charcoal">United States</p>
+                  <p class="text-charcoal mt-2">+1 (555) 123-4567</p>
+                  <div class="mt-4 flex space-x-3">
+                    <button class="text-royal hover:text-royal-dark underline text-sm">Edit</button>
+                    <button class="text-royal hover:text-royal-dark underline text-sm">Remove</button>
+                    <button class="text-charcoal-light text-sm">Default</button>
+                  </div>
+                </div>
+                
+                <div class="mt-4">
+                  <button type="button" class="btn-outline">
+                    Add New Address
+                  </button>
+                </div>
+              </section>
+              
+              <!-- Security Section -->
+              <section class="md:col-span-2">
+                <h3 class="font-playfair text-xl font-semibold text-charcoal-dark mb-4">Security</h3>
+                
+                <div class="border rounded-lg p-6 bg-gray-50">
+                  <div class="flex flex-col md:flex-row md:items-center justify-between">
+                    <div>
+                      <p class="font-medium text-charcoal-dark">Password</p>
+                      <p class="text-charcoal-light text-sm mt-1">Last changed 3 months ago</p>
+                    </div>
+                    <button class="mt-3 md:mt-0 btn-primary">
+                      Change Password
+                    </button>
+                  </div>
+                </div>
+              </section>
+            </div>
+
+
+            <!-- Recent Orders Preview -->
+            <section class="mt-10">
+              <div class="flex justify-between items-center mb-4">
+                <h3 class="font-playfair text-xl font-semibold text-charcoal-dark">Recent Orders</h3>
+                <a href="#" class="text-royal hover:text-royal-dark text-sm">View All</a>
+              </div>
+              
+              <div class="overflow-x-auto">
+                <table class="min-w-full divide-y divide-gray-200">
+                  <thead class="bg-gray-50">
+                    <tr>
+                      <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-charcoal-light uppercase tracking-wider">Order #</th>
+                      <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-charcoal-light uppercase tracking-wider">Date</th>
+                      <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-charcoal-light uppercase tracking-wider">Status</th>
+                      <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-charcoal-light uppercase tracking-wider">Total</th>
+                      <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-charcoal-light uppercase tracking-wider">Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody class="bg-white divide-y divide-gray-200">
+                    <tr>
+                      <td class="px-6 py-4 whitespace-nowrap text-sm text-charcoal">#ORD-2305</td>
+                      <td class="px-6 py-4 whitespace-nowrap text-sm text-charcoal">May 12, 2023</td>
+                      <td class="px-6 py-4 whitespace-nowrap">
+                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800">Delivered</span>
+                      </td>
+                      <td class="px-6 py-4 whitespace-nowrap text-sm text-charcoal">$156.00</td>
+                      <td class="px-6 py-4 whitespace-nowrap text-sm text-royal hover:text-royal-dark"><a href="#">View</a></td>
+                    </tr>
+                    <tr>
+                      <td class="px-6 py-4 whitespace-nowrap text-sm text-charcoal">#ORD-2290</td>
+                      <td class="px-6 py-4 whitespace-nowrap text-sm text-charcoal">Apr 23, 2023</td>
+                      <td class="px-6 py-4 whitespace-nowrap">
+                        <span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-blue-100 text-blue-800">Shipped</span>
+                      </td>
+                      <td class="px-6 py-4 whitespace-nowrap text-sm text-charcoal">$89.50</td>
+                      <td class="px-6 py-4 whitespace-nowrap text-sm text-royal hover:text-royal-dark"><a href="#">View</a></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          </div>
+        </main>
+      </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="bg-charcoal-dark text-white py-10 mt-12">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <h3 class="font-playfair text-lg font-semibold mb-4">LUXE</h3>
+            <p class="text-gray-300 text-sm">Premium shopping experience with curated products and exclusive offers.</p>
+          </div>
+          <div>
+            <h4 class="font-medium mb-4">Shop</h4>
+            <ul class="space-y-2 text-sm text-gray-300">
+              <li><a href="#" class="hover:text-white transition-colors">New Arrivals</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">Bestsellers</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">Sale</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">Collections</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-medium mb-4">Customer Service</h4>
+            <ul class="space-y-2 text-sm text-gray-300">
+              <li><a href="#" class="hover:text-white transition-colors">Contact Us</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">Shipping Policy</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">Returns & Exchanges</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">FAQ</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-medium mb-4">Connect With Us</h4>
+            <div class="flex space-x-4">
+              <a href="#" class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-colors">
+                <span class="sr-only">Facebook</span>
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" />
+                </svg>
+              </a>
+              <a href="#" class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-colors">
+                <span class="sr-only">Instagram</span>
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" />
+                </svg>
+              </a>
+              <a href="#" class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-colors">
+                <span class="sr-only">Twitter</span>
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                </svg>
+              </a>
+            </div>
+            <p class="text-gray-300 text-sm mt-4">Subscribe to our newsletter</p>
+            <div class="mt-2 flex">
+              <input type="email" placeholder="Your email" class="bg-charcoal border border-gray-600 rounded-l-md px-4 py-2 text-sm w-full focus:outline-none focus:ring-1 focus:ring-royal" />
+              <button class="bg-royal hover:bg-royal-dark text-white rounded-r-md px-4 py-2 text-sm transition-colors">
+                Subscribe
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+          <p class="text-gray-400 text-sm">&copy; 2025 LUXE. All rights reserved.</p>
+          <div class="mt-4 md:mt-0 flex space-x-6">
+            <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
+            <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- No JavaScript needed as per requirements -->
+  </body>
+</html>
+
+
+
+
+
+
+
