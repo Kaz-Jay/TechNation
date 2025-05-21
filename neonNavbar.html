@@ -14,20 +14,22 @@
 
     <title>Document</title>
 </head>
-<nav id="mainNavbar" class="navbar navbar-lg bg-navy-gradient font-lato fixed-top py-2.5">
+<nav id="mainNavbar" class="navbar navbar-lg bg-dark-gradient font-lato fixed-top py-2.5">
     <div class="container-fluid d-flex justify-content-between align-items-center">
   
       
       
       <!-- Left Side: Menu Button -->
       <button 
-        class="border-0 md:border d-md-block px-2 py-1 bg-transparent" 
+        class="text-cyan border-0 md:border d-md-block px-2 py-1 bg-transparent" 
         type="button" 
         data-bs-toggle="offcanvas" 
         data-bs-target="#offcanvasMenu" 
         aria-controls="offcanvasMenu"
       >
-        <span class="navbar-toggler-icon" style="font-size: 1.2rem; filter: brightness(0) invert(1);"></span>
+         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8">
+    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+  </svg>
       </button>
        
 
@@ -48,14 +50,14 @@
 </button></a>
 </div>
 
-<a class="navbar-brand d-flex align-items-center gap-2 text-white me-2" href="#">
-<i class="fa-solid fa-bolt text-danger"></i>
-<span class="fw-semibold d-none d-md-inline hover:text-blue-200" style="font-size: 16px;">Gaming</span>
+<a class="navbar-brand d-flex align-items-center gap-2 text-cyan me-2" href="index.html">
+<i class="fa-solid fa-microchip text-safe"></i>
+<span class="fw-semibold d-none d-md-inline hover:text-blue-200" style="font-size: 16px;">Simple</span>
 </a>
       <!-- Profile Dropdown -->
       <div class="relative hidden lg:block">
         <!-- Trigger Icon -->
-        <a href="#" class="navbar-brand mx-right d-flex align-items-center gap-2 text-white hover:text-gray-300 me-3">
+        <a href="#" class="navbar-brand d-flex align-items-center gap-2 text-cyan me-3">
           <i class="fa-solid fa-user text-xl"></i>
           <span class="fw-semibold d-none d-md-inline hover:text-blue-200" style="font-size: 16px;">Profile</span>
         </a>
@@ -65,7 +67,7 @@
       
       
       <!-- Right Side: Cart Toggle -->
-<button class="navbar-toggler d-flex align-items-center gap-1 text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCartRight" aria-controls="offcanvasCartRight">
+<button class="navbar-toggler d-flex align-items-center gap-1 text-cyan" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCartRight" aria-controls="offcanvasCartRight">
 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
 <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2"/>
 </svg>
@@ -75,49 +77,49 @@
 
   
     <!-- Offcanvas Menu (Left Side) -->
-<div class="offcanvas offcanvas-start" style="background-color: #152e3b; max-height: 100vh;" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
+<div class="offcanvas offcanvas-start bg-dark-gradient" style="max-height: 100vh;" tabindex="-1" id="offcanvasMenu" aria-labelledby="offcanvasMenuLabel">
 <div class="offcanvas-header">
-<h5 style="font-size: 22px;" class="offcanvas-title text-gray-200" id="offcanvasMenuLabel">Menu</h5>
+<h5 style="font-size: 22px;" class="offcanvas-title text-cyan" id="offcanvasMenuLabel">Menu</h5>
 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
 </div>
 
 <!-- Scrollable Offcanvas Body -->
 <div class="offcanvas-body p-0 flex flex-col" style="height: calc(100vh - 56px);">
 <!-- Container for sidebar content and sticky footer -->
-<div class="flex flex-col h-full text-gray-200" style="background-color: #152e3b;">
+<div class="flex flex-col h-full text-gray-200">
   
   <!-- Scrollable content area -->
   <div class="flex-1 overflow-y-auto">
-    <aside class="w-full" style="font-size: 20px; background-color: #152e3b;">
+    <aside class="w-full" style="font-size: 20px;">
       <div class="px-0 py-2 flex flex-col">
         <nav class="px-2 space-y-2">
 
           <a href="#" class="flex items-center px-2 block lg:hidden sidenavbar-options">
-            <i class="fa-regular fa-user text-gray-400 sidenavbar-icons" style="font-size: 1.1rem;"></i>
+            <i class="fa-regular fa-user text-cyan sidenavbar-icons" style="font-size: 1.1rem;"></i>
             <span class="ml-4">Profile</span>
           </a>
 
-          <a href="#" class="flex items-center p-2 sidenavbar-options">
-            <svg class="w-5 h-5 mr-3 text-gray-400" fill="none" stroke="currentColor" stroke-width="2"
+          <a href="#" class="flex items-center text-cyan p-2 sidenavbar-options">
+            <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" stroke-width="2"
               viewBox="0 0 24 24"><path d="M3 12l9-9 9 9v8a2 2 0 01-2 2h-4a2 2 0 01-2-2v-4H9v4a2 2 0 01-2 2H5a2 2 0 01-2-2z" /></svg>
             <span>Home</span>
           </a>
 
           <!-- Products Dropdown Section -->
           <div x-data="{ open: false }" class="text-sm">
-            <button @click="open = !open" class="w-full flex items-center justify-between p-2 transition focus:outline-none">
+            <button @click="open = !open" class="w-full flex items-center justify-between p-2 text-cyan transition focus:outline-none">
               <div class="flex items-center">
-                <svg class="w-5 h-5 mr-3 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
                   <path d="M20 13V6a2 2 0 00-2-2h-3V2h-6v2H6a2 2 0 00-2 2v7M5 20h14a1 1 0 001-1v-5H4v5a1 1 0 001 1z" />
                 </svg>
                 <a href="prolist.html"><span class="sidenavbar-options">Products</span></a>
               </div>
-              <svg :class="{ 'rotate-180': open }" class="w-4 h-4 text-gray-200 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg :class="{ 'rotate-180': open }" class="w-4 h-4 text-cyan transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path d="M19 9l-7 7-7-7" />
               </svg>
             </button>
 
-            <div x-show="open" x-transition class="flex flex-col mt-2 ml-10 space-y-2 sidenavbar-suboptions">
+            <div x-show="open" x-transition class="flex flex-col mt-2 ml-10 space-y-2 text-cyan sidenavbar-suboptions">
               <a href="#" class="hover:text-blue-400 transition">Keyboards</a>
               <a href="#" class="py-2 hover:text-blue-400 transition">Mice</a>
               <a href="#" class="py-2 hover:text-blue-400 transition">Headsets</a>
@@ -125,16 +127,16 @@
             </div>
           </div>
 
-          <a href="#" class="flex items-center px-1 py-1 sidenavbar-options">
+          <a href="#" class="flex items-center px-1 py-1 text-cyan sidenavbar-options">
             <!-- Hollow Bolt -->
-            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-3 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
             </svg>
             <span class="px-0">Gaming</span>
           </a>
 
-          <a href="#" class="flex items-center px-2 py-1 sidenavbar-options">
-            <svg class="w-5 h-5 mr-3 text-gray-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <a href="#" class="flex items-center px-2 py-1 text-cyan sidenavbar-options">
+            <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
               <path d="M18.364 5.636a9 9 0 11-12.728 0M9 9h.01M15 15h.01M9 15h.01M15 9h.01" />
             </svg>
             <span class="px-1">About TechNation</span>
@@ -145,7 +147,7 @@
   </div>
 
   <!-- Footer -->
-  <div class="border-t px-4 py-3 text-sm text-gray-400 text-center" style="background-color: #152e3b;">
+  <div class="border-t px-4 py-3 text-sm text-cyan text-center" style="border-color: #00F0FF;">
     © 2025 TechNation. All rights reserved.
   </div>
 </div>
@@ -154,15 +156,22 @@
         </nav>
 
         <div id="searchBar">
-        <div class="shadow py-3 px-4 mt-5 sticky-top z-10 bg-navy-gradient" style="margin-top: 40px;">
-            <div class="container">
-              <form class="d-flex" role="search">
-                <input id="searchInput" class="form-control me-2" type="search" placeholder="Search products..." aria-label="Search">
-                <button class="btn btn-outline-success text-white" type="submit">Search</button>
-              </form>
-            </div>
-          </div>
-        </div>
+  <div class="shadow py-3 px-4 mt-5 sticky-top z-10 bg-dark-gradient" style="margin-top: 40px;">
+    <div class="container">
+      <form class="d-flex bg-dark-gradient rounded" role="search">
+        <input 
+          id="searchInput" 
+          class="form-control me-2 bg-transparent text-white placeholder-green-400 border-1"
+          style="border-color: #00FF99;" 
+          type="search" 
+          placeholder="Search products..." 
+          aria-label="Search"
+        >
+        <button class="btn btn-outline-success text-green-400" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</div>
 
     </body>
     
@@ -173,27 +182,6 @@
 <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 <script src="https://unpkg.com/heroicons@2.0.16/dist/24/outline.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
-<script>
-    // let lastScroll = 0;
-    // const searchBar = document.getElementById('searchBar');
-    // const searchIcon = document.getElementById('searchIcon');
-  
-    // window.addEventListener('scroll', () => {
-    //   const currentScroll = window.scrollY;
-  
-    //   if (currentScroll > lastScroll && currentScroll > 50) {
-    //     // Scrolling down
-    //     searchBar.classList.add('-translate-y-full');
-    //     searchIcon.classList.remove('hidden');
-    //   } else if (currentScroll < lastScroll) {
-    //     // Scrolling up
-    //     searchBar.classList.remove('-translate-y-full');
-    //     searchIcon.classList.add('hidden');
-    //   }
-  
-    //   lastScroll = currentScroll;
-    // });
-  </script>
 
 <script>
   // Show search icon on scroll
@@ -205,77 +193,6 @@
       icon.classList.add("hidden");
     }
   });
-
-  // Cart and checkout logic placeholder
-  document.getElementById("checkout-btn").addEventListener("click", () => {
-    alert("Proceeding to checkout...");
-  });
-</script>
-
-<script>
-  const container = document.getElementById('scrollContainer');
-  const cardWidth = 315; // Tailwind w-72 = 18rem = 288px
-  const gap = 48;        // Tailwind gap-6 = 1.5rem = 24px
-  const scrollAmount = (cardWidth + gap) * 4;
-  const stepSize = 10;   // 10px per move
-  const stepTime = 2;    // 2ms between moves (you had 10ms, adjusted to match 2ms)
-
-  const backBtn = document.getElementById("backBtn");
-  const nextBtn = document.getElementById("nextBtn");
-
-  function smoothScroll(container, distance, step, intervalTime) {
-    let scrolled = 0;
-    const direction = distance > 0 ? 1 : -1;
-    const interval = setInterval(() => {
-      container.scrollLeft += step * direction;
-      scrolled += step;
-      if (scrolled >= Math.abs(distance)) {
-        clearInterval(interval);
-        updateArrowVisibility(); // Recheck after scroll finishes
-      }
-    }, intervalTime);
-  }
-
-  nextBtn.addEventListener("click", () => {
-    smoothScroll(container, scrollAmount, stepSize, stepTime);
-  });
-
-  backBtn.addEventListener("click", () => {
-    smoothScroll(container, -scrollAmount, stepSize, stepTime);
-  });
-
-  function updateArrowVisibility() {
-    const scrollLeft = container.scrollLeft;
-    const maxScrollLeft = container.scrollWidth - container.clientWidth;
-
-    if (scrollLeft <= 0) {
-      backBtn.style.display = 'none';
-    } else {
-      backBtn.style.display = 'block';
-    }
-
-    if (scrollLeft >= maxScrollLeft - 1) {
-      nextBtn.style.display = 'none';
-    } else {
-      nextBtn.style.display = 'block';
-    }
-  }
-
-  // Button show/hide based on screen size
-  function updateButtonVisibility() {
-    if (window.innerWidth < 768) {
-      backBtn.style.display = 'none';
-      nextBtn.style.display = 'none';
-    } else {
-      updateArrowVisibility(); // Smart: call scroll-based check
-    }
-  }
-
-  // Initial check
-  updateButtonVisibility();
-
-  // Update on resize
-  window.addEventListener('resize', updateButtonVisibility);
 </script>
 
 

@@ -190,6 +190,12 @@ html {
     --color-charcoal-dark: #222222;
     --color-charcoal-light: #555555;
 
+    --neon-cyan: #00F0FF;
+    --neon-green: #00FF99;
+    --dark-bg: #05080D;
+    --deep-navy: #0B0F1A;
+    --cool-gray: #1E2B38;
+
     --font-playfair: 'Playfair Display', serif;
     --font-roboto: 'Roboto', sans-serif;
     --font-merriweather: 'Merriweather', serif;
@@ -200,6 +206,18 @@ html {
     background: linear-gradient(to right, var(--color-navy), var(--color-navy-dark));
   }
 
+  .text-cyan{
+    color: var(--neon-cyan);
+  }
+
+  .text-green{
+    color: var(--neon-green);
+  }
+
+  .bg-dark-gradient{
+    background: linear-gradient(to right, var(--deep-navy), var(--dark-bg));
+  }
+
   .bg-charcoal-gradient {
     background: linear-gradient(to right, var(--color-charcoal), var(--color-charcoal-dark));
   }
@@ -207,3 +225,38 @@ html {
   .font-lato {
     font-family: var(--font-lato);
   }
+
+
+  .btn-primary {
+        background-image: linear-gradient(to right, #18314F, #405D7D);
+        color: white;
+        font-weight: 500;
+        border-radius: 8px;
+        padding: 8px 16px;
+        transition: all 0.3s ease-in-out;
+        transform: translateY(0);
+      }
+      
+      .btn-primary:hover {
+        background-image: linear-gradient(to right, #0E1C2C, #18314F);
+        box-shadow: 0 4px 12px rgba(24, 49, 79, 0.2);
+        transform: translateY(-1px);
+      }
+      
+      .btn-primary:active {
+        transform: translateY(0);
+      }
+      
+      .btn-outline {
+        border: 1px solid #1E56A0;
+        color: #1E56A0;
+        font-weight: 500;
+        border-radius: 8px;
+        padding: 8px 16px;
+        transition: all 0.3s ease-in-out;
+      }
+      
+      .btn-outline:hover {
+        background-color: #1E56A0;
+        color: white;
+      }
