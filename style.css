@@ -315,3 +315,23 @@ html {
   .footer-options:hover{
     color: var(--neon-green);
   }
+
+  .gaming-categories{
+    font-size: 1.2rem;
+    font-family:Audiowide, Helvetica, sans-serif;
+  }
+
+  .blogs-headings{
+    font-family:Roboto, Helvetica, sans-serif;
+    font-weight: bold;
+  }
+
+  .gaming-cards{
+    font-size: 1.1rem;
+    font-family:Orbitron, Helvetica, sans-serif;
+  }
+
+  .gaming-headings{
+    border-bottom: 0.5px solid rgba(0, 255, 153, 0.2); 
+    font-family:Orbitron, Helvetica, sans-serif
+  }
