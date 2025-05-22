@@ -210,6 +210,20 @@ html {
     color: var(--neon-cyan);
   }
 
+  .navbar-links{
+    color: var(--neon-cyan)
+  }
+
+  .navbar-links:hover{
+     color: var(--neon-green);
+  }
+
+  .cards-border{
+    border-color: green;
+    opacity: 0.7;
+  }
+
+
   .text-green{
     color: var(--neon-green);
   }
@@ -227,6 +241,29 @@ html {
   }
 
 
+  .gaming-btn-primary {
+  background-image: linear-gradient(to right, #0a0d13, #151c23);
+  color: #00ffc3; /* neon-accent text */
+  font-weight: 500;
+  border-radius: 8px;
+  padding: 8px 16px;
+  transition: all 0.3s ease-in-out;
+  transform: translateY(0);
+  border: 1px solid rgba(0, 255, 195, 0.15); /* subtle border */
+  }
+
+  .gaming-btn-primary:hover {
+    background-image: linear-gradient(to right, #131920, #1f2b36);
+    box-shadow: 0 4px 12px rgba(0, 255, 195, 0.08);
+    color: #00ffc3;
+    transform: translateY(-1px);
+  }
+
+  .gaming-btn-primary:active {
+    transform: translateY(0);
+  } 
+
+  
   .btn-primary {
         background-image: linear-gradient(to right, #18314F, #405D7D);
         color: white;
@@ -260,3 +297,21 @@ html {
         background-color: #1E56A0;
         color: white;
       }
+
+      .shipping-right-section{
+        padding-top: 0.25em;
+      }
+
+      @media (min-width: 768px) {
+    .shipping-right-section {
+      padding-top: 4.25rem;
+    }
+  }
+
+  .footer-options{
+    color: var(--neon-cyan);
+  }
+
+  .footer-options:hover{
+    color: var(--neon-green);
+  }
