@@ -173,27 +173,6 @@
 <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 <script src="https://unpkg.com/heroicons@2.0.16/dist/24/outline.min.js" defer></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
-<script>
-    // let lastScroll = 0;
-    // const searchBar = document.getElementById('searchBar');
-    // const searchIcon = document.getElementById('searchIcon');
-  
-    // window.addEventListener('scroll', () => {
-    //   const currentScroll = window.scrollY;
-  
-    //   if (currentScroll > lastScroll && currentScroll > 50) {
-    //     // Scrolling down
-    //     searchBar.classList.add('-translate-y-full');
-    //     searchIcon.classList.remove('hidden');
-    //   } else if (currentScroll < lastScroll) {
-    //     // Scrolling up
-    //     searchBar.classList.remove('-translate-y-full');
-    //     searchIcon.classList.add('hidden');
-    //   }
-  
-    //   lastScroll = currentScroll;
-    // });
-  </script>
 
 <script>
   // Show search icon on scroll
@@ -205,77 +184,6 @@
       icon.classList.add("hidden");
     }
   });
-
-  // Cart and checkout logic placeholder
-  document.getElementById("checkout-btn").addEventListener("click", () => {
-    alert("Proceeding to checkout...");
-  });
-</script>
-
-<script>
-  const container = document.getElementById('scrollContainer');
-  const cardWidth = 315; // Tailwind w-72 = 18rem = 288px
-  const gap = 48;        // Tailwind gap-6 = 1.5rem = 24px
-  const scrollAmount = (cardWidth + gap) * 4;
-  const stepSize = 10;   // 10px per move
-  const stepTime = 2;    // 2ms between moves (you had 10ms, adjusted to match 2ms)
-
-  const backBtn = document.getElementById("backBtn");
-  const nextBtn = document.getElementById("nextBtn");
-
-  function smoothScroll(container, distance, step, intervalTime) {
-    let scrolled = 0;
-    const direction = distance > 0 ? 1 : -1;
-    const interval = setInterval(() => {
-      container.scrollLeft += step * direction;
-      scrolled += step;
-      if (scrolled >= Math.abs(distance)) {
-        clearInterval(interval);
-        updateArrowVisibility(); // Recheck after scroll finishes
-      }
-    }, intervalTime);
-  }
-
-  nextBtn.addEventListener("click", () => {
-    smoothScroll(container, scrollAmount, stepSize, stepTime);
-  });
-
-  backBtn.addEventListener("click", () => {
-    smoothScroll(container, -scrollAmount, stepSize, stepTime);
-  });
-
-  function updateArrowVisibility() {
-    const scrollLeft = container.scrollLeft;
-    const maxScrollLeft = container.scrollWidth - container.clientWidth;
-
-    if (scrollLeft <= 0) {
-      backBtn.style.display = 'none';
-    } else {
-      backBtn.style.display = 'block';
-    }
-
-    if (scrollLeft >= maxScrollLeft - 1) {
-      nextBtn.style.display = 'none';
-    } else {
-      nextBtn.style.display = 'block';
-    }
-  }
-
-  // Button show/hide based on screen size
-  function updateButtonVisibility() {
-    if (window.innerWidth < 768) {
-      backBtn.style.display = 'none';
-      nextBtn.style.display = 'none';
-    } else {
-      updateArrowVisibility(); // Smart: call scroll-based check
-    }
-  }
-
-  // Initial check
-  updateButtonVisibility();
-
-  // Update on resize
-  window.addEventListener('resize', updateButtonVisibility);
 </script>
 
 
