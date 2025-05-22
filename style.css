@@ -335,3 +335,39 @@ html {
     border-bottom: 0.5px solid rgba(0, 255, 153, 0.2); 
     font-family:Orbitron, Helvetica, sans-serif
   }
+
+  .gaming-filter-btns-p {
+  background-image: linear-gradient(to right, #070a0f, #10171e); /* darker base */
+  color: #00e6b4; /* slightly dimmer neon */
+  font-weight: 500;
+  border-radius: 8px;
+  padding: 8px 16px;
+  transition: all 0.3s ease-in-out;
+  transform: translateY(0);
+  border: 1px solid rgba(0, 230, 180, 0.15); /* slightly toned down */
+}
+
+.gaming-filter-btns-p:hover {
+  background-image: linear-gradient(to right, #0e141a, #1a262f); /* darker hover */
+  box-shadow: 0 4px 12px rgba(0, 230, 180, 0.08);
+  color: #00e6b4;
+  transform: translateY(-1px);
+}
+
+  .gaming-filter-btns {
+  background-image: linear-gradient(to right, #0a0d13, #151c23);
+  color: #00ffc3; /* neon-accent text */
+  font-weight: 500;
+  border-radius: 8px;
+  padding: 8px 16px;
+  transition: all 0.3s ease-in-out;
+  transform: translateY(0);
+  border: 1px solid rgba(0, 255, 195, 0.15); /* subtle border */
+}
+
+.gaming-filter-btns:hover {
+  background-image: linear-gradient(to right, #131920, #1f2b36);
+    box-shadow: 0 4px 12px rgba(0, 255, 195, 0.08);
+    color: #00ffc3;
+    transform: translateY(-1px);
+}

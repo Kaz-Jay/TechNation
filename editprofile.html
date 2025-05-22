@@ -1,0 +1,420 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LUXE - Edit Profile</title>
+    <meta name="description" content="Edit your LUXE profile information." />
+    <meta name="author" content="LUXE" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&family=Merriweather:wght@300;400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              navy: {
+                DEFAULT: '#18314F',
+                light: '#405D7D',
+                dark: '#0E1C2C'
+              },
+              charcoal: {
+                DEFAULT: '#333333',
+                light: '#555555',
+                dark: '#222222'
+              },
+              royal: {
+                DEFAULT: '#1E56A0',
+                light: '#3A7BD5',
+                dark: '#0E3B7D'
+              },
+              teal: {
+                DEFAULT: '#20639B',
+                light: '#3D89C9',
+                dark: '#174F7D'
+              }
+            },
+            fontFamily: {
+              'playfair': ['"Playfair Display"', 'serif'],
+              'roboto': ['Roboto', 'sans-serif'],
+              'merriweather': ['Merriweather', 'serif'],
+              'lato': ['Lato', 'sans-serif']
+            }
+          }
+        }
+      }
+    </script>
+    
+    <!-- Custom CSS -->
+    <style>
+      body {
+        font-family: 'Roboto', sans-serif;
+        color: #333333;
+        background-color: #f7f7f7;
+      }
+      
+      .animate-fade-in {
+        opacity: 0;
+        animation: fadeIn 0.5s ease-out forwards;
+      }
+      
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); }
+        to { opacity: 1; transform: translateY(0); }
+      }
+      
+      .input-field {
+        width: 100%;
+        padding: 12px 16px;
+        border-radius: 8px;
+        background-color: white;
+        border: 1px solid #e2e8f0;
+        transition: all 0.2s ease-in-out;
+        color: #333333;
+      }
+      
+      .input-field:focus {
+        outline: none;
+        box-shadow: 0 0 0 2px rgba(30, 86, 160, 0.3);
+        border-color: #1E56A0;
+      }
+      
+      .input-label {
+        display: block;
+        font-size: 14px;
+        font-weight: 500;
+        color: #222222;
+        margin-bottom: 6px;
+      }
+      
+      .btn-primary {
+        background-image: linear-gradient(to right, #18314F, #405D7D);
+        color: white;
+        font-weight: 500;
+        border-radius: 8px;
+        padding: 10px 20px;
+        transition: all 0.3s ease-in-out;
+        cursor: pointer;
+      }
+      
+      .btn-primary:hover {
+        background-image: linear-gradient(to right, #0E1C2C, #18314F);
+        box-shadow: 0 4px 12px rgba(24, 49, 79, 0.2);
+        transform: translateY(-1px);
+      }
+      
+      .btn-outline {
+        border: 1px solid #1E56A0;
+        color: #1E56A0;
+        font-weight: 500;
+        border-radius: 8px;
+        padding: 10px 20px;
+        transition: all 0.3s ease-in-out;
+        background-color: transparent;
+        cursor: pointer;
+      }
+      
+      .btn-outline:hover {
+        background-color: #1E56A0;
+        color: white;
+      }
+      
+      .dropdown {
+        position: relative;
+        display: inline-block;
+      }
+      
+      .dropdown-content {
+        display: none;
+        position: absolute;
+        right: 0;
+        background-color: #fff;
+        min-width: 160px;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+        z-index: 1;
+        border-radius: 8px;
+        overflow: hidden;
+      }
+      
+      .dropdown:hover .dropdown-content {
+        display: block;
+      }
+      
+      .dropdown-item {
+        padding: 12px 16px;
+        text-decoration: none;
+        display: block;
+        color: #333;
+        transition: all 0.2s;
+      }
+      
+      .dropdown-item:hover {
+        background-color: #f1f5f9;
+        color: #1E56A0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header with Navigation -->
+    <header class="bg-gradient-to-r from-navy to-navy-dark text-white p-4 md:p-6 shadow-md">
+      <div class="container mx-auto flex justify-between items-center">
+        <a href="index.html" class="font-playfair text-2xl md:text-3xl font-bold">LUXE</a>
+        <nav class="hidden md:flex space-x-6">
+          <a href="index.html" class="hover:text-royal-light transition-colors">Home</a>
+          <a href="#" class="hover:text-royal-light transition-colors">Shop</a>
+          <a href="#" class="hover:text-royal-light transition-colors">Orders</a>
+          <a href="#" class="hover:text-royal-light transition-colors">Cart</a>
+        </nav>
+        <div class="dropdown">
+          <button class="font-medium px-3 py-1.5 rounded-full bg-white/20 text-white hover:bg-white/30 transition-colors flex items-center">
+            My Account 
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="dropdown-content">
+            <a href="profile.html" class="dropdown-item">Profile</a>
+            <a href="#" class="dropdown-item">Orders</a>
+            <a href="#" class="dropdown-item">Addresses</a>
+            <a href="#" class="dropdown-item">Payment Methods</a>
+            <a href="#" class="dropdown-item">Wishlist</a>
+            <a href="sign-in.html" class="dropdown-item">Sign Out</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    
+    <div class="container mx-auto px-4 py-8 md:py-12">
+      <div class="max-w-3xl mx-auto">
+        <div class="bg-white rounded-lg shadow-sm p-6 md:p-8 animate-fade-in">
+          <div class="flex items-center mb-8">
+            <a href="profile.html" class="mr-4 text-royal hover:text-royal-dark">
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+              </svg>
+            </a>
+            <h1 class="font-playfair text-2xl md:text-3xl font-bold text-charcoal-dark">Edit Personal Information</h1>
+          </div>
+          
+                    
+          <form>
+            <div class="space-y-6">
+              <!-- Profile Picture -->
+              <div class="flex flex-col items-center mb-6 md:items-start md:flex-row md:space-x-6">
+                <div class="w-24 h-24 md:w-32 md:h-32 rounded-full bg-gradient-to-br from-navy to-royal-light flex items-center justify-center text-white text-3xl md:text-4xl font-bold mb-4 md:mb-0">
+                  JD
+                </div>
+                <div class="flex flex-col space-y-2 items-center md:items-start">
+                  <button class="btn-outline">Change Profile Picture</button>
+                  <p class="text-xs text-charcoal-light">Supported formats: JPG, PNG. Max size: 5MB</p>
+                </div>
+              </div>
+              
+              <!-- Full Name -->
+              <div class="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label class="input-label" for="firstName">First Name*</label>
+                  <input type="text" id="firstName" class="input-field" value="John" required>
+                </div>
+                <div>
+                  <label class="input-label" for="lastName">Last Name*</label>
+                  <input type="text" id="lastName" class="input-field" value="Doe" required>
+                </div>
+              </div>
+              
+              <!-- Email -->
+              <div>
+                <label class="input-label" for="email">Email Address*</label>
+                <input type="email" id="email" class="input-field" value="john.doe@example.com" required>
+              </div>
+              
+              <!-- Phone -->
+              <div>
+                <label class="input-label" for="phone">Phone Number*</label>
+                <input type="tel" id="phone" class="input-field" value="+1 (555) 123-4567" required>
+              </div>
+              
+              <!-- Date of Birth -->
+              <div class="grid md:grid-cols-3 gap-4">
+                <div>
+                  <label class="input-label" for="birthMonth">Birth Month</label>
+                  <select id="birthMonth" class="input-field">
+                    <option value="01">January</option>
+                    <option value="02">February</option>
+                    <option value="03">March</option>
+                    <option value="04">April</option>
+                    <option value="05">May</option>
+                    <option value="06">June</option>
+                    <option value="07">July</option>
+                    <option value="08">August</option>
+                    <option value="09">September</option>
+                    <option value="10">October</option>
+                    <option value="11" selected>November</option>
+                    <option value="12">December</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="input-label" for="birthDay">Day</label>
+                  <select id="birthDay" class="input-field">
+                    <!-- Generate options 1-31 -->
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10" selected>10</option>
+                    <option value="11">11</option>
+                    <!-- More options... -->
+                    <option value="31">31</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="input-label" for="birthYear">Year</label>
+                  <select id="birthYear" class="input-field">
+                    <!-- Generate year options -->
+                    <option value="2005">2005</option>
+                    <option value="2004">2004</option>
+                    <option value="2003">2003</option>
+                    <option value="2002">2002</option>
+                    <option value="2001">2001</option>
+                    <option value="2000">2000</option>
+                    <option value="1999">1999</option>
+                    <option value="1998">1998</option>
+                    <option value="1997">1997</option>
+                    <option value="1996">1996</option>
+                    <option value="1995">1995</option>
+                    <option value="1994">1994</option>
+                    <option value="1993">1993</option>
+                    <option value="1992">1992</option>
+                    <option value="1991">1991</option>
+                    <option value="1990" selected>1990</option>
+                    <!-- More options... -->
+                    <option value="1950">1950</option>
+                  </select>
+                </div>
+              </div>
+              
+              <!-- Gender -->
+              <div>
+                <label class="input-label">Gender</label>
+                <div class="flex space-x-4 mt-1">
+                  <label class="flex items-center">
+                    <input type="radio" name="gender" value="male" class="mr-2" checked>
+                    <span>Male</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="radio" name="gender" value="female" class="mr-2">
+                    <span>Female</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="radio" name="gender" value="other" class="mr-2">
+                    <span>Other</span>
+                  </label>
+                </div>
+              </div>
+              
+              <!-- Communication Preferences -->
+              <div>
+                <label class="input-label">Communication Preferences</label>
+                <div class="space-y-2 mt-1">
+                  <label class="flex items-center">
+                    <input type="checkbox" class="mr-2" checked>
+                    <span>Email me about special promotions and new products</span>
+                  </label>
+                  <label class="flex items-center">
+                    <input type="checkbox" class="mr-2" checked>
+                    <span>SMS notifications for order updates</span>
+                  </label>
+                </div>
+              </div>
+              
+              <!-- Buttons -->
+              <div class="flex flex-col-reverse sm:flex-row justify-end space-y-4 space-y-reverse sm:space-y-0 sm:space-x-4 mt-8">
+                <a href="profile.html" class="btn-outline text-center">Cancel</a>
+                <button type="submit" class="btn-primary">Save Changes</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+    
+    <!-- Footer -->
+    <footer class="bg-charcoal-dark text-white py-10 mt-12">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+          <div>
+            <h3 class="font-playfair text-lg font-semibold mb-4">LUXE</h3>
+            <p class="text-gray-300 text-sm">Premium shopping experience with curated products and exclusive offers.</p>
+          </div>
+          <div>
+            <h4 class="font-medium mb-4">Shop</h4>
+            <ul class="space-y-2 text-sm text-gray-300">
+              <li><a href="#" class="hover:text-white transition-colors">New Arrivals</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">Bestsellers</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">Sale</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">Collections</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-medium mb-4">Customer Service</h4>
+            <ul class="space-y-2 text-sm text-gray-300">
+              <li><a href="#" class="hover:text-white transition-colors">Contact Us</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">Shipping Policy</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">Returns & Exchanges</a></li>
+              <li><a href="#" class="hover:text-white transition-colors">FAQ</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-medium mb-4">Connect With Us</h4>
+            <div class="flex space-x-4">
+              <a href="#" class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-colors">
+                <span class="sr-only">Facebook</span>
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" />
+                </svg>
+              </a>
+              <a href="#" class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-colors">
+                <span class="sr-only">Instagram</span>
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" />
+                </svg>
+              </a>
+              <a href="#" class="w-8 h-8 rounded-full bg-white/20 flex items-center justify-center hover:bg-white/30 transition-colors">
+                <span class="sr-only">Twitter</span>
+                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                </svg>
+              </a>
+            </div>
+            <p class="text-gray-300 text-sm mt-4">Subscribe to our newsletter</p>
+            <div class="mt-2 flex">
+              <input type="email" placeholder="Your email" class="bg-charcoal border border-gray-600 rounded-l-md px-4 py-2 text-sm w-full focus:outline-none focus:ring-1 focus:ring-royal" />
+              <button class="bg-royal hover:bg-royal-dark text-white rounded-r-md px-4 py-2 text-sm transition-colors">
+                Subscribe
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-t border-gray-700 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+          <p class="text-gray-400 text-sm">&copy; 2025 LUXE. All rights reserved.</p>
+          <div class="mt-4 md:mt-0 flex space-x-6">
+            <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Privacy Policy</a>
+            <a href="#" class="text-gray-400 hover:text-white text-sm transition-colors">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
